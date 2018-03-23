@@ -15,7 +15,7 @@ public class App
         u.setNeckMeasurment(15);
         u.setWaistMeasurment(34.5);
         System.out.println(u.calculateBFNavyMethod());
-        DatabaseGateway d=new DatabaseGateway();
+        DatabaseGateway d = new DatabaseGateway();
         //d.createTable();
     }
 }
