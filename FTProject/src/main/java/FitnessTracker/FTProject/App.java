@@ -16,6 +16,7 @@ public class App
         u.setWaistMeasurment(34.5);
         System.out.println(u.calculateBFNavyMethod());
         DatabaseGateway d = new DatabaseGateway();
-        //d.createTable();
+        d.createTable();
+        d.addFoodToTable("Apple", "Fruit", 95);
     }
 }
