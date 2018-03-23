@@ -8,6 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        MaleUser u=new MaleUser();
+        u.setHeight(69);
+        u.setNeckMeasurment(15);
+        u.setWaistMeasurment(34.5);
+        System.out.println(u.calculateBFNavyMethod());
     }
 }
