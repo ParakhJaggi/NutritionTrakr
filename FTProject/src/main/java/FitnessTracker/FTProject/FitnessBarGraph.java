@@ -24,20 +24,9 @@ public class FitnessBarGraph extends Application {
         final BarChart<String,Number> bc = 
             new BarChart<String,Number>(xAxis,yAxis);
         bc.setTitle("FITNESS");
-        xAxis.setLabel("GARTH");       
-        yAxis.setLabel("Value");
+        xAxis.setLabel("Date");       
+        yAxis.setLabel("Calories");
  
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("2003");       
-        series1.getData().add(new XYChart.Data(usa, 0));      
-        
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName("2004");
-        series2.getData().add(new XYChart.Data(usa, 1));  
-        
-        XYChart.Series series3 = new XYChart.Series();
-        series3.setName("2005");
-        series3.getData().add(new XYChart.Data(usa, 2));
         ArrayList<XYChart.Series> list= new ArrayList<XYChart.Series>();
         for(int i=0;i<20;i++) {
         	XYChart.Series mySeries=new XYChart.Series();
@@ -45,12 +34,8 @@ public class FitnessBarGraph extends Application {
         	mySeries.getData().add(new XYChart.Data(usa,i));
         	list.add(mySeries);
         }
-        XYChart.Series series4 = new XYChart.Series();
-        //series3.setName("2005");
-        series4.getData().add(new XYChart.Data(usa, 92633.68));  
         bc.setLegendVisible(false);
         Scene scene  = new Scene(bc,800,600);
-        bc.getData().addAll(series1, series2, series3);
         for(XYChart.Series a:list) {
         	bc.getData().addAll(a);
         }
