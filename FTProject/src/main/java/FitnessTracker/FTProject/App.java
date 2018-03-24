@@ -21,7 +21,9 @@ public class App
         food.setCalories(105);
         food.setName("Banana");
         food.setCategory("Fruit");
-        System.out.println(d.retrieveFood("Apple", null).getName());
-        //d.addFoodToTable("Apple", "Fruit", 95);
+        System.out.println(d.retrieveFood("Banana").getCalories());
+        //d.updateCalories("Banana", 105);
+        System.out.println(d.retrieveFood("Banana").getCalories());
+        d.DisplayFoodFromCategory("Fruit");
     }
 }
