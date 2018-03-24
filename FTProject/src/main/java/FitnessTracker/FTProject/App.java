@@ -17,6 +17,11 @@ public class App
         System.out.println(u.calculateBFNavyMethod());
         DatabaseGateway d = new DatabaseGateway();
         d.createTable();
-        d.addFoodToTable("Apple", "Fruit", 95);
+        Food food= new Food();
+        food.setCalories(105);
+        food.setName("Banana");
+        food.setCategory("Fruit");
+        System.out.println(d.retrieveFood("Apple", null).getName());
+        //d.addFoodToTable("Apple", "Fruit", 95);
     }
 }

@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import FitnessTracker.Exceptions.FoodNotFoundException;
+
 
 	
 public class DatabaseGateway {
@@ -21,45 +23,62 @@ public class DatabaseGateway {
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
-			System.out.println(createTableSQL);
-			// execute the SQL statement
 			statement.execute(createTableSQL);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-			if (statement != null) {
+			if (statement != null) 
 				statement.close();
-			}
-			if (dbConnection != null) {
+			if (dbConnection != null) 
 				dbConnection.close();
-			}
 		}
 	}
 	
-	public void addFoodToTable (String name, String category, int calories) throws SQLException{
+	public void addFoodToTable (Food f,Connection connect) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
 		String insertTableSQL = "INSERT INTO FOODS" + "(Food_Name, Category_Name, Calories) " + "VALUES"
-				+ "('"+name+"', '"+category+"',"+calories+")";
+				+ "('"+f.getName()+"', '"+f.getCategory()+"',"+f.getCalories()+")";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
-			System.out.println(insertTableSQL);
-			// execute insert SQL stetement
 			statement.executeUpdate(insertTableSQL);
-			System.out.println("Record is inserted into DBUSER table!");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-			if (statement != null) {
+			if (statement != null) 
 				statement.close();
-			}
-			if (dbConnection != null) {
+			if (dbConnection != null) 
 				dbConnection.close();
-			}
 		}
 	}
-	
+	//If f is null, a else statement must add to table
+	public Food retrieveFood(String foodName,String category) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "SELECT * FROM Foods WHERE FOOD_NAME = "+foodName;
+		Food f=new Food();
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			if (rs.next() == false) 
+				f=null;
+			else {
+				f.setName(rs.getString("Food_Name"));
+				f.setCategory(rs.getString("Category"));
+				f.setCalories(Integer.parseInt((rs.getString("Calories"))));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		return f;
+	}
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
