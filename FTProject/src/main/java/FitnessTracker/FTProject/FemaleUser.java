@@ -1,6 +1,10 @@
 package FitnessTracker.FTProject;
 
 public class FemaleUser extends User {
+	public FemaleUser(int id) {
+		super(id);
+	}
+
 	public double hipMeasurement;
 	
 	public void setHipMeasurment(double h) {

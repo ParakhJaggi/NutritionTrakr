@@ -1,9 +1,11 @@
 package FitnessTracker.FTProject;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
@@ -19,7 +21,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "CREATE TABLE Foods (Food_Name VarChar(25) NOT NULL, Category_Name VarChar(25) NOT NULL, Calories INT,Primary KEY(Food_Name))"; 
+		String createTableSQL = "CREATE TABLE FITNESS_TRACKER(USER_ID INT NOT NULL, ENTRY_DATE DATE NOT NULL, Calories_FROM_FOOD INT DEFAULT 0, CALORIES_FROM_EXERCISE INT DEFAULT 0)"; 
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -33,7 +35,6 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
 	
 	public void addFoodToTable (String foodName,String category, int calories) throws SQLException{
 		Connection dbConnection = null;
@@ -81,7 +82,6 @@ public class DatabaseGateway {
 		return f;
 	}
 	
-	
 	public ArrayList<String> DisplayFoodFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -108,6 +108,7 @@ public class DatabaseGateway {
 		}
 		return myList;
 	}
+	
 	//This should be called if it is known the food is in the Database 
 	public void updateCalories(String foodName, int cals) throws SQLException {
 		Connection dbConnection = null;
@@ -126,6 +127,44 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
+	//To change one tracker, put a 0 in the tracker you don't want to update
+	public void addCaloriesToTrackers(int userID, Date d, int calFood, int calEx) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String updateTableSQL = "UPDATE FITNESS_TRACKER SET Calories_FROM_FOOD = CALORIES_FROM_FOOD + "+calFood+ ", CALORIES_FROM_EXERCISE = CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " +userID+" AND ENTRY_DATE = '"+d+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(updateTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+	}
+	
+	public void createTrackerEntry(int userID, Date d, int calFood, int calEx) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) " + "VALUES"
+				+ "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(insertTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
+
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
