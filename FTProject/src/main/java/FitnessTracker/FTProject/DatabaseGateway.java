@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
+import FitnessTracker.Exceptions.UserNotFoundException;
 
 
 	
@@ -21,7 +21,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "CREATE TABLE FITNESS_TRACKER(USER_ID INT NOT NULL, ENTRY_DATE DATE NOT NULL, Calories_FROM_FOOD INT DEFAULT 0, CALORIES_FROM_EXERCISE INT DEFAULT 0)"; 
+		String createTableSQL = "ALTER TABLE USERS ADD HIP_MEASUREMENT REAL";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -164,7 +164,37 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-
+	public User LoadUser(String email, String password) throws SQLException{
+		User userLoader = null;
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = '"+email+"' AND  PASSWORD = '"+ password+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			if (rs.next() == false) 
+				throw new UserNotFoundException("User NOT FOUND");
+			else {
+					String gender= rs.getString("Gender");
+					if(gender=="Male")
+						userLoader= new MaleUser(rs.getInt("USER_ID"));
+					else
+						userLoader= new FemaleUser(rs.getInt("USER_ID"));
+				do {
+					//TODO FREAKING EVERYTHING
+				} while (rs.next());
+			} 
+		}catch (SQLException|UserNotFoundException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		return userLoader;
+	}
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {

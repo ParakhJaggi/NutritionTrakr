@@ -30,6 +30,6 @@ public class App
         System.out.println(d.retrieveFood("Banana").getCalories());
         d.DisplayFoodFromCategory("Fruit");
         //d.addCaloriesToTrackers(1, Date.valueOf(LocalDate.now()), 0, 0);
-        d.createTrackerEntry(1, Date.valueOf(LocalDate.now()), 2000, 300);
+        //d.createTrackerEntry(1, Date.valueOf(LocalDate.now()), 2000, 300);
     }
 }

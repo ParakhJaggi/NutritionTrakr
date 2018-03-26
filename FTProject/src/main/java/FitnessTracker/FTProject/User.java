@@ -5,6 +5,12 @@ import java.sql.Date;
 import java.util.HashMap;
 
 public abstract class User {
+	String firstName;
+	String lastName;
+	String gender;
+	String Email_Address;
+	String Password;
+	int fitnessScore;
 	int user_id;
 	double height;//In in
 	double weight;//In Lbs
