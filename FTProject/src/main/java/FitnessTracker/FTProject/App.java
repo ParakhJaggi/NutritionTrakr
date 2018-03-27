@@ -32,10 +32,11 @@ public class App extends Application
  
 		
 	}
-	
+	/** HEY PARAKH, CHECK OUT THE LOADUSER FUNCTION AND REGISTRATIONHELPER IN THE DATABASE CLASS WHEN YOU WORK ON REGISTRATION **/
 	public static void main( String[] args ) throws SQLException
     {
-    	launch(args);
+		launch(args);
+		
         /*MaleUser u=new MaleUser(1);
         u.setHeight(69);
         u.setNeckMeasurment(15);

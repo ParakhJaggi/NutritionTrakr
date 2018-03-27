@@ -21,7 +21,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "ALTER TABLE USERS ADD HIP_MEASUREMENT REAL";
+		String createTableSQL = null;
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -131,7 +131,9 @@ public class DatabaseGateway {
 	public void addCaloriesToTrackers(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String updateTableSQL = "UPDATE FITNESS_TRACKER SET Calories_FROM_FOOD = CALORIES_FROM_FOOD + "+calFood+ ", CALORIES_FROM_EXERCISE = CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " +userID+" AND ENTRY_DATE = '"+d+"'";
+		String updateTableSQL = "UPDATE FITNESS_TRACKER SET Calories_FROM_FOOD = CALORIES_FROM_FOOD + "
+				+ ""+calFood+ ", CALORIES_FROM_EXERCISE = CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " 
+				+userID+" AND ENTRY_DATE = '"+d+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -149,8 +151,8 @@ public class DatabaseGateway {
 	public void createTrackerEntry(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) " + "VALUES"
-				+ "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
+		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) "
+		+ "VALUES" + "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -164,8 +166,10 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
+	
+	//USE FOR NON-REGISTRATION LOGIN
 	public User LoadUser(String email, String password) throws SQLException{
-		User userLoader = null;
+		User userLoader = null;//REMOVE ONCE COMPLETE
 		Connection dbConnection = null;
 		Statement statement = null;
 		String selectTableSQL = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = '"+email+"' AND  PASSWORD = '"+ password+"'";
@@ -180,10 +184,28 @@ public class DatabaseGateway {
 					if(gender=="Male")
 						userLoader= new MaleUser();
 					else
-						userLoader= new FemaleUser(rs.getDouble("HIP_MEASUREMENT"));
+						userLoader= new FemaleUser();
+				userLoader.setUserId(rs.getInt("USER_ID"));
+				userLoader.setHeight(rs.getDouble("HEIGHT"));
+				userLoader.setWeight(rs.getDouble("WEIGHT"));
+				userLoader.setGender(rs.getString("GENDER"));
+				userLoader.setFirstName(rs.getString("FIRST_NAME"));
+				userLoader.setLastName(rs.getString("LAST_NAME"));
+				if(rs.getDouble("NECK_MEASUREMENT") != 0) 
+					userLoader.setNeckMeasurment(rs.getDouble("NECK_MEASUREMENT"));
+				if(rs.getDouble("WAIST_MEASUREMENT") !=0) 
+					userLoader.setWaistMeasurment(rs.getDouble("WAIST_MEASUREMENT"));
+				if(rs.getDouble("HIP_MEASUREMENT") !=0 && userLoader instanceof FemaleUser) {
+					FemaleUser f=(FemaleUser)userLoader;//Down-casting
+					f.setHipMeasurment(rs.getDouble("HIP_MEASUREMENT"));
+					userLoader=f;
+				}
+				selectTableSQL= "SELECT * FROM FITNESS_TRACKER WHERE USER_ID = " + userLoader.getUserId();
+				rs = statement.executeQuery(selectTableSQL);
 				do {
-					//TODO FREAKING EVERYTHING
-				} while (rs.next());
+					userLoader.setDataPointCalorieMap(rs.getDate("ENTRY_DATE"), rs.getInt("CALORIES_FROM_FOOD"));
+					userLoader.setDataPointExerciseMap(rs.getDate("ENTRY_DATE"), rs.getInt("CALORIES_FROM_EXERCISE"));
+				} while(rs.next());
 			} 
 		}catch (SQLException|UserNotFoundException e) {
 			System.out.println(e.getMessage());
@@ -195,6 +217,36 @@ public class DatabaseGateway {
 		}
 		return userLoader;
 	}
+	
+	//USE WITH REGISTRATION, Loads a user to database. Should only occur once.
+	public void registrationHelper(User u) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String insertTableSQL = "INSERT INTO USERS" + "(HEIGHT, WEIGHT, NECK_MEASUREMENT, "
+				+ "WAIST_MEASUREMENT, WEIGHT, FITNESS_SCORE, GENDER, EMAIL_ADDRESS, "
+				+ "PASSWORD, FIRST_NAME,LAST_NAME) " + "VALUES"
+				+ "("+u.getHeight()+","+u.getWeight()+ ","+u.getNeckMeasurement()+","+u.getWaistMeasurement()+
+				","+u.getWeight()+ ","+50+ ",'"+ u.getGender()+ "','"+ u.getEmail()+"','"+
+				u.getPassword()+"','"+u.getFirstName()+"','"+u.getLastName()+"')";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(insertTableSQL);
+			if (u instanceof FemaleUser) {
+				FemaleUser f=(FemaleUser)u;//Down-casting
+				String updateTableSQL= "UPDATE USERS SET HIP_MEASUREMENT = "+f.getHipMeasurment()+ " WHERE EMAIL_ADDRESS = '"+f.getEmail()+"'";
+				statement.executeUpdate(updateTableSQL);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
+	
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
