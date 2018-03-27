@@ -1,9 +1,6 @@
 package FitnessTracker.FTProject;
 //test
 public class MaleUser extends User {
-	public MaleUser(int id) {
-		super(id);
-	}
 
 	@Override
 	public double calculateBFNavyMethod() {

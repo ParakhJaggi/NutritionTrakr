@@ -178,9 +178,9 @@ public class DatabaseGateway {
 			else {
 					String gender= rs.getString("Gender");
 					if(gender=="Male")
-						userLoader= new MaleUser(rs.getInt("USER_ID"));
+						userLoader= new MaleUser();
 					else
-						userLoader= new FemaleUser(rs.getInt("USER_ID"));
+						userLoader= new FemaleUser(rs.getDouble("HIP_MEASUREMENT"));
 				do {
 					//TODO FREAKING EVERYTHING
 				} while (rs.next());

@@ -19,8 +19,10 @@ public abstract class User {
 	double waistMeasurement;//Inches
 	double neckMeasurement;//Inches
 	
-	public User(int id) {
-		user_id=id;
+	public User() {};
+	
+	public void setUserId(int i) {
+		user_id=i;
 	}
 	public int getUserId() {
 		return user_id;

@@ -1,8 +1,8 @@
 package FitnessTracker.FTProject;
 
 public class FemaleUser extends User {
-	public FemaleUser(int id) {
-		super(id);
+	public FemaleUser(double hip) {
+		this.hipMeasurement=hip;
 	}
 
 	public double hipMeasurement;
