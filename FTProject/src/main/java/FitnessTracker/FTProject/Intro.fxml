@@ -17,8 +17,8 @@
             <Image url="@../../images/9700.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="473.0" layoutY="142.0" promptText="Username" />
-      <PasswordField layoutX="474.0" layoutY="197.0" promptText="Password" />
+      <TextField fx:id="usrname" layoutX="473.0" layoutY="142.0" promptText="Username" />
+      <PasswordField fx:id="pass" layoutX="474.0" layoutY="197.0" promptText="Password" />
       <Text fill="WHITE" layoutX="494.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In">
          <font>
             <Font size="29.0" />
