@@ -182,7 +182,7 @@ public class DatabaseGateway {
 				throw new UserNotFoundException("User NOT FOUND");
 			else {
 					String gender= rs.getString("Gender");
-					if(gender=="Male")
+					if(gender.contentEquals("Male"))
 						userLoader= new MaleUser();
 					else
 						userLoader= new FemaleUser();
@@ -216,6 +216,8 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();	
 		}
+		userLoader.setEmail(email);
+		userLoader.setPassword(password);
 		return userLoader;
 	}
 	

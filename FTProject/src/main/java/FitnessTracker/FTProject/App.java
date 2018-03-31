@@ -31,6 +31,9 @@ public class App extends Application
 	}
 	public static void main( String[] args ) throws SQLException
     {
+		 //DatabaseGateway d = new DatabaseGateway();
+		//d.LoadUser("test","test");
+		
 		launch(args);
 		
         /*MaleUser u=new MaleUser(1);
