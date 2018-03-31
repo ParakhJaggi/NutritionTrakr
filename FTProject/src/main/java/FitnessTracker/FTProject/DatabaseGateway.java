@@ -223,10 +223,10 @@ public class DatabaseGateway {
 		Connection dbConnection = null;
 		Statement statement = null;
 		String insertTableSQL = "INSERT INTO USERS" + "(HEIGHT, WEIGHT, NECK_MEASUREMENT, "
-				+ "WAIST_MEASUREMENT, WEIGHT, FITNESS_SCORE, GENDER, EMAIL_ADDRESS, "
+				+ "WAIST_MEASUREMENT, FITNESS_SCORE, GENDER, EMAIL_ADDRESS, "
 				+ "PASSWORD, FIRST_NAME,LAST_NAME) " + "VALUES"
 				+ "("+u.getHeight()+","+u.getWeight()+ ","+u.getNeckMeasurement()+","+u.getWaistMeasurement()+
-				","+u.getWeight()+ ","+50+ ",'"+ u.getGender()+ "','"+ u.getEmail()+"','"+
+				 ","+50+ ",'"+ u.getGender()+ "','"+ u.getEmail()+"','"+
 				u.getPassword()+"','"+u.getFirstName()+"','"+u.getLastName()+"')";
 		try {
 			dbConnection = getDBConnection();

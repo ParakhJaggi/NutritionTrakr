@@ -27,7 +27,7 @@ public abstract class User {
 	}
 	public int getUserId() {
 		return user_id;
-		}
+	}
 	public double getHeight() {
 		return height;
 	}

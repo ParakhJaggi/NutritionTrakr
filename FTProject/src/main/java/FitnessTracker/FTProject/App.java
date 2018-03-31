@@ -27,12 +27,8 @@ public class App extends Application
          primaryStage.setTitle("My Application");
          primaryStage.setScene(new Scene(root));
          primaryStage.show();
-      
-     
- 
 		
 	}
-	/** HEY PARAKH, CHECK OUT THE LOADUSER FUNCTION AND REGISTRATIONHELPER IN THE DATABASE CLASS WHEN YOU WORK ON REGISTRATION **/
 	public static void main( String[] args ) throws SQLException
     {
 		launch(args);

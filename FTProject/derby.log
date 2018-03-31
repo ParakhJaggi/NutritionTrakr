@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Sat Mar 31 17:02:48 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-7e15-9dd8-000004bba298 
-on database directory /Users/ParakhJaggi/eclipse/Software1/FTProject/Database/MyDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4f8e5cde 
-Loaded from file:/Users/ParakhJaggi/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+Sat Mar 31 17:06:12 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-7e18-badf-000019517ea0 
+on database directory H:\FitnessTrackerProject\FTProject\Database\MyDB with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
+Loaded from file:/C:/Users/Terlizzi/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=9.0.4+11
-user.dir=/Users/ParakhJaggi/eclipse/Software1/FTProject
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.13.3
+java.runtime.version=1.8.0_144-b01
+user.dir=H:\FitnessTrackerProject\FTProject
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
