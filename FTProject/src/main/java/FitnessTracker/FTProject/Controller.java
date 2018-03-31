@@ -14,6 +14,7 @@ public class Controller {
 	
 	public void pressSignUp(ActionEvent action) {
 		
+		
 	}
 	public void pressSignIn(ActionEvent action) throws SQLException {
 		
