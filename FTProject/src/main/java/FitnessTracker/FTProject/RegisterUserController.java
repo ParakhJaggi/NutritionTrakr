@@ -13,7 +13,7 @@ public class RegisterUserController {
 	@FXML
 	ObservableList<String> GenderList = FXCollections.observableArrayList("Male","Female");
 	@FXML
-	public TextField username;
+	public TextField email;
 	@FXML 
 	public PasswordField password;
 	
