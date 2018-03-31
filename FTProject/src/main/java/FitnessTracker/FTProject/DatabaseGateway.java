@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
+import FitnessTracker.Exceptions.UserAlreadyInDatabaseException;
 import FitnessTracker.Exceptions.UserNotFoundException;
 
 
@@ -21,7 +22,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = null;
+		String createTableSQL = "Alter Table USERS ADD COLUMN EMAIL_ADDRESS VARCHAR(50) UNIQUE";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -222,6 +223,7 @@ public class DatabaseGateway {
 	public void registrationHelper(User u) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
+		
 		String insertTableSQL = "INSERT INTO USERS" + "(HEIGHT, WEIGHT, NECK_MEASUREMENT, "
 				+ "WAIST_MEASUREMENT, FITNESS_SCORE, GENDER, EMAIL_ADDRESS, "
 				+ "PASSWORD, FIRST_NAME,LAST_NAME) " + "VALUES"
