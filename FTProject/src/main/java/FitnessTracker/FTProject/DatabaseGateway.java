@@ -170,7 +170,7 @@ public class DatabaseGateway {
 	
 	//USE FOR NON-REGISTRATION LOGIN
 	public User LoadUser(String email, String password) throws SQLException{
-		User userLoader = null;//REMOVE ONCE COMPLETE
+		User userLoader=null;
 		Connection dbConnection = null;
 		Statement statement = null;
 		String selectTableSQL = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = '"+email+"' AND  PASSWORD = '"+ password+"'";
@@ -186,12 +186,15 @@ public class DatabaseGateway {
 						userLoader= new MaleUser();
 					else
 						userLoader= new FemaleUser();
+				userLoader.setEmail(email);
+				userLoader.setPassword(password);
 				userLoader.setUserId(rs.getInt("USER_ID"));
 				userLoader.setHeight(rs.getDouble("HEIGHT"));
 				userLoader.setWeight(rs.getDouble("WEIGHT"));
 				userLoader.setGender(rs.getString("GENDER"));
 				userLoader.setFirstName(rs.getString("FIRST_NAME"));
 				userLoader.setLastName(rs.getString("LAST_NAME"));
+				userLoader.setFitnessScore(rs.getInt("FITNESS_SCORE"));
 				if(rs.getDouble("NECK_MEASUREMENT") != 0) 
 					userLoader.setNeckMeasurment(rs.getDouble("NECK_MEASUREMENT"));
 				if(rs.getDouble("WAIST_MEASUREMENT") !=0) 
@@ -203,10 +206,10 @@ public class DatabaseGateway {
 				}
 				selectTableSQL= "SELECT * FROM FITNESS_TRACKER WHERE USER_ID = " + userLoader.getUserId();
 				rs = statement.executeQuery(selectTableSQL);
-				do {
+				while(rs.next()) {
 					userLoader.setDataPointCalorieMap(rs.getDate("ENTRY_DATE"), rs.getInt("CALORIES_FROM_FOOD"));
 					userLoader.setDataPointExerciseMap(rs.getDate("ENTRY_DATE"), rs.getInt("CALORIES_FROM_EXERCISE"));
-				} while(rs.next());
+				} 
 			} 
 		}catch (SQLException|UserNotFoundException e) {
 			System.out.println(e.getMessage());
@@ -216,8 +219,7 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();	
 		}
-		userLoader.setEmail(email);
-		userLoader.setPassword(password);
+		
 		return userLoader;
 	}
 	

@@ -1,5 +1,8 @@
 package FitnessTracker.FTProject;
 
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,14 +14,18 @@ import javafx.stage.Stage;
  
 @SuppressWarnings("restriction")
 public class FitnessBarGraph extends Application {
-    final static String austria = "Austria";
-    final static String brazil = "Brazil";
-    final static String france = "France";
-    final static String italy = "Italy";
-    final static String usa = "USA";
- 
-    @Override public void start(Stage stage) {
-        stage.setTitle("Bar Chart Sample");
+    final static String CALORIES = "Calories";
+    private User user;
+    
+    
+    @Override public void start(Stage stage) throws SQLException {
+    	
+    	DatabaseGateway d= new DatabaseGateway();
+
+		user=d.LoadUser("a", "a");
+    	d.createTrackerEntry(user.getUserId(), Date.valueOf(LocalDate.now().minusDays(1)), 1500, 400);
+    	user=d.LoadUser("a", "a");
+        stage.setTitle("My Calories this month");
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc = 
@@ -26,13 +33,14 @@ public class FitnessBarGraph extends Application {
         bc.setTitle("FITNESS");
         xAxis.setLabel("Date");       
         yAxis.setLabel("Calories");
- 
         ArrayList<XYChart.Series> list= new ArrayList<XYChart.Series>();
-        for(int i=0;i<20;i++) {
+        LocalDate date= LocalDate.now();
+        for(int i=0;i<30;i++) {
         	XYChart.Series mySeries=new XYChart.Series();
         	mySeries.setName("a");
-        	mySeries.getData().add(new XYChart.Data(usa,i));
+        	mySeries.getData().add(new XYChart.Data(CALORIES,user.getDataPointCalorieMap(Date.valueOf(date))));
         	list.add(mySeries);
+        	date.minusDays(1);
         }
         bc.setLegendVisible(false);
         Scene scene  = new Scene(bc,800,600);
@@ -42,8 +50,8 @@ public class FitnessBarGraph extends Application {
         stage.setScene(scene);
         stage.show();
     }
- 
+    
     public static void main(String[] args) {
-        launch(args);
+    	launch(args);
     }
 }
