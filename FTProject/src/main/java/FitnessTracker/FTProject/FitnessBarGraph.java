@@ -23,7 +23,7 @@ public class FitnessBarGraph extends Application {
     	DatabaseGateway d= new DatabaseGateway();
 
 		user=d.LoadUser("a", "a");
-    	d.createTrackerEntry(user.getUserId(), Date.valueOf(LocalDate.now().minusDays(1)), 1500, 400);
+    	d.createTrackerEntry(user.getUserId(), Date.valueOf(LocalDate.now().minusDays(4)), 2053, 400);
     	user=d.LoadUser("a", "a");
         stage.setTitle("My Calories this month");
         final CategoryAxis xAxis = new CategoryAxis();
@@ -31,16 +31,21 @@ public class FitnessBarGraph extends Application {
         final BarChart<String,Number> bc = 
             new BarChart<String,Number>(xAxis,yAxis);
         bc.setTitle("FITNESS");
+        bc.setCategoryGap(0);
+        bc.setBarGap(-20);
         xAxis.setLabel("Date");       
         yAxis.setLabel("Calories");
         ArrayList<XYChart.Series> list= new ArrayList<XYChart.Series>();
-        LocalDate date= LocalDate.now();
+        LocalDate date= LocalDate.now().minusDays(30);
+        
         for(int i=0;i<30;i++) {
+        	int curDay= date.getDayOfMonth();
         	XYChart.Series mySeries=new XYChart.Series();
         	mySeries.setName("a");
-        	mySeries.getData().add(new XYChart.Data(CALORIES,user.getDataPointCalorieMap(Date.valueOf(date))));
+        	int value=user.getDataPointCalorieMap(Date.valueOf(date));
+        	mySeries.getData().add(new XYChart.Data(String.valueOf(curDay),value));
         	list.add(mySeries);
-        	date.minusDays(1);
+        	date=date.plusDays(1);
         }
         bc.setLegendVisible(false);
         Scene scene  = new Scene(bc,800,600);
