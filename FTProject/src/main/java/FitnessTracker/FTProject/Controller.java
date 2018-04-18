@@ -36,7 +36,7 @@ public class Controller {
 		
 		String usr = usrname.getText();
 		String password = pass.getText();
-		DatabaseGateway d = new DatabaseGateway();
+		DatabaseGateway d = DatabaseGateway.getInstance();
 		User user = d.LoadUser(usr,password);
 	}
 }

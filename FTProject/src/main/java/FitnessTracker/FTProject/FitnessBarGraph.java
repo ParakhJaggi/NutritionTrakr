@@ -20,7 +20,7 @@ public class FitnessBarGraph extends Application {
     
     @Override public void start(Stage stage) throws SQLException {
     	
-    	DatabaseGateway d= new DatabaseGateway();
+    	DatabaseGateway d= DatabaseGateway.getInstance();
 
 		user=d.LoadUser("a", "a");
     	d.createTrackerEntry(user.getUserId(), Date.valueOf(LocalDate.now().minusDays(4)), 2053, 400);

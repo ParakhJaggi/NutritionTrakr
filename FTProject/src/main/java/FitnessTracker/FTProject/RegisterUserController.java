@@ -54,7 +54,7 @@ public class RegisterUserController {
 		usr.setWeight(Double.parseDouble(weight.getText()));
 		//usr.setUserId(i);
 		
-		DatabaseGateway d = new DatabaseGateway();
+		DatabaseGateway d = DatabaseGateway.getInstance();
 		d.registrationHelper(usr);
 		
 		

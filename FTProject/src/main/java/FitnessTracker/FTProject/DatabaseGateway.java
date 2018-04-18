@@ -18,6 +18,18 @@ public class DatabaseGateway {
 	private static final String DB_CONNECTION = "jdbc:derby:Database/MyDB;";
 	private static final String DB_USER = "";
 	private static final String DB_PASSWORD = "";
+	
+	private static DatabaseGateway instance = null;
+	   protected DatabaseGateway() {
+	      // Exists only to defeat instantiation.
+	   }
+	   public static DatabaseGateway getInstance() {
+	      if(instance == null) {
+	         instance = new DatabaseGateway();
+	      }
+	      return instance;
+	   }
+	
 
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;

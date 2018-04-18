@@ -31,7 +31,7 @@ public class App extends Application
 	}
 	public static void main( String[] args ) throws SQLException
     {
-		DatabaseGateway d = new DatabaseGateway();
+		DatabaseGateway d = DatabaseGateway.getInstance();
 		d.LoadUser("a", "a");
 		launch(args);
 		
