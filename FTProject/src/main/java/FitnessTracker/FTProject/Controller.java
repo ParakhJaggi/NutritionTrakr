@@ -32,11 +32,21 @@ public class Controller {
         // Hide this current window (if this is what you want)
          ((Node)(action.getSource())).getScene().getWindow().hide();
 	}
-	public void pressSignIn(ActionEvent action) throws SQLException {
+	public void pressSignIn(ActionEvent action) throws SQLException, IOException {
 		
 		String usr = usrname.getText();
 		String password = pass.getText();
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User user = d.LoadUser(usr,password);
+		Parent root;
+        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
+		root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("My New Stage Title");
+        stage.setScene(new Scene(root, 339, 409));
+        stage.show();
+        // Hide this current window (if this is what you want)
+         ((Node)(action.getSource())).getScene().getWindow().hide();
+		
 	}
 }
