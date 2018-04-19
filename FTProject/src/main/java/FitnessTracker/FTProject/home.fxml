@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="713.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -31,14 +32,46 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Get My Score" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Exersize" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Edit Goals" GridPane.columnIndex="5" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="My Profile " GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Leaderboard" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Settings" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Get My Score">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Exersize" GridPane.rowIndex="2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Edit Goals" GridPane.columnIndex="5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="My Profile " GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Leaderboard" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Settings" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
          </children>
       </GridPane>
    </children>
