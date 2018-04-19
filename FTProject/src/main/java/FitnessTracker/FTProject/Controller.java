@@ -43,7 +43,7 @@ public class Controller {
 		root = FXMLLoader.load(getClass().getResource("home.fxml"));
         Stage stage = new Stage();
         stage.setTitle("My New Stage Title");
-        stage.setScene(new Scene(root, 523, 501));
+        stage.setScene(new Scene(root, 1091, 713));
         stage.show();
         // Hide this current window (if this is what you want)
          ((Node)(action.getSource())).getScene().getWindow().hide();
