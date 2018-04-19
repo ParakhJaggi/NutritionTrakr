@@ -24,7 +24,7 @@
             <Font size="29.0" />
          </font>
       </Text>
-      <Button layoutX="509.0" layoutY="269.0" mnemonicParsing="false" onAction="#pressSignUp" text="Submit" />
+      <Button layoutX="509.0" layoutY="269.0" mnemonicParsing="false" onAction="#pressSignIn" text="Submit" />
       <Label layoutX="138.0" layoutY="160.0" />
       <Label layoutX="103.0" layoutY="75.0" text="Nutrition Trakr" textFill="WHITE">
          <font>
