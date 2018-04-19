@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="713.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="713.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.DashboardController">
    <children>
       <ImageView fitHeight="715.0" fitWidth="1100.0" layoutX="-8.0" pickOnBounds="true">
          <image>
