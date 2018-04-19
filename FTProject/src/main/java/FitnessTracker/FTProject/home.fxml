@@ -42,7 +42,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Exersice" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Exercise" GridPane.rowIndex="2">
                <font>
                   <Font size="17.0" />
                </font>
