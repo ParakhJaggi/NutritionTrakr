@@ -2,16 +2,21 @@ package FitnessTracker.FTProject;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.runners.MethodSorters;
 
 import FitnessTracker.Exceptions.UserNotFoundException;
 import junit.framework.TestCase;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DatabaseTest {
-	
 	private static DatabaseGateway gateway= DatabaseGateway.getInstance();
 	@Test
 	public void testInsert() throws SQLException {
@@ -47,19 +52,81 @@ public class DatabaseTest {
 	
 	@Test
 	public void testAddFood() throws SQLException {
+		gateway.addFoodToTable("Test4", "TestCategory", 100);
+		Food f= gateway.retrieveFood("Test4");
+		assert(f.getName().equals("Test4"));
+		assert(f.getCalories()==100);
+		assert(f.getCategory().equals("TestCategory"));
+		gateway.deleteFood("Test4");
+	}
+	
+	@Test
+	public void testDisplayCategory() throws SQLException {
 		gateway.addFoodToTable("Test", "TestCategory", 100);
+		gateway.addFoodToTable("Test2", "TestCategory", 101);
+		gateway.addFoodToTable("Test3", "TestCategory", 101);
+		ArrayList<String> myArray=gateway.DisplayFoodFromCategory("TestCategory");
+		assert(myArray.get(0).equals("Test"));
+		assert(myArray.get(1).equals("Test2"));
+		assert(myArray.get(2).equals("Test3"));
+		gateway.deleteFood("Test");
+		gateway.deleteFood("Test2");
+		gateway.deleteFood("Test3");
+	}
+	
+	@Test
+	public void testUpdateCalories() throws SQLException {
+		gateway.addFoodToTable("Test", "TestCategory", 100);
+		gateway.updateCalories("Test", 5000);
 		Food f= gateway.retrieveFood("Test");
 		assert(f.getName().equals("Test"));
-		assert(f.getCalories()==100);
+		assert(f.getCalories()==5000);
 		assert(f.getCategory().equals("TestCategory"));
 		gateway.deleteFood("Test");
 	}
 	
 	@Test
-	public void testDisplayCategory(String cat) throws SQLException {
-		gateway.addFoodToTable("Test", "TestCategory", 100);
-		gateway.addFoodToTable("Test2", "TestCategory", 101);
-		gateway.addFoodToTable("Test3", "TestCategory", 101);
-		//ArrayList<String>my array=gateway
+	public void testTrackers() throws SQLException {
+		User u= new MaleUser();
+		u.setFitnessScore(50);
+		u.setFirstName("Testy");
+		u.setLastName("McTestFace");
+		u.setEmail("Testy@Testy.test");
+		u.setPassword("TestPassword");
+		u.setHeight(60);
+		u.setWeight(50);
+		u.setWaistMeasurment(30);
+		u.setNeckMeasurment(14);
+		u.setPassword("TestPassword");
+		gateway.registrationHelper(u);
+		u=gateway.LoadUser("Testy@Testy.test", "TestPassword");
+		gateway.createTrackerEntry(u.getUserId(), Date.valueOf(LocalDate.now()), 1, 2);
+		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==1);
+		assert(u.getDataPointExerciseMap(Date.valueOf(LocalDate.now()))==2);
+		gateway.deleteUser("Testy@Test.test");//Clean up Database
+	}
+	
+	
+	@Test
+	public void testTrackerUpdate() throws SQLException {
+		User u= new MaleUser();
+		u.setFitnessScore(50);
+		u.setFirstName("Testy");
+		u.setLastName("McTestFace");
+		u.setEmail("Testy@Testy2.test");
+		u.setPassword("TestPassword");
+		u.setHeight(60);
+		u.setWeight(50);
+		u.setWaistMeasurment(30);
+		u.setNeckMeasurment(14);
+		u.setPassword("TestPassword");
+		gateway.registrationHelper(u);
+		u=gateway.LoadUser("Testy@Testy2.test", "TestPassword");
+		gateway.createTrackerEntry(u.getUserId(), Date.valueOf(LocalDate.now()), 1, 2);
+		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==1);
+		gateway.addCaloriesToTrackers(u.getUserId(), Date.valueOf(LocalDate.now()), 5, 0);
+		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==6);
+		
+		gateway.deleteUser("Testy@Test.test");//Clean up Database
 	}
 }

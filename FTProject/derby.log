@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Thu Apr 19 23:32:34 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-e153-47b2-00001d38dbb0 
-on database directory H:\FitnessTrackerProject\FTProject\Database\MyDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Fri Apr 20 01:38:13 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-e1c6-5149-00001d14ca88 
+on database directory H:\FitnessTrackerProject\FTProject\Database\MyDB with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
 Loaded from file:/C:/Users/Terlizzi/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
