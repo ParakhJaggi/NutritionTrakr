@@ -12,6 +12,9 @@ public class FemaleUser extends User {
 		return hipMeasurement;
 	}
 	
+	public String getGender() {
+		return "Female";
+	}
 	@Override
 	public double calculateBFNavyMethod() {
 		return 163.205*Math.log10(waistMeasurement+hipMeasurement-neckMeasurement)- 70.041*Math.log10(height)+36.76;

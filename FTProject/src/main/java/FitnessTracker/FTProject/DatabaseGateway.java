@@ -30,7 +30,7 @@ public class DatabaseGateway {
 	      return instance;
 	   }
 	
-
+//ToDO delete
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -94,7 +94,26 @@ public class DatabaseGateway {
 		}
 		return f;
 	}
-	
+	//Used for testing purposes
+		public void deleteFood(String name) throws SQLException {
+			Connection dbConnection = null;
+			Statement statement = null;
+			
+			String deleteSQL = "DELETE FROM Foods WHERE Food_name = ' "+name+"'";
+			try {
+				dbConnection = getDBConnection();
+				statement = dbConnection.createStatement();
+				statement.executeUpdate(deleteSQL);
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} finally {
+				if (statement != null) 
+					statement.close();
+				if (dbConnection != null) 
+					dbConnection.close();
+			}
+		}
+		
 	public ArrayList<String> DisplayFoodFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -264,7 +283,25 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
+	//Used for testing purposes
+	public void deleteUser(String email) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		
+		String deleteSQL = "DELETE FROM USERS WHERE EMAIL_ADDRESS = ' "+email+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(deleteSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
