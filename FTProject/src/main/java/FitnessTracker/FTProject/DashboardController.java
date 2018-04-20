@@ -1,6 +1,7 @@
 package FitnessTracker.FTProject;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,5 +32,9 @@ public class DashboardController {
 
 		
 	}
-	
+	private static User getUser() throws SQLException {
+		User usr = Controller.sendUser();
+		return usr;
+		
+	}
 }

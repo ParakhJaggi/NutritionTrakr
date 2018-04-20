@@ -23,13 +23,17 @@ public class AddCalorieController {
 	@FXML
 	public Button AddFood;
 	
-	DatabaseGateway d = new DatabaseGateway();
+	DatabaseGateway d = DatabaseGateway.getInstance();
+	
 	@FXML
 	ObservableList<String> FoodList;
 	@FXML
 	public TextField Catagory;
+	
+	private User usr;
 	@FXML
 	public void pressChoiceBox(KeyEvent action) throws SQLException {
+		
 		String catagory = Catagory.getText();
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));

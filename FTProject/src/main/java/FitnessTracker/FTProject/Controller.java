@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 
 public class Controller {
 	@FXML
-	public TextField usrname;
+	public static TextField usrname;
 	@FXML
-	public PasswordField pass;
+	public static PasswordField pass;
 	
 	public void pressSignUp(ActionEvent action) throws IOException {
 		Parent root;
@@ -34,10 +34,6 @@ public class Controller {
 	}
 	public void pressSignIn(ActionEvent action) throws SQLException, IOException {
 		
-		String usr = usrname.getText();
-		String password = pass.getText();
-		DatabaseGateway d = DatabaseGateway.getInstance();
-		//User user = d.LoadUser(usr,password);
 		Parent root;
         //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
 		root = FXMLLoader.load(getClass().getResource("home.fxml"));
@@ -48,5 +44,12 @@ public class Controller {
         // Hide this current window (if this is what you want)
          ((Node)(action.getSource())).getScene().getWindow().hide();
 		
+	}
+	public static User sendUser() throws SQLException {
+		String usr = usrname.getText();
+		String password = pass.getText();
+		DatabaseGateway d = DatabaseGateway.getInstance();
+		User user = d.LoadUser(usr,password);
+		return user;
 	}
 }

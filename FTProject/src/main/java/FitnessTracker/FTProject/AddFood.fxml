@@ -15,5 +15,7 @@
       <TextField fx:id="newFood" layoutX="266.0" layoutY="187.0" />
       <TextField fx:id="Calorie" layoutX="266.0" layoutY="232.0" />
       <Button fx:id="AddFood" layoutX="266.0" layoutY="272.0" mnemonicParsing="false" onAction="#pressAddFood" text="Add Food" />
+      <Label layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="77.0" text="Food name:" />
+      <Label layoutX="151.0" layoutY="237.0" text="Calorie:" />
    </children>
 </AnchorPane>
