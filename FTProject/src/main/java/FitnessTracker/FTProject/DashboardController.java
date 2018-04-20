@@ -32,7 +32,7 @@ public class DashboardController {
 
 		
 	}
-	private static User getUser() throws SQLException {
+	public static User getUser() throws SQLException {
 		User usr = Controller.sendUser();
 		return usr;
 		

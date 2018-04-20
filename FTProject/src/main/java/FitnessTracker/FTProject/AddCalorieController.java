@@ -1,6 +1,9 @@
 package FitnessTracker.FTProject;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -50,13 +53,23 @@ public class AddCalorieController {
 		}
 		
 	}
-	
+	@FXML
 	public void pressAddFood() throws NumberFormatException, SQLException {
 		d.addFoodToTable(newFood.getText(), Catagory.getText(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getText();
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
+		
+	}
+	@FXML
+	public void addCalorie() throws SQLException {
+		
+		usr  = DashboardController.getUser();
+		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
+		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, Integer.parseInt(Calorie.getText()), 0);
+		
 		
 	}
 	
