@@ -37,7 +37,7 @@ public class Controller {
 		String usr = usrname.getText();
 		String password = pass.getText();
 		DatabaseGateway d = DatabaseGateway.getInstance();
-		User user = d.LoadUser(usr,password);
+		//User user = d.LoadUser(usr,password);
 		Parent root;
         //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
 		root = FXMLLoader.load(getClass().getResource("home.fxml"));

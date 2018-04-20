@@ -37,7 +37,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#UpdateCalories" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1">
                <font>
                   <Font size="17.0" />
                </font>
