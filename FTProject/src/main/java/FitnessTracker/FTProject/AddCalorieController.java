@@ -33,11 +33,22 @@ public class AddCalorieController {
 	private User usr;
 	@FXML
 	public void pressChoiceBox(KeyEvent action) throws SQLException {
-		
 		String catagory = Catagory.getText();
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
+		
+		if(temp.size()>0) {
+			FoodChoice.setValue(temp.get(0).toString());
+		}
+		else {
+			FoodList = FXCollections.observableArrayList("Press Here for Food");
+			FoodChoice.setItems(FoodList);
+			FoodChoice.setValue("Press Here for Food");
+
+			
+		}
+		
 	}
 	
 	public void pressAddFood() throws NumberFormatException, SQLException {
