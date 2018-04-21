@@ -85,7 +85,7 @@ public class AddCalorieController {
 		Food f = new Food();
 		f = d.retrieveFood(FoodChoice.getValue());
 	
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, f.getCalories(), 0);
+		d.createTrackerEntry(usr.getUserId(), sqlDate, f.getCalories(), 0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
 

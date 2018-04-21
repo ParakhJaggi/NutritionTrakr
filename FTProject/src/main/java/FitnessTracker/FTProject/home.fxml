@@ -42,12 +42,12 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Track My Exercise" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#UpdateExercise" prefHeight="80.0" prefWidth="200.0" text="Track My Exercise" GridPane.rowIndex="2">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#getGraph" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="3">
                <font>
                   <Font size="28.0" />
                </font>

@@ -3,6 +3,8 @@ package FitnessTracker.FTProject;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javafx.application.Application;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,11 +43,46 @@ public class DashboardController {
 		
 	}
 	@FXML
+	private void UpdateExercise(ActionEvent action) throws IOException {
+		System.out.println(usrname);
+		System.out.println(usrname);
+
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
+		controller.setUser(usrname.toString(), pass.toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
+	}
+	@FXML
 	private void initialize() {
 		
 	}
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
+	}
+	@FXML
+	public void getGraph() throws SQLException, IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bargraph.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		BarGraphController controller = fxmlLoader.<BarGraphController>getController();
+		controller.setUser(usrname.toString(), pass.toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
+		
+
 	}
 }

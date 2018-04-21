@@ -50,17 +50,17 @@ public class AddExerciseController {
 
 		String catagory = Catagory.getValue();
 		
-		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		ExerciseList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ArrayList<String> temp = d.DisplayExerciseFromCategory(catagory);
+		ExerciseList = FXCollections.observableArrayList(d.DisplayExerciseFromCategory(catagory));
 		ExerciseChoice.setItems(CategoryList);
 		
 		if(temp.size()>0) {
 			ExerciseChoice.setValue(temp.get(0).toString());
 		}
 		else {
-			CategoryList = FXCollections.observableArrayList("Press Here for Food");
+			CategoryList = FXCollections.observableArrayList("Press Here for Exercise");
 			ExerciseChoice.setItems(CategoryList);
-			ExerciseChoice.setValue("Press Here for Food");
+			ExerciseChoice.setValue("Press Here for Exercise");
 
 			
 		}
@@ -70,10 +70,10 @@ public class AddExerciseController {
 	public void pressAddExcersice() throws NumberFormatException, SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
 
-		d.addFoodToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
+		d.addExerciseToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
-		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		ExerciseList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ArrayList<String> temp = d.DisplayExerciseFromCategory(catagory);
+		ExerciseList = FXCollections.observableArrayList(d.DisplayExerciseFromCategory(catagory));
 		ExerciseChoice.setItems(ExerciseList);
 		
 	}
@@ -86,9 +86,9 @@ public class AddExerciseController {
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		Exercise f = new Exercise();
-		f = d.retrieveFood(ExerciseChoice.getValue());
+		f = d.retrieveExercise(ExerciseChoice.getValue());
 	
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, f.getCalories(), 0);
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , f.getCalories());
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
 
