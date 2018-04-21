@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 
 public class Controller {
 	@FXML
-	public static TextField usrname;
+	public TextField usrname;
 	@FXML
-	public static PasswordField pass;
+	public PasswordField pass;
 	
 	public void pressSignUp(ActionEvent action) throws IOException {
 		Parent root;
@@ -33,23 +33,36 @@ public class Controller {
          ((Node)(action.getSource())).getScene().getWindow().hide();
 	}
 	public void pressSignIn(ActionEvent action) throws SQLException, IOException {
+		/*
 		
+		//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
 		Parent root;
-        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
 		root = FXMLLoader.load(getClass().getResource("home.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
+
+		Parent root1 = (Parent)fxmlLoader.load();          
+		DashboardController controller = fxmlLoader.<DashboardController>getController();
+		controller.setUser(usrname.getText().toString(), pass.getText().toString());
         Stage stage = new Stage();
         stage.setTitle("My New Stage Title");
         stage.setScene(new Scene(root, 1091, 713));
         stage.show();
         // Hide this current window (if this is what you want)
          ((Node)(action.getSource())).getScene().getWindow().hide();
+        */
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		DashboardController controller = fxmlLoader.<DashboardController>getController();
+		controller.setUser(usrname.getText().toString(), pass.getText().toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        ((Node)(action.getSource())).getScene().getWindow().hide();
+
 		
 	}
-	public static User sendUser() throws SQLException {
-		String usr = usrname.getText();
-		String password = pass.getText();
-		DatabaseGateway d = DatabaseGateway.getInstance();
-		User user = d.LoadUser(usr,password);
-		return user;
-	}
+	
 }

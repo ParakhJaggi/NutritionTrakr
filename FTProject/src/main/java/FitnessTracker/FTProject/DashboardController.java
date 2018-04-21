@@ -12,29 +12,40 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class DashboardController {
 //test
 	@FXML
+	public String usrname;
+	@FXML
+	public String pass;
+	@FXML
 	private void UpdateCalories(ActionEvent action) throws IOException {
-		Parent root;
-        
-        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
-		root = FXMLLoader.load(getClass().getResource("AddFood.fxml"));
-		
-        Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
-        stage.setScene(new Scene(root, 720, 360));
-        stage.show();
-        ((Node)(action.getSource())).getScene().getWindow().hide();
+		System.out.println(usrname);
+		System.out.println(usrname);
 
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddFood.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		AddCalorieController controller = fxmlLoader.<AddCalorieController>getController();
+		controller.setUser(usrname.toString(), pass.toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 	}
-	public static User getUser() throws SQLException {
-		User usr = Controller.sendUser();
-		return usr;
+	@FXML
+	private void initialize() {
 		
+	}
+	public void setUser(String email,String pass){
+	    this.usrname = email;
+	    this.pass = pass;
 	}
 }

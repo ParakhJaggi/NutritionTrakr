@@ -1,14 +1,21 @@
 package FitnessTracker.FTProject;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class RegisterUserController {
 	@FXML
@@ -35,7 +42,7 @@ public class RegisterUserController {
 	public TextField lastname;
 	
 	@FXML 
-	private void PressRegister() throws SQLException {
+	private void PressRegister(ActionEvent action) throws SQLException, IOException {
 		User usr;
 		if(genderbox.getValue().equals("Male")) {
 			usr = new MaleUser();
@@ -56,7 +63,18 @@ public class RegisterUserController {
 		
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		d.registrationHelper(usr);
-		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		DashboardController controller = fxmlLoader.<DashboardController>getController();
+		controller.setUser(email.getText().toString(), password.getText().toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        ((Node)(action.getSource())).getScene().getWindow().hide();
+
 		
 	}
 	@FXML

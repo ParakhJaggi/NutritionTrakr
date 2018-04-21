@@ -18,6 +18,11 @@ import javafx.scene.input.MouseEvent;
 
 public class AddCalorieController {
 	@FXML
+	public String usrname;
+	@FXML
+	public String pass;
+	
+	@FXML
 	public ChoiceBox<String> FoodChoice;
 	@FXML
 	public ChoiceBox<String> Catagory;
@@ -70,20 +75,30 @@ public class AddCalorieController {
 	}
 	@FXML
 	public void addCalorie() throws SQLException {
-		
-		usr  = DashboardController.getUser();
+		DatabaseGateway d;
+		d = DatabaseGateway.getInstance();
+		usr = d.LoadUser(usrname, pass);
+		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, Integer.parseInt(Calorie.getText()), 0);
+		Food f = new Food();
+		f = d.retrieveFood(FoodChoice.getValue());
+	
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, f.getCalories(), 0);
 		
 		
 	}
 	
 	@FXML
 	private void initialize() {
-		Catagory.setValue("Meats/Fish");
+		Catagory.setValue("Protein");
 		Catagory.setItems(CategoryList);
 		
+	}
+	
+	public void setUser(String email,String pass){
+	    this.usrname = email;
+	    this.pass = pass;
 	}
 
 	
