@@ -35,7 +35,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "Alter Table USERS ADD COLUMN EMAIL_ADDRESS VARCHAR(50) UNIQUE";
+		String createTableSQL = "CREATE TABLE EXERCISE (Exercise_Name Varchar(50), Category_Name VarChar(50), Calories INT)";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -55,6 +55,25 @@ public class DatabaseGateway {
 		Statement statement = null;
 		String insertTableSQL = "INSERT INTO FOODS" + "(Food_Name, Category_Name, Calories) " + "VALUES"
 				+ "('"+foodName+"', '"+category+"',"+calories+")";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(insertTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
+	
+	public void addExerciseToTable (String exName,String category, int calories) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		String insertTableSQL = "INSERT INTO Exercse" + "(Exercise_Name, Category_Name, Calories) " + "VALUES"
+				+ "('"+exName+"', '"+category+"',"+calories+")";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -95,6 +114,34 @@ public class DatabaseGateway {
 		}
 		return f;
 	}
+	
+	public Exercise retrieveExercise(String exName) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "SELECT * FROM Exercise WHERE Exercise_NAME = '"+exName+"'";
+		Exercise ex=new Exercise();
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			if (rs.next() == false) 
+				throw new SQLException();
+			else {
+				ex.setName(rs.getString("Exercise_Name"));
+				ex.setCategory(rs.getString("Category_Name"));
+				ex.setCalories(Integer.parseInt((rs.getString("Calories"))));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		return ex;
+	}
+	
 	//Used for testing purposes
 		public void deleteFood(String name) throws SQLException {
 			Connection dbConnection = null;
@@ -142,11 +189,56 @@ public class DatabaseGateway {
 		return myList;
 	}
 	
+	public ArrayList<String> DisplayExerciseFromCategory(String cat) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "SELECT * FROM Exercise WHERE CATEGORY_NAME = '"+cat+"'";
+		ArrayList<String> myList= new ArrayList<String>();
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			if (rs.next() == false) 
+				throw new FoodNotFoundException("Exercise NOT FOUND");
+			else {
+				do {
+					myList.add(rs.getString("Exercise_Name"));
+				} while (rs.next());
+			} 
+		}catch (SQLException|FoodNotFoundException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		return myList;
+	}
+	
 	//This should be called if it is known the food is in the Database 
-	public void updateCalories(String foodName, int cals) throws SQLException {
+	public void updateCaloriesFood(String foodName, int cals) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
 		String selectTableSQL = "UPDATE Foods SET Calories = "+cals+ " WHERE FOOD_NAME = '"+foodName+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(selectTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+	}
+	
+	public void updateCaloriesExercise(String exName, int cals) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "UPDATE Exercise SET Calories = "+cals+ " WHERE Exercise_NAME = '"+exName+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();

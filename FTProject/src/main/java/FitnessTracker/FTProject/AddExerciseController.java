@@ -85,7 +85,7 @@ public class AddExerciseController {
 		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-		Exercise f = new Food();
+		Exercise f = new Exercise();
 		f = d.retrieveFood(ExerciseChoice.getValue());
 	
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, f.getCalories(), 0);

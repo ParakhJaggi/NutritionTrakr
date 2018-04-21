@@ -79,7 +79,7 @@ public class DatabaseTest extends TestCase {
 	@Test
 	public void testUpdateCalories() throws SQLException {
 		gateway.addFoodToTable("Test", "TestCategory", 100);
-		gateway.updateCalories("Test", 5000);
+		gateway.updateCaloriesFood("Test", 5000);
 		Food f= gateway.retrieveFood("Test");
 		assert(f.getName().equals("Test"));
 		assert(f.getCalories()==5000);
