@@ -6,6 +6,8 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -16,7 +18,7 @@ import FitnessTracker.Exceptions.UserNotFoundException;
 import junit.framework.TestCase;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class DatabaseTest {
+public class DatabaseTest extends TestCase {
 	private static DatabaseGateway gateway= DatabaseGateway.getInstance();
 	@Test
 	public void testInsert() throws SQLException {
@@ -24,14 +26,14 @@ public class DatabaseTest {
 			u.setFitnessScore(50);
 			u.setFirstName("Testy");
 			u.setLastName("McTestFace");
-			u.setEmail("Testy@Test.test");
+			u.setEmail("Testy@Test3.test");
 			u.setHeight(60);
 			u.setWeight(50);
 			u.setWaistMeasurment(30);
 			u.setNeckMeasurment(14);
 			u.setPassword("TestPassword");
 			gateway.registrationHelper(u);
-			User u2=gateway.LoadUser("Testy@Test.test", "TestPassword");
+			User u2=gateway.LoadUser("Testy@Test3.test", "TestPassword");
 			assert(u2.getFirstName().equals(u.getFirstName()));
 			assert(u2.getLastName().equals(u.getLastName()));
 			assert(u2.getEmail().equals(u.getEmail()));
@@ -40,7 +42,7 @@ public class DatabaseTest {
 			assert(u2.getHeight()==u.getHeight());
 			assert(u2.getWaistMeasurement()==u.getWaistMeasurement());
 			
-			gateway.deleteUser("Testy@Test.test");//Clean up Database
+			gateway.deleteUser("Testy@Test3.test");//Clean up Database
 			
 	}
 	
@@ -122,11 +124,31 @@ public class DatabaseTest {
 		u.setPassword("TestPassword");
 		gateway.registrationHelper(u);
 		u=gateway.LoadUser("Testy@Testy2.test", "TestPassword");
-		gateway.createTrackerEntry(u.getUserId(), Date.valueOf(LocalDate.now()), 1, 2);
+		gateway.createTrackerEntry(u.getUserId(), Date.valueOf(LocalDate.now().plusDays(500)), 1, 2);
 		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==1);
-		gateway.addCaloriesToTrackers(u.getUserId(), Date.valueOf(LocalDate.now()), 5, 0);
-		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==6);
+		gateway.addCaloriesToTrackers(u.getUserId(), Date.valueOf(LocalDate.now().plusDays(500)), 5, 0);
+		u=gateway.LoadUser("Testy@Testy2.test", "TestPassword");
+		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now().plusDays(500)))==6);
 		
-		gateway.deleteUser("Testy@Test.test");//Clean up Database
+		gateway.deleteUser("Testy@Testy2.test");//Clean up Database
+	}
+	
+	@Test
+	public void testleaderboard() throws SQLException {
+		gateway.getTopTenLeaderBoard();
+	}
+	
+	Lock sequential = new ReentrantLock();
+
+	@Override
+	protected void setUp() throws Exception {
+	    super.setUp();
+	    sequential.lock();
+	}
+
+	@Override
+	protected void tearDown() throws Exception {
+	    sequential.unlock();
+	    super.tearDown();
 	}
 }

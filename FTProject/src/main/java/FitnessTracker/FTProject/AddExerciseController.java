@@ -17,73 +17,76 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-public class AddCalorieController {
+public class AddExerciseController {
 	@FXML
 	public String usrname;
 	@FXML
 	public String pass;
 	
 	@FXML
-	public ChoiceBox<String> FoodChoice;
+	public ChoiceBox<String>ExerciseChoice;
 	@FXML
 	public ChoiceBox<String> Catagory;
 	@FXML
-	public ObservableList<String> CategoryList= FXCollections.observableArrayList("Fruits","Vegetables","Meats/Fish","Dairy","Junk Food","Water","Drinks");
+	public ObservableList<String> CategoryList= FXCollections.observableArrayList("Cardio","Weight Lifting");
 	
 	@FXML
-	public TextField newFood;
+	public TextField newExercise;
 	
 	@FXML
 	public TextField Calorie;
 	@FXML
-	public Button AddFood;
+	public Button AddExcercise;
 	
-	DatabaseGateway d = DatabaseGateway.getInstance();
 	
 	@FXML
-	ObservableList<String> FoodList;
+	ObservableList<String> ExerciseList;
 	
 	
 	private User usr;
 	@FXML
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
+		DatabaseGateway d = DatabaseGateway.getInstance();
+
 		String catagory = Catagory.getValue();
 		
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
-		FoodChoice.setItems(FoodList);
+		ExerciseList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ExerciseChoice.setItems(CategoryList);
 		
 		if(temp.size()>0) {
-			FoodChoice.setValue(temp.get(0).toString());
+			ExerciseChoice.setValue(temp.get(0).toString());
 		}
 		else {
-			FoodList = FXCollections.observableArrayList("Press Here for Food");
-			FoodChoice.setItems(FoodList);
-			FoodChoice.setValue("Press Here for Food");
+			CategoryList = FXCollections.observableArrayList("Press Here for Food");
+			ExerciseChoice.setItems(CategoryList);
+			ExerciseChoice.setValue("Press Here for Food");
 
 			
 		}
 		
 	}
 	@FXML
-	public void pressAddFood() throws NumberFormatException, SQLException {
-		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
+	public void pressAddExcersice() throws NumberFormatException, SQLException {
+		DatabaseGateway d = DatabaseGateway.getInstance();
+
+		d.addFoodToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
-		FoodChoice.setItems(FoodList);
+		ExerciseList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ExerciseChoice.setItems(ExerciseList);
 		
 	}
 	@FXML
-	public void addCalorie(ActionEvent action) throws SQLException {
+	public void SubtractCalorie(ActionEvent action) throws SQLException {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
 		usr = d.LoadUser(usrname, pass);
 		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-		Food f = new Food();
-		f = d.retrieveFood(FoodChoice.getValue());
+		Exercise f = new Food();
+		f = d.retrieveFood(ExerciseChoice.getValue());
 	
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate, f.getCalories(), 0);
 		
