@@ -14,10 +14,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class AddCalorieController {
 	@FXML
 	public ChoiceBox<String> FoodChoice;
+	@FXML
+	public ChoiceBox<String> Catagory;
+	@FXML
+	public ObservableList<String> CategoryList= FXCollections.observableArrayList("Fruits","Vegetables","Meats/Fish","Dairy","Junk Food","Water","Drinks");
+	
 	@FXML
 	public TextField newFood;
 	
@@ -30,13 +36,13 @@ public class AddCalorieController {
 	
 	@FXML
 	ObservableList<String> FoodList;
-	@FXML
-	public TextField Catagory;
+	
 	
 	private User usr;
 	@FXML
-	public void pressChoiceBox(KeyEvent action) throws SQLException {
-		String catagory = Catagory.getText();
+	public void pressChoiceBox(MouseEvent action) throws SQLException {
+		String catagory = Catagory.getValue();
+		
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
@@ -55,8 +61,8 @@ public class AddCalorieController {
 	}
 	@FXML
 	public void pressAddFood() throws NumberFormatException, SQLException {
-		d.addFoodToTable(newFood.getText(), Catagory.getText(), Integer.parseInt(Calorie.getText()));
-		String catagory = Catagory.getText();
+		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
+		String catagory = Catagory.getValue();
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
@@ -75,7 +81,8 @@ public class AddCalorieController {
 	
 	@FXML
 	private void initialize() {
-		FoodChoice.setValue("Food");
+		Catagory.setValue("Meats/Fish");
+		Catagory.setItems(CategoryList);
 		
 	}
 
