@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javafx.util.Pair;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
 import FitnessTracker.Exceptions.UserAlreadyInDatabaseException;
@@ -164,7 +165,7 @@ public class DatabaseGateway {
 		Connection dbConnection = null;
 		Statement statement = null;
 		String updateTableSQL = "UPDATE FITNESS_TRACKER SET Calories_FROM_FOOD = CALORIES_FROM_FOOD + "
-				+ ""+calFood+ ", CALORIES_FROM_EXERCISE = CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " 
+				+ ""+calFood+ ", CALORIES_FROM_EXERCISE =CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " 
 				+userID+" AND ENTRY_DATE = '"+d+"'";
 		try {
 			dbConnection = getDBConnection();
@@ -183,6 +184,7 @@ public class DatabaseGateway {
 	public void createTrackerEntry(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
+		deleteTracker(userID, d);
 		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) "
 		+ "VALUES" + "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
 		try {
@@ -198,7 +200,24 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
+	public static void  deleteTracker(int user, Date d) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
 	
+		String deleteTableSQL = "DELETE FROM FITNESS_TRACKER WHERE USER_ID = " +user+" AND ENTRY_DATE = '"+d+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(deleteTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
 	//USE FOR NON-REGISTRATION LOGIN
 	public User LoadUser(String email, String password) throws SQLException{
 		User userLoader=null;
@@ -301,6 +320,41 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();
 		}
+	}
+	
+	public ArrayList<Pair<String,Integer>> getTopTenLeaderBoard() throws SQLException{
+		
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = "SELECT * FROM USERS ORDER BY FITNESS_SCORE DESC";
+		ArrayList<Pair<String,Integer>> myList=new ArrayList<Pair<String,Integer>>();
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			
+			if (rs.next() == false) 
+				throw new UserNotFoundException("User NOT FOUND");
+			else {
+				
+				for(int i=0;i<10;i++) {
+					String fullName= rs.getString("FIRST_NAME") + rs.getString("LAST_NAME");
+					Pair<String,Integer> p = new Pair<String,Integer>(fullName,rs.getInt("FITNESS_SCORE") );
+					myList.add(p);
+					if(rs.next()==false)
+						i=10;
+				}
+			} 
+		}catch (SQLException|UserNotFoundException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		
+		return myList;
 	}
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
