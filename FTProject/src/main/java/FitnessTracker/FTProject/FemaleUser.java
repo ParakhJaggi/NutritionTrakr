@@ -1,7 +1,16 @@
 package FitnessTracker.FTProject;
 
 public class FemaleUser extends User {
-
+	private static FemaleUser instance = null;
+	   protected FemaleUser() {
+	      // Exists only to defeat instantiation.
+	   }
+	   public static FemaleUser getInstance() {
+	      if(instance == null) {
+	         instance = new FemaleUser();
+	      }
+	      return instance;
+	   }
 
 	public double hipMeasurement;
 	
