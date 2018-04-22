@@ -63,7 +63,7 @@
                   <Font size="26.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Leaderboard" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#getLeaderboard" prefHeight="80.0" prefWidth="200.0" text="Leaderboard" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <font>
                   <Font size="21.0" />
                </font>

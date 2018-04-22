@@ -91,4 +91,23 @@ public class DashboardController {
 		
 
 	}
+	@FXML
+	public void getLeaderboard() throws SQLException, IOException {
+		System.out.println(usrname);
+		System.out.println(usrname);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leaderboard.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		//BarGraphController controller = fxmlLoader.<BarGraphController>getController();
+		//controller.setUser(usrname.toString(), pass.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
+		
+
+	}
 }
