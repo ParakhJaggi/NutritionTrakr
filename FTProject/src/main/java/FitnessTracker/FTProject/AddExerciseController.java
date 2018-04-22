@@ -18,9 +18,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class AddExerciseController {
-	@FXML
+	
 	public String usrname;
-	@FXML
+	
 	public String pass;
 	
 	@FXML
@@ -46,20 +46,22 @@ public class AddExerciseController {
 	private User usr;
 	@FXML
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
+	
 		DatabaseGateway d = DatabaseGateway.getInstance();
 
 		String catagory = Catagory.getValue();
-		
+		System.out.println(usrname);
+		System.out.println(usrname);
 		ArrayList<String> temp = d.DisplayExerciseFromCategory(catagory);
 		ExerciseList = FXCollections.observableArrayList(d.DisplayExerciseFromCategory(catagory));
-		ExerciseChoice.setItems(CategoryList);
-		
+		ExerciseChoice.setItems(ExerciseList);
+		System.out.println(temp.toString());
 		if(temp.size()>0) {
 			ExerciseChoice.setValue(temp.get(0).toString());
 		}
 		else {
 			CategoryList = FXCollections.observableArrayList("Press Here for Exercise");
-			ExerciseChoice.setItems(CategoryList);
+			ExerciseChoice.setItems(ExerciseList);
 			ExerciseChoice.setValue("Press Here for Exercise");
 
 			
@@ -91,13 +93,14 @@ public class AddExerciseController {
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , f.getCalories());
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
-
+        System.out.println(usrname+pass);
 	}
 	
 	@FXML
 	private void initialize() {
-		Catagory.setValue("Protein");
+		Catagory.setValue("Cardio");
 		Catagory.setItems(CategoryList);
+		
 		
 	}
 	

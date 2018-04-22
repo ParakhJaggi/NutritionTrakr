@@ -79,7 +79,6 @@ public class AddCalorieController {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
 		usr = d.LoadUser(usrname, pass);
-		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		Food f = new Food();

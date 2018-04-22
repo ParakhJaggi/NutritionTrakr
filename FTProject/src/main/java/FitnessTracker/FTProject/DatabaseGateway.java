@@ -72,7 +72,7 @@ public class DatabaseGateway {
 	public void addExerciseToTable (String exName,String category, int calories) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
-		String insertTableSQL = "INSERT INTO Exercse" + "(Exercise_Name, Category_Name, Calories) " + "VALUES"
+		String insertTableSQL = "INSERT INTO Exercise" + "(Exercise_Name, Category_Name, Calories) " + "VALUES"
 				+ "('"+exName+"', '"+category+"',"+calories+")";
 		try {
 			dbConnection = getDBConnection();

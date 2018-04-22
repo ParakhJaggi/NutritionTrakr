@@ -9,13 +9,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pressChoiceBox" onMouseMoved="#pressChoiceBox" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.AddCalorieController">
    <children>
       <ChoiceBox fx:id="FoodChoice" layoutX="254.0" layoutY="59.0" prefWidth="150.0" />
-      <Label layoutX="61.0" layoutY="25.0" prefHeight="27.0" prefWidth="58.0" text="Catagory" />
+      <Label layoutX="61.0" layoutY="25.0" prefHeight="27.0" prefWidth="92.0" text="Catagory:" />
       <Label layoutX="266.0" layoutY="159.0" text="Add Food" />
       <TextField fx:id="newFood" layoutX="266.0" layoutY="187.0" />
       <TextField fx:id="Calorie" layoutX="266.0" layoutY="232.0" />
       <Button fx:id="AddFood" layoutX="266.0" layoutY="272.0" mnemonicParsing="false" onAction="#pressAddFood" text="Add Food" />
-      <Label layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="77.0" text="Food name:" />
-      <Label layoutX="151.0" layoutY="237.0" text="Calorie:" />
+      <Label layoutX="151.0" layoutY="187.0" prefHeight="27.0" prefWidth="77.0" text="Food Name:" />
+      <Label layoutX="151.0" layoutY="237.0" text="Calories Eaten:" />
       <ChoiceBox fx:id="Catagory" layoutX="61.0" layoutY="59.0" onContextMenuRequested="#pressChoiceBox" onMouseClicked="#pressChoiceBox" onMouseEntered="#pressChoiceBox" onMouseExited="#pressChoiceBox" onMouseMoved="#pressChoiceBox" onMousePressed="#pressChoiceBox" onMouseReleased="#pressChoiceBox" prefWidth="150.0" />
       <Button fx:id="Submit" layoutX="462.0" layoutY="59.0" mnemonicParsing="false" onAction="#addCalorie" text="Submit" />
    </children>

@@ -14,32 +14,38 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 
-public class BarGraphController implements Initializable {
+public class BarGraphController{
 
 	@FXML
+	public Button graph;
+	
 	public String usrname;
-	@FXML
+	
 	public String pass;
 	@FXML
-	public BarChart<?,?> CalorieChart;
+	public BarChart<String,Number> CalorieChart;
 	@FXML
 	public CategoryAxis Xaxis;
 	@FXML
 	public NumberAxis Yaxis;
 	
-	@Override
-	public void initialize(URL url,ResourceBundle rb)  {
+	@FXML
+	public void getgraph() {
 		DatabaseGateway d = DatabaseGateway.getInstance();
-
 		User user = null;
 		try {
-			user = d.LoadUser(usrname, pass);
+			user = d.LoadUser(usrname,pass);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		XYChart.Series set1 = new XYChart.Series<>();
+		System.out.println(user.user_id);
+		CalorieChart.setTitle("FITNESS");
+        CalorieChart.setCategoryGap(0);
+        CalorieChart.setBarGap(-20);
+		
 		ArrayList<XYChart.Series> list= new ArrayList<XYChart.Series>();
         LocalDate date= LocalDate.now().minusDays(30);
         
@@ -48,18 +54,31 @@ public class BarGraphController implements Initializable {
         	XYChart.Series mySeries=new XYChart.Series();
         	mySeries.setName("a");
         	int value=user.getDataPointCalorieMap(Date.valueOf(date));
-        	mySeries.getData().add(new XYChart.Data(String.valueOf(curDay),value));
+        	mySeries.getData().add(new XYChart.Data(String.valueOf(i),value));
         	list.add(mySeries);
         	date=date.plusDays(1);
         }
         
         for(XYChart.Series a:list) {
-        	set1.getData().addAll(a);
+        	CalorieChart.getData().addAll(a);
         }
-		
+        CalorieChart.setLegendVisible(false);
+        /*
+		XYChart.Series series1 = new XYChart.Series<>();
+		series1.getData().add(new XYChart.Data("James",5000));
+		CalorieChart.getData().addAll(series1);
+		*/
+	}
+	@FXML
+	public void buttonhit() {
+		System.out.println("test");
+		getgraph();
+ 
 	}
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
+	    System.out.println(usrname);
+		System.out.println(usrname);
 	}
 }

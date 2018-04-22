@@ -3,11 +3,12 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.BarGraphController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.BarGraphController">
    <children>
-      <BarChart fx:id="CalorieChart" layoutX="59.0">
+      <BarChart fx:id="CalorieChart" layoutX="-3.0" layoutY="62.0" prefHeight="742.0" prefWidth="642.0">
         <xAxis>
           <CategoryAxis fx:id="Xaxis" label="Date" side="BOTTOM" />
         </xAxis>
@@ -15,5 +16,6 @@
           <NumberAxis fx:id="Yaxis" label="Calories" side="LEFT" />
         </yAxis>
       </BarChart>
+      <Button fx:id="graph" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#buttonhit" text="Button" />
    </children>
 </AnchorPane>
