@@ -35,7 +35,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "CREATE TABLE EXERCISE (Exercise_Name Varchar(50), Category_Name VarChar(50), Calories INT)";
+		String createTableSQL = "CREATE TABLE Goals (UserID int, Goal_Name VarChar(200))";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -48,6 +48,73 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();
 		}
+	}
+	
+	public void insertGoal(int id, String goal) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		
+		String insertTableSQL = "INSERT INTO Goals" + "(UserID, Goal_Name) " + "VALUES"
+				+ "("+id+", '"+goal+"')";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(insertTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
+	
+	public void deleteGoal(int id, String goal) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		
+		String deleteTableSQL = "DELETE FROM Goals WHERE USERID = " +id+" AND Goal_Name = '"+goal+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(deleteTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
+		}
+	}
+	
+	public ArrayList<String> getGoals(int id) throws SQLException{
+		Connection dbConnection = null;
+		Statement statement = null;
+		ArrayList<String> myGoals=new ArrayList<String>();
+		String selectTableSQL = "SELECT * FROM Goals WHERE USERID = "+ id+" ORDER BY Goal_Name ASC";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+			if (rs.next() == false) 
+				throw new SQLException();
+			else {
+				do {
+					myGoals.add(rs.getString("Goal_Name"));
+				} while (rs.next());
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+		return myGoals;
+		
 	}
 	
 	public void addFoodToTable (String foodName,String category, int calories) throws SQLException{
@@ -72,7 +139,7 @@ public class DatabaseGateway {
 	public void addExerciseToTable (String exName,String category, int calories) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
-		String insertTableSQL = "INSERT INTO Exercise" + "(Exercise_Name, Category_Name, Calories) " + "VALUES"
+		String insertTableSQL = "INSERT INTO Exercse" + "(Exercise_Name, Category_Name, Calories) " + "VALUES"
 				+ "('"+exName+"', '"+category+"',"+calories+")";
 		try {
 			dbConnection = getDBConnection();
@@ -365,6 +432,46 @@ public class DatabaseGateway {
 		return userLoader;
 	}
 	
+	// Values you don't want do update is null;
+	public void updateValues(int id, Integer height, Integer weight, Double neck, Double waist, Double hip) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = null;
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			if(height != null) {
+				selectTableSQL = "UPDATE Users SET Height = "+height+ " WHERE USER_ID = "+id;
+				statement.executeUpdate(selectTableSQL);
+			}
+			if(weight != null) {
+				selectTableSQL = "UPDATE Users SET Weight = "+weight+ " WHERE USER_ID = "+id;
+				statement.executeUpdate(selectTableSQL);
+			}
+			if(neck != null) {
+				selectTableSQL = "UPDATE Users SET NECK_MEASUREMENT = "+neck+ " WHERE USER_ID = "+id;
+				statement.executeUpdate(selectTableSQL);
+			}
+			if(waist != null) {
+				selectTableSQL = "UPDATE Users SET Waist_Measurement = "+waist+ " WHERE USER_ID = "+id;
+				statement.executeUpdate(selectTableSQL);
+			}
+			if(hip != null) {
+				selectTableSQL = "UPDATE Users SET Hip_Measurement = "+hip+ " WHERE USER_ID = "+id;
+				statement.executeUpdate(selectTableSQL);
+			}
+			
+			statement.executeUpdate(selectTableSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+	}
+	
 	//USE WITH REGISTRATION, Loads a user to database. Should only occur once.
 	public void registrationHelper(User u) throws SQLException {
 		Connection dbConnection = null;
@@ -448,6 +555,7 @@ public class DatabaseGateway {
 		
 		return myList;
 	}
+	
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
