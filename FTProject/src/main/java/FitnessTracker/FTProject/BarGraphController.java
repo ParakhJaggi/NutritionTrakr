@@ -45,7 +45,7 @@ public class BarGraphController{
 			e.printStackTrace();
 		}
 		//System.out.println(user.user_id);
-		//CalorieChart.setTitle("FITNESS");
+		CalorieChart.setTitle("FITNESS");
         CalorieChart.setCategoryGap(0);
         CalorieChart.setBarGap(-20);
 		

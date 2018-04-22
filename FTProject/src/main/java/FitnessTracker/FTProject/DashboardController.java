@@ -45,6 +45,22 @@ public class DashboardController {
 		
 	}
 	@FXML
+	public void getScore() throws SQLException, IOException {
+		System.out.println(usrname);
+		System.out.println(pass);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getScore.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		MyScoreController controller = fxmlLoader.<MyScoreController>getController();
+		controller.setUser(usrname.toString(), pass.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+	}
+	@FXML
 	private void UpdateExercise(ActionEvent action) throws IOException {
 		System.out.println(usrname);
 		System.out.println(usrname);
@@ -108,6 +124,28 @@ public class DashboardController {
         //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 		
+		
 
 	}
+	@FXML
+	public void getGoals() throws SQLException, IOException {
+		System.out.println(usrname);
+		System.out.println(usrname);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getGoals.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		GoalsController controller = fxmlLoader.<GoalsController>getController();
+		controller.setUser(usrname.toString(), pass.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
+		
+		
+
+	}
+	
 }

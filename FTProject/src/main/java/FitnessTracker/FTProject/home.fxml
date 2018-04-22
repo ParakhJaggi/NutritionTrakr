@@ -33,7 +33,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Get My Score">
+            <Button mnemonicParsing="false" onAction="#getScore" prefHeight="80.0" prefWidth="200.0" text="Get My Score">
                <font>
                   <Font size="20.0" />
                </font>
@@ -53,7 +53,7 @@
                   <Font size="28.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Edit Goals" GridPane.columnIndex="5">
+            <Button mnemonicParsing="false" onAction="#getGoals" prefHeight="80.0" prefWidth="200.0" text="Edit Goals" GridPane.columnIndex="5">
                <font>
                   <Font size="23.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Settings" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="5" GridPane.rowIndex="3">
                <font>
                   <Font size="28.0" />
                </font>

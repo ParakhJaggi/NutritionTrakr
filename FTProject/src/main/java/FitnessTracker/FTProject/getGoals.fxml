@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pressChoiceBox" onMouseMoved="#pressChoiceBox" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
+   <children>
+      <ChoiceBox fx:id="Goals" layoutX="73.0" layoutY="84.0" prefWidth="150.0" />
+      <TextField fx:id="newGoal" layoutX="260.0" layoutY="91.0" />
+      <Button fx:id="AddGoal" layoutX="323.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoal" text="add" />
+      <Button fx:id="RemoveGoal" layoutX="116.0" layoutY="118.0" mnemonicParsing="false" onAction="#removeGoal" text="remove" />
+      <Label layoutX="73.0" layoutY="52.0" prefHeight="27.0" prefWidth="187.0" text="Select a Goal to Delete " />
+      <Label layoutX="281.0" layoutY="44.0" prefHeight="43.0" prefWidth="167.0" text="Enter a New Goal" />
+   </children>
+</AnchorPane>
