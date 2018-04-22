@@ -147,5 +147,23 @@ public class DashboardController {
 		
 
 	}
+	@FXML
+	public void getProfile() throws SQLException, IOException {
+		System.out.println(usrname);
+		System.out.println(usrname);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProfileChanger.fxml"));     
+
+		Parent root = (Parent)fxmlLoader.load();          
+		ProfileController controller = fxmlLoader.<ProfileController>getController();
+		controller.setUser(usrname.toString(), pass.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+	}
+		
+		
 	
 }
