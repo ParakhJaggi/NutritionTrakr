@@ -32,7 +32,10 @@ public class BarGraphController{
 	public NumberAxis Yaxis;
 	
 	@FXML
-	public void getgraph() {
+	private void getgraph() {
+		System.out.println(usrname);
+		System.out.println(usrname);
+	
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User user = null;
 		try {
@@ -41,8 +44,8 @@ public class BarGraphController{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(user.user_id);
-		CalorieChart.setTitle("FITNESS");
+		//System.out.println(user.user_id);
+		//CalorieChart.setTitle("FITNESS");
         CalorieChart.setCategoryGap(0);
         CalorieChart.setBarGap(-20);
 		
@@ -54,27 +57,40 @@ public class BarGraphController{
         	XYChart.Series mySeries=new XYChart.Series();
         	mySeries.setName("a");
         	int value=user.getDataPointCalorieMap(Date.valueOf(date));
-        	mySeries.getData().add(new XYChart.Data(String.valueOf(i),value));
+        	System.out.println(value+" ");
+        	mySeries.getData().add(new XYChart.Data(String.valueOf(curDay),value));
         	list.add(mySeries);
         	date=date.plusDays(1);
         }
         
-        for(XYChart.Series a:list) {
-        	CalorieChart.getData().addAll(a);
+        for(int x =0; x<list.size();x++) {
+        	
+        	CalorieChart.getData().addAll(list.get(x));
         }
-        CalorieChart.setLegendVisible(false);
+       
+        
+       CalorieChart.setLegendVisible(false);
+        
+		
+        
         /*
+        
 		XYChart.Series series1 = new XYChart.Series<>();
 		series1.getData().add(new XYChart.Data("James",5000));
 		CalorieChart.getData().addAll(series1);
 		*/
+		
 	}
 	@FXML
 	public void buttonhit() {
-		System.out.println("test");
-		getgraph();
- 
+		for(int x = 0; x<5; x++) {
+			getgraph();
+		}
+		
+		
+		
 	}
+	
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;

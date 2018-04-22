@@ -203,4 +203,9 @@ public abstract class User {
 			return false;
 		return true;
 	}
+	
+	public int getScore() {
+		//Implement later
+		return 50;
+	}
 }

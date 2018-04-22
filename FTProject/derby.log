@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sat Apr 21 22:30:54 CDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-eb67-8c8f-0000044945a0 
+Sun Apr 22 01:11:04 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-ebfa-2d88-00000429abc0 
 on database directory /Users/ParakhJaggi/eclipse/Software1/FinalProject/fitnesstrackerproject/FTProject/Database/MyDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4f8e5cde 
 Loaded from file:/Users/ParakhJaggi/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation
