@@ -151,16 +151,36 @@ public class DashboardController {
 	public void getProfile() throws SQLException, IOException {
 		System.out.println(usrname);
 		System.out.println(usrname);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProfileChanger.fxml"));     
+		
+		
+		if(DatabaseGateway.getInstance().LoadUser(usrname, pass).getGender().equals("Male")) {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MaleProfileChanger.fxml"));  
+			Parent root = (Parent)fxmlLoader.load();  
+			MaleProfileController controller = fxmlLoader.<MaleProfileController>getController();
+			controller.setUser(usrname.toString(), pass.toString());	
+			Scene scene = new Scene(root); 
+			Stage stage = new Stage();
+			stage.setScene(scene);    
 
-		Parent root = (Parent)fxmlLoader.load();          
-		ProfileController controller = fxmlLoader.<ProfileController>getController();
-		controller.setUser(usrname.toString(), pass.toString());	
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
+			stage.show();   
+		}
+		else { 
+			System.out.println("hi");
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FemaleProfileChanger.fxml"));  
+			Parent root = (Parent)fxmlLoader.load();  
+			FemaleProfileController controller = fxmlLoader.<FemaleProfileController>getController();
+			controller.setUser(usrname.toString(), pass.toString());	
+			Scene scene = new Scene(root); 
+			Stage stage = new Stage();
+			stage.setScene(scene);    
 
-		stage.show();   
+			stage.show();   
+		}
+		
+
+		        
+		
+		
         //((Node)(action.getSource())).getScene().getWindow().hide();
 	}
 		

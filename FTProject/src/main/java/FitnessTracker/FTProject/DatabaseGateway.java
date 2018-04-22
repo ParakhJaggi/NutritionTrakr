@@ -35,7 +35,7 @@ public class DatabaseGateway {
 	public void createTable() throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String createTableSQL = "CREATE TABLE Goals (UserID int, Goal_Name VarChar(200))";
+		String createTableSQL = "CREATE TABLE Goals (User_ID int, Goal_Name VarChar(200))";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -54,7 +54,7 @@ public class DatabaseGateway {
 		Connection dbConnection = null;
 		Statement statement = null;
 		
-		String insertTableSQL = "INSERT INTO Goals" + "(UserID, Goal_Name) " + "VALUES"
+		String insertTableSQL = "INSERT INTO Goals" + "(User_ID, Goal_Name) " + "VALUES"
 				+ "("+id+", '"+goal+"')";
 		try {
 			dbConnection = getDBConnection();
@@ -74,7 +74,7 @@ public class DatabaseGateway {
 		Connection dbConnection = null;
 		Statement statement = null;
 		
-		String deleteTableSQL = "DELETE FROM Goals WHERE USERID = " +id+" AND Goal_Name = '"+goal+"'";
+		String deleteTableSQL = "DELETE FROM Goals WHERE USER_ID = " +id+" AND Goal_Name = '"+goal+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -93,7 +93,7 @@ public class DatabaseGateway {
 		Connection dbConnection = null;
 		Statement statement = null;
 		ArrayList<String> myGoals=new ArrayList<String>();
-		String selectTableSQL = "SELECT * FROM Goals WHERE USERID = "+ id+" ORDER BY Goal_Name ASC";
+		String selectTableSQL = "SELECT * FROM Goals WHERE USER_ID = "+ id+" ORDER BY Goal_Name ASC";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();

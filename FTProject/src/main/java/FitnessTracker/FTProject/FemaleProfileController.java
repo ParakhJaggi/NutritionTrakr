@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class ProfileController {
+public class FemaleProfileController {
 	@FXML
 	public Button registerButton;
 	@FXML
@@ -19,6 +19,9 @@ public class ProfileController {
 	public TextField waistMeasurement;
 	@FXML
 	public TextField neckMeasurement;
+	@FXML
+	public TextField hipMeasurement;
+	
 	String usrname,pass;
 	
 	@FXML 
@@ -27,7 +30,7 @@ public class ProfileController {
 		User usr;
 		usr = d.LoadUser(usrname, pass);
 		int Height,Weight;
-		double Neck,Waist;
+		double Neck,Waist, Hip;
 		if(height.getText().isEmpty()) {
 			Height = (Integer) null;
 		}
@@ -52,7 +55,13 @@ public class ProfileController {
 		else {
 			Neck = Double.parseDouble(neckMeasurement.getText());
 		}
-		d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, null);
+		if(hipMeasurement.getText().isEmpty()) {
+			Hip = (Double) null;
+		}
+		else {
+			Hip = Double.parseDouble(hipMeasurement.getText());
+		}
+		d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Hip);
 		
 		
 	}
