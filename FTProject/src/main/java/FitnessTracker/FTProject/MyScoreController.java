@@ -18,6 +18,12 @@ public class MyScoreController{
 	@FXML 
 	public Button button; 
 	
+	@FXML
+	public Label BMI;
+	
+	@FXML 
+	public Label BodyFat;
+	
 	
 	@FXML
 	public void buttonhit() throws SQLException {
@@ -27,6 +33,8 @@ public class MyScoreController{
 		
 		Score.setText(String.valueOf(usr.getScore()));
 		
+		BMI.setText(String.valueOf(usr.calculateBMI()));
+		BodyFat.setText(String.valueOf(usr.calculateBFNavyMethod()));
 		
 	}
 	
