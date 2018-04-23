@@ -143,9 +143,21 @@ public class DashboardController {
 		stage.show();   
         //((Node)(action.getSource())).getScene().getWindow().hide();
 		
+	}
+	@FXML
+	public void getAboutUs() throws IOException{
 		
-		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));     
 
+		Parent root = (Parent)fxmlLoader.load();          
+		
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
 	}
 	@FXML
 	public void getProfile() throws SQLException, IOException {

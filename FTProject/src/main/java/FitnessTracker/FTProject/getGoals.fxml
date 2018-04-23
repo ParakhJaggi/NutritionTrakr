@@ -5,14 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pressChoiceBox" onMouseMoved="#pressChoiceBox" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
    <children>
-      <ChoiceBox fx:id="Goals" layoutX="73.0" layoutY="84.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="Goals" layoutX="73.0" layoutY="84.0" onMouseEntered="#start" prefWidth="150.0" />
       <TextField fx:id="newGoal" layoutX="260.0" layoutY="91.0" />
       <Button fx:id="AddGoal" layoutX="323.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoal" text="add" />
       <Button fx:id="RemoveGoal" layoutX="116.0" layoutY="118.0" mnemonicParsing="false" onAction="#removeGoal" text="remove" />
       <Label layoutX="73.0" layoutY="52.0" prefHeight="27.0" prefWidth="187.0" text="Select a Goal to Delete " />
       <Label layoutX="281.0" layoutY="44.0" prefHeight="43.0" prefWidth="167.0" text="Enter a New Goal" />
+      <GridPane layoutX="146.0" layoutY="187.0" prefHeight="200.0" prefWidth="309.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="134.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="goal1" text="Label" />
+            <Label fx:id="goal2" text="Label" GridPane.rowIndex="1" />
+            <Label fx:id="goal3" text="Label" GridPane.rowIndex="2" />
+            <Label fx:id="goal4" text="Label" GridPane.rowIndex="3" />
+            <Label fx:id="goal5" text="Label" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

@@ -68,7 +68,7 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#getAboutUs" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="5" GridPane.rowIndex="3">
                <font>
                   <Font size="28.0" />
                </font>

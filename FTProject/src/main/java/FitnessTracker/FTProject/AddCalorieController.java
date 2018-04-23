@@ -18,6 +18,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class AddCalorieController {
+	private Boolean bool = true;
 	@FXML
 	public String usrname;
 	@FXML
@@ -46,7 +47,37 @@ public class AddCalorieController {
 	
 	private User usr;
 	@FXML
+	public void stop(MouseEvent action) {
+		bool = true;
+		System.out.println(bool);
+	}
+	@FXML
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
+		String catagory = Catagory.getValue();
+		
+		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
+		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		FoodChoice.setItems(FoodList);
+		
+		if(temp.size()>0) {
+			FoodChoice.setValue(temp.get(0).toString());
+		}
+		else if(temp.size()>1) {
+			FoodList = FXCollections.observableArrayList("Press Here for Food");
+			if(bool) {
+			FoodChoice.setItems(FoodList);
+			bool = false;
+			System.out.println(bool);
+			}
+			
+			FoodChoice.setValue("Press Here for Food");
+
+			
+		}
+		
+	}
+	@FXML
+	public void moving(MouseEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
@@ -72,6 +103,20 @@ public class AddCalorieController {
 		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
+
+		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		FoodChoice.setItems(FoodList);
+		
+		if(temp.size()>0) {
+			FoodChoice.setValue(temp.get(0).toString());
+		}
+		else {
+			FoodList = FXCollections.observableArrayList("Press Here for Food");
+			FoodChoice.setItems(FoodList);
+			FoodChoice.setValue("Press Here for Food");
+
+			
+		}
 		
 	}
 	@FXML
@@ -87,6 +132,7 @@ public class AddCalorieController {
 		d.createTrackerEntry(usr.getUserId(), sqlDate, f.getCalories(), 0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
+         
 
 	}
 	
