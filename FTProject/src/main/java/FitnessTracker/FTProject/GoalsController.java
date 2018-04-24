@@ -57,7 +57,11 @@ public class GoalsController {
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.LoadUser(usrname, pass);
-		ArrayList<String> temp = d.getGoals(usr.getUserId());
+		ListFactory factory = new ListFactory();
+		
+		ArrayList<String> temp = factory.createArray();
+		
+		temp = d.getGoals(usr.getUserId());
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
 		
@@ -78,9 +82,13 @@ public class GoalsController {
 		User usr;
 		usr = d.LoadUser(usrname, pass);
 		d.deleteGoal(usr.getUserId(), Goals.getValue());
-		
+		ListFactory factory = new ListFactory();
+
 		usr = d.LoadUser(usrname, pass);
-		ArrayList<String> temp = d.getGoals(usr.getUserId());
+		
+		ArrayList<String> temp = factory.createArray();
+		
+		temp = d.getGoals(usr.getUserId());
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
 		
@@ -98,8 +106,11 @@ public class GoalsController {
 		usr = d.LoadUser(usrname, pass);
 		d.insertGoal(usr.getUserId(), newGoal.getText());
 		
-		usr = d.LoadUser(usrname, pass);
-		ArrayList<String> temp = d.getGoals(usr.getUserId());
+		usr = d.LoadUser(usrname, pass);	
+		ListFactory factory = new ListFactory();
+
+		ArrayList<String> temp =factory.createArray();
+		d.getGoals(usr.getUserId());
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
 		

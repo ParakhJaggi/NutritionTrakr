@@ -21,6 +21,7 @@ public abstract class User {
 	double neckMeasurement;//Inches
 	
 	public User() {
+		
 	};
 	
 	public void setUserId(int i) {

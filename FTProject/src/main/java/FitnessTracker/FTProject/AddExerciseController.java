@@ -52,8 +52,13 @@ public class AddExerciseController {
 		String catagory = Catagory.getValue();
 		System.out.println(usrname);
 		System.out.println(usrname);
-		ArrayList<String> temp = d.DisplayExerciseFromCategory(catagory);
-		ExerciseList = FXCollections.observableArrayList(d.DisplayExerciseFromCategory(catagory));
+		
+		ListFactory factory = new ListFactory();
+		
+		
+		ArrayList<String> temp = factory.createArray();
+		temp = d.DisplayExerciseFromCategory(catagory);
+		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		System.out.println(temp.toString());
 		if(temp.size()>0) {
@@ -74,8 +79,13 @@ public class AddExerciseController {
 
 		d.addExerciseToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
-		ArrayList<String> temp = d.DisplayExerciseFromCategory(catagory);
-		ExerciseList = FXCollections.observableArrayList(d.DisplayExerciseFromCategory(catagory));
+		
+		ListFactory factory = new ListFactory();
+		
+		
+		ArrayList<String> temp = factory.createArray();
+		temp = d.DisplayExerciseFromCategory(catagory);
+		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		
 	}

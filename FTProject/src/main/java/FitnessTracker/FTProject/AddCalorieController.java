@@ -55,8 +55,12 @@ public class AddCalorieController {
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
-		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ListFactory factory = new ListFactory();
+		
+		
+		ArrayList<String> temp = factory.createArray();
+		temp =d.DisplayFoodFromCategory(catagory);
+		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 		
 		if(temp.size()>0) {
@@ -80,8 +84,11 @@ public class AddCalorieController {
 	public void moving(MouseEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
-		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		ListFactory factory = new ListFactory();
+		
+		ArrayList<String> temp = factory.createArray();
+	    temp = d.DisplayFoodFromCategory(catagory);
+		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 		
 		if(temp.size()>0) {
@@ -100,8 +107,13 @@ public class AddCalorieController {
 	public void pressAddFood() throws NumberFormatException, SQLException {
 		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
-		ArrayList<String> temp = d.DisplayFoodFromCategory(catagory);
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		
+		ListFactory factory = new ListFactory();
+		
+		
+		ArrayList<String> temp = factory.createArray();
+		temp = d.DisplayFoodFromCategory(catagory);
+		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 
 		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
