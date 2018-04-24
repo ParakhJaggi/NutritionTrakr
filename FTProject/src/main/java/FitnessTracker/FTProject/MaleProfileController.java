@@ -32,36 +32,38 @@ public class MaleProfileController {
 		usr = d.LoadUser(usrname, pass);
 		
 		UpdateUser u = new UpdateUser();
+		
 		u.addObserver(new Observer() {
             public void update(Observable obj, Object arg) {
-            	int Height,Weight;
-        		double Neck,Waist;
+            	System.out.println("here");
+            	Integer Height,Weight;
+        		Double Neck,Waist;
         		if(height.getText().isEmpty()) {
-        			Height = (Integer) null;
+        			Height = 0;
         		}
         		else {
         			Height = Integer.parseInt(height.getText());
         		}
         		if(weight.getText().isEmpty()) {
-        			Weight = (Integer) null;
+        			Weight = 0;
         		}
         		else {
         			Weight = Integer.parseInt(weight.getText());
         		}
         		if(waistMeasurement.getText().isEmpty()) {
-        			Waist = (Double) null;
+        			Waist = Double.valueOf(0);
         		}
         		else {
         			Waist = Double.parseDouble(waistMeasurement.getText());
         		}
         		if(neckMeasurement.getText().isEmpty()) {
-        			Neck = (Double) null;
+        			Neck = Double.valueOf(0);
         		}
         		else {
         			Neck = Double.parseDouble(neckMeasurement.getText());
         		}
         		try {
-					d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, null);
+					d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Double.valueOf(0));
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -71,6 +73,7 @@ public class MaleProfileController {
 
 			
         });
+		u.doNotify();
 		
 		/*int Height,Weight;
 		double Neck,Waist;

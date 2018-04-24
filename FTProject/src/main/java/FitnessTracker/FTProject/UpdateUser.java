@@ -6,7 +6,7 @@ public class UpdateUser extends java.util.Observable {
 	private void setid(int id) {
 		this.id = id;
 	}
-	private void doNotify() {
+	public void doNotify() {
 		setChanged();
 		
 		notifyObservers(id);
