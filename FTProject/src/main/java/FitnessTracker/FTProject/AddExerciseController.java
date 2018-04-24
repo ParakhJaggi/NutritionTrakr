@@ -1,5 +1,6 @@
 package FitnessTracker.FTProject;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -10,14 +11,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-public class AddExerciseController {
+public class AddExerciseController implements Command {
 	
 	public String usrname;
 	
@@ -117,6 +122,29 @@ public class AddExerciseController {
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
+	}
+	@Override
+	public void execute(String username,String password) {
+		System.out.println(usrname);
+		System.out.println(usrname);
+
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));     
+
+		Parent root = null;
+		try {
+			root = (Parent)fxmlLoader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}          
+		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
+		controller.setUser(username.toString(), password.toString());
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();		
 	}
 
 	

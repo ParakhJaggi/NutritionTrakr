@@ -17,7 +17,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class RegisterUserController {
+public class RegisterUserController implements Command {
 	@FXML
 	public ChoiceBox<String> genderbox;
 	@FXML
@@ -81,6 +81,11 @@ public class RegisterUserController {
 	private void initialize() {
 		genderbox.setValue("Male");
 		genderbox.setItems(GenderList);
+	}
+	@Override
+	public void execute(String usernmae,String password) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

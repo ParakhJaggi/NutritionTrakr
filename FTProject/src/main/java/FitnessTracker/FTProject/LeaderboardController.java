@@ -1,13 +1,18 @@
 package FitnessTracker.FTProject;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import javafx.util.Pair;
 
-public class LeaderboardController {
+public class LeaderboardController implements Command {
 	@FXML
 	private Label number;
 	@FXML
@@ -86,6 +91,29 @@ public class LeaderboardController {
 
 
 		
+	}
+
+	@Override
+	public void execute(String username,String password) {
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leaderboard.fxml"));     
+
+		Parent root = null;
+		try {
+			root = (Parent)fxmlLoader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}          
+		//BarGraphController controller = fxmlLoader.<BarGraphController>getController();
+		//controller.setUser(usrname.toString(), pass.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+				
 	}
 
 }

@@ -2,13 +2,18 @@ package FitnessTracker.FTProject;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class FemaleProfileController {
+public class FemaleProfileController implements Command {
 	@FXML
 	public Button registerButton;
 	@FXML
@@ -68,5 +73,23 @@ public class FemaleProfileController {
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
+	}
+	@Override
+	public void execute(String username,String password) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FemaleProfileChanger.fxml"));  
+		Parent root = null;
+		try {
+			root = (Parent)fxmlLoader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		FemaleProfileController controller = fxmlLoader.<FemaleProfileController>getController();
+		controller.setUser(username.toString(), password.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   		
 	}
 }

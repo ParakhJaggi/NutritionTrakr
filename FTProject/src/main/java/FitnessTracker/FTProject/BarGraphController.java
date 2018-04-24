@@ -1,5 +1,6 @@
 package FitnessTracker.FTProject;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -8,15 +9,18 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-public class BarGraphController{
+public class BarGraphController implements Command{
 
 	@FXML
 	public Button graph;
@@ -96,5 +100,30 @@ public class BarGraphController{
 	    this.pass = pass;
 	    System.out.println(usrname);
 		System.out.println(usrname);
+	}
+	@Override
+	public void execute(String username,String password) {
+		System.out.println(usrname);
+		System.out.println(usrname);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bargraph.fxml"));     
+
+		Parent root = null;
+		try {
+			root = (Parent)fxmlLoader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}          
+		BarGraphController controller = fxmlLoader.<BarGraphController>getController();
+		controller.setUser(username.toString(), password.toString());	
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
+        //((Node)(action.getSource())).getScene().getWindow().hide();
+		
+		
+		
 	}
 }

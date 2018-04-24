@@ -19,7 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class DashboardController {
+public class DashboardController  {
 //test
 
 	public String usrname;
@@ -31,51 +31,19 @@ public class DashboardController {
 		System.out.println(usrname);
 		System.out.println(usrname);
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddFood.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		AddCalorieController controller = fxmlLoader.<AddCalorieController>getController();
-		controller.setUser(usrname.toString(), pass.toString());
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
+		AddCalorieController controller = new AddCalorieController();
+		controller.execute(usrname,pass);
 		
 	}
 	@FXML
 	public void getScore() throws SQLException, IOException {
-		System.out.println(usrname);
-		System.out.println(pass);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getScore.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		MyScoreController controller = fxmlLoader.<MyScoreController>getController();
-		controller.setUser(usrname.toString(), pass.toString());	
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
+		MyScoreController c = new MyScoreController();
+		c.execute(usrname, pass);
 	}
 	@FXML
 	private void UpdateExercise(ActionEvent action) throws IOException {
-		System.out.println(usrname);
-		System.out.println(usrname);
-
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
-		controller.setUser(usrname.toString(), pass.toString());
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
+		AddExerciseController e = new AddExerciseController();
+		e.execute(usrname, pass);
 		
 	}
 	@FXML
@@ -90,103 +58,40 @@ public class DashboardController {
 	}
 	@FXML
 	public void getGraph() throws SQLException, IOException {
-		System.out.println(usrname);
-		System.out.println(usrname);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bargraph.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		BarGraphController controller = fxmlLoader.<BarGraphController>getController();
-		controller.setUser(usrname.toString(), pass.toString());	
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
-		
-		
+		BarGraphController b = new BarGraphController();
+		b.execute(usrname, pass);
 
 	}
 	@FXML
 	public void getLeaderboard() throws SQLException, IOException {
-		System.out.println(usrname);
-		System.out.println(usrname);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leaderboard.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		//BarGraphController controller = fxmlLoader.<BarGraphController>getController();
-		//controller.setUser(usrname.toString(), pass.toString());	
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
-		
+		LeaderboardController l = new LeaderboardController();
+		l.execute(usrname, pass);
 		
 		
 
 	}
 	@FXML
 	public void getGoals() throws SQLException, IOException {
-		System.out.println(usrname);
-		System.out.println(usrname);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getGoals.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		GoalsController controller = fxmlLoader.<GoalsController>getController();
-		controller.setUser(usrname.toString(), pass.toString());	
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
-		
+		GoalsController g = new GoalsController();
+		g.execute(usrname, pass);
 	}
 	@FXML
 	public void getAboutUs() throws IOException{
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));     
-
-		Parent root = (Parent)fxmlLoader.load();          
-		
-		Scene scene = new Scene(root); 
-		Stage stage = new Stage();
-		stage.setScene(scene);    
-
-		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
-		
+		AboutUsController a = new AboutUsController();
+		a.execute(usrname, pass);
 	}
 	@FXML
 	public void getProfile() throws SQLException, IOException {
-		System.out.println(usrname);
-		System.out.println(usrname);
 		
 		
 		if(DatabaseGateway.getInstance().LoadUser(usrname, pass).getGender().equals("Male")) {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MaleProfileChanger.fxml"));  
-			Parent root = (Parent)fxmlLoader.load();  
-			MaleProfileController controller = fxmlLoader.<MaleProfileController>getController();
-			controller.setUser(usrname.toString(), pass.toString());	
-			Scene scene = new Scene(root); 
-			Stage stage = new Stage();
-			stage.setScene(scene);    
-
-			stage.show();   
+			MaleProfileController m = new MaleProfileController();
+			m.execute(usrname, pass);
 		}
 		else { 
-			System.out.println("hi");
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FemaleProfileChanger.fxml"));  
-			Parent root = (Parent)fxmlLoader.load();  
-			FemaleProfileController controller = fxmlLoader.<FemaleProfileController>getController();
-			controller.setUser(usrname.toString(), pass.toString());	
-			Scene scene = new Scene(root); 
-			Stage stage = new Stage();
-			stage.setScene(scene);    
-
-			stage.show();   
+			FemaleProfileController f = new FemaleProfileController();
+			f.execute(usrname, pass);
 		}
 		
 
