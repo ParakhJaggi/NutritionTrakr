@@ -432,7 +432,7 @@ public class DatabaseGateway {
 		return userLoader;
 	}
 	
-	// Values you don't want do update is null;
+	// Values you don't want do update is 0;
 	public void updateValues(int id, Integer height, Integer weight, Double neck, Double waist, Double hip) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -440,23 +440,23 @@ public class DatabaseGateway {
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
-			if(height != null) {
+			if(height != 0) {
 				selectTableSQL = "UPDATE Users SET Height = "+height+ " WHERE USER_ID = "+id;
 				statement.executeUpdate(selectTableSQL);
 			}
-			if(weight != null) {
+			if(weight != 0) {
 				selectTableSQL = "UPDATE Users SET Weight = "+weight+ " WHERE USER_ID = "+id;
 				statement.executeUpdate(selectTableSQL);
 			}
-			if(neck != null) {
+			if(neck != 0) {
 				selectTableSQL = "UPDATE Users SET NECK_MEASUREMENT = "+neck+ " WHERE USER_ID = "+id;
 				statement.executeUpdate(selectTableSQL);
 			}
-			if(waist != null) {
+			if(waist != 0) {
 				selectTableSQL = "UPDATE Users SET Waist_Measurement = "+waist+ " WHERE USER_ID = "+id;
 				statement.executeUpdate(selectTableSQL);
 			}
-			if(hip != null) {
+			if(hip != 0) {
 				selectTableSQL = "UPDATE Users SET Hip_Measurement = "+hip+ " WHERE USER_ID = "+id;
 				statement.executeUpdate(selectTableSQL);
 			}
