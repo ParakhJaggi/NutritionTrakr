@@ -42,6 +42,8 @@ public class GoalsController implements Command{
 	@FXML
 	public Label goal5;
 
+	private GoalsSaver saver = new GoalsSaver();
+	private PreviousGoals previous = new PreviousGoals();
 	
 
 
@@ -70,11 +72,134 @@ public class GoalsController implements Command{
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
 		
-		goal1.setText(temp.get(0));
-		goal2.setText(temp.get(1));
-		goal3.setText(temp.get(2));
-		goal4.setText(temp.get(3));
-		goal5.setText(temp.get(4));
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()==5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		else {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+			
+		}
+		
+	
+
+		
+		
+		
+		
+	}
+	@FXML
+	private void update() throws SQLException {
+		
+	
+		DatabaseGateway d = DatabaseGateway.getInstance();
+		User usr;
+		usr = d.LoadUser(usrname, pass);
+		ListFactory factory = new ListFactory();
+		
+		ArrayList<String> temp = factory.createArray();
+		
+		temp = d.getGoals(usr.getUserId());
+		
+		
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()==5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		else {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+			
+		}
+		
+	
 
 		
 		
@@ -86,6 +211,11 @@ public class GoalsController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.LoadUser(usrname, pass);
+	
+		previous.setState(Goals.getValue());
+		saver.addMemento(previous.save());
+		
+		
 		d.deleteGoal(usr.getUserId(), Goals.getValue());
 		ListFactory factory = new ListFactory();
 
@@ -96,13 +226,72 @@ public class GoalsController implements Command{
 		temp = d.getGoals(usr.getUserId());
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
 		
-		goal1.setText(temp.get(0));
-		goal2.setText(temp.get(1));
-		goal3.setText(temp.get(2));
-		goal4.setText(temp.get(3));
-		goal5.setText(temp.get(4));
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()==5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		else {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+			
+		}
+		
 	
+	}
+	
+	@FXML
+	public void restoreGoal() {
+		DatabaseGateway d = DatabaseGateway.getInstance();
+		previous.restore(saver.getMemento());
+		try {
+			addGoal(previous.save().getState());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@FXML
 	public void addGoal() throws SQLException {
@@ -110,6 +299,75 @@ public class GoalsController implements Command{
 		User usr;
 		usr = d.LoadUser(usrname, pass);
 		d.insertGoal(usr.getUserId(), newGoal.getText());
+		
+		usr = d.LoadUser(usrname, pass);	
+		ListFactory factory = new ListFactory();
+
+		ArrayList<String> temp =factory.createArray();
+		d.getGoals(usr.getUserId());
+		GoalsList = FXCollections.observableArrayList(temp);
+		Goals.setItems(GoalsList);
+		
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()==5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		else {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+			
+		}
+		
+	
+	}
+	public void addGoal(String previous) throws SQLException {
+		DatabaseGateway d = DatabaseGateway.getInstance();
+		User usr;
+		usr = d.LoadUser(usrname, pass);
+		d.insertGoal(usr.getUserId(), previous);
 		
 		usr = d.LoadUser(usrname, pass);	
 		ListFactory factory = new ListFactory();

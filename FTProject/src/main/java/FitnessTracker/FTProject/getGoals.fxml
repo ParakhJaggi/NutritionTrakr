@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#update" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
    <children>
       <ChoiceBox fx:id="Goals" layoutX="73.0" layoutY="84.0" onMouseEntered="#start" prefWidth="150.0" />
       <TextField fx:id="newGoal" layoutX="260.0" layoutY="91.0" />
@@ -36,5 +36,6 @@
             <Label fx:id="goal5" text="Label" GridPane.rowIndex="4" />
          </children>
       </GridPane>
+      <Button layoutX="117.0" layoutY="152.0" mnemonicParsing="false" onAction="#restoreGoal" text="Undo" />
    </children>
 </AnchorPane>
