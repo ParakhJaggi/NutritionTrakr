@@ -377,11 +377,58 @@ public class GoalsController implements Command{
 		GoalsList = FXCollections.observableArrayList(temp);
 		Goals.setItems(GoalsList);
 		
-		goal1.setText(temp.get(0));
-		goal2.setText(temp.get(1));
-		goal3.setText(temp.get(2));
-		goal4.setText(temp.get(3));
-		goal5.setText(temp.get(4));
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()==5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		else {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+			
+		}
 	
 	}
 	public void setUser(String email,String pass){

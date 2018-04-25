@@ -6,11 +6,14 @@ public class GoalsSaver {
 	private ArrayList<UndoListMemento> mementos = new ArrayList<>();
 
     public void addMemento(UndoListMemento m) {
-        mementos.add(m);
+        mementos.add(0,m);
     }
 
     public UndoListMemento getMemento() {
-        return mementos.get(0);
+        UndoListMemento m =  mementos.get(0);
+        mementos.remove(0);
+        return m;
+        
     }
 
 }
