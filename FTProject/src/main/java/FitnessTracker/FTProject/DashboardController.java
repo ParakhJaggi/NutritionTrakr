@@ -17,6 +17,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 /**
  * 
@@ -30,6 +31,12 @@ public class DashboardController  {
 	public String usrname;
 	
 	public String pass;
+	@FXML
+	private ImageView bronze;
+	@FXML
+	private ImageView silver;
+	@FXML
+	private ImageView gold;
 	/**
 	 * @author ParakhJaggi
 	 * @param action
@@ -151,7 +158,11 @@ public class DashboardController  {
 
         //((Node)(action.getSource())).getScene().getWindow().hide();
 	}
-		
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will implement the stage pattern 
+	 */
 	@FXML
 	public void ribbonize() throws SQLException{
 		int score=DatabaseGateway.getInstance().LoadUser(usrname, pass).getScore();
@@ -163,6 +174,15 @@ public class DashboardController  {
 		else
 			rib.setState(new GoldRibbonState());
 		String img= rib.getState().doAction(rib);
+		if(img.equals("bronzeRibbon.png")) {
+			bronze.setVisible(true);
+		}
+		else if(img.equals("silverRibbon.png")) {
+			silver.setVisible(true);
+		}
+		else if(img.equals("goldeRibbon.png")) {
+			gold.setVisible(true);
+		}
 	}
 	
 }
