@@ -1,5 +1,9 @@
 package FitnessTracker.FTProject;
-
+/**
+ * 
+ * @author Terlizzi
+ * Context for the ribbon at the home center which controls the state
+ */
 public class RibbonContext {
 	private RibbonState state;
 
