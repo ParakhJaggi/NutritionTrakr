@@ -3,7 +3,10 @@ package FitnessTracker.FTProject;
 
 import java.sql.Date;
 import java.util.HashMap;
-
+/*
+ * @author Garth Terlizzi III
+ * Abstract class with setters and getters, references the user at login
+ */
 public abstract class User {
 	String firstName;
 	String lastName;
@@ -20,9 +23,7 @@ public abstract class User {
 	double waistMeasurement;//Inches
 	double neckMeasurement;//Inches
 	
-	public User() {
-		
-	};
+	public User() {};
 	
 	public void setUserId(int i) {
 		user_id=i;
@@ -76,7 +77,6 @@ public abstract class User {
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -119,92 +119,15 @@ public abstract class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public abstract double calculateBFNavyMethod();//Note the method is different for both Male and Females
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((calorieMap == null) ? 0 : calorieMap.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((exerciseMap == null) ? 0 : exerciseMap.hashCode());
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + fitnessScore;
-		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(height);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		temp = Double.doubleToLongBits(neckMeasurement);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + user_id;
-		temp = Double.doubleToLongBits(waistMeasurement);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(weight);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (calorieMap == null) {
-			if (other.calorieMap != null)
-				return false;
-		} else if (!calorieMap.equals(other.calorieMap))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (exerciseMap == null) {
-			if (other.exerciseMap != null)
-				return false;
-		} else if (!exerciseMap.equals(other.exerciseMap))
-			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (fitnessScore != other.fitnessScore)
-			return false;
-		if (gender == null) {
-			if (other.gender != null)
-				return false;
-		} else if (!gender.equals(other.gender))
-			return false;
-		if (Double.doubleToLongBits(height) != Double.doubleToLongBits(other.height))
-			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
-				return false;
-		} else if (!lastName.equals(other.lastName))
-			return false;
-		if (Double.doubleToLongBits(neckMeasurement) != Double.doubleToLongBits(other.neckMeasurement))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (user_id != other.user_id)
-			return false;
-		if (Double.doubleToLongBits(waistMeasurement) != Double.doubleToLongBits(other.waistMeasurement))
-			return false;
-		if (Double.doubleToLongBits(weight) != Double.doubleToLongBits(other.weight))
-			return false;
-		return true;
-	}
-	
+	/*
+	 * @author Garth Terlizzi
+	 * Different for Male and Females
+	 */
+	public abstract double calculateBFNavyMethod();
+	/*
+	 * @author Garth Terlizzi
+	 * @return a score that correlates to the Fitness Tracker
+	 */
 	public int getScore() {
 		//Implement later
 		return 50;
