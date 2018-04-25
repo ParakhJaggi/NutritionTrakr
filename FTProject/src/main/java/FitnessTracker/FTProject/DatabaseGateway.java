@@ -13,49 +13,44 @@ import FitnessTracker.Exceptions.UserAlreadyInDatabaseException;
 import FitnessTracker.Exceptions.UserNotFoundException;
 
 
-	
+/*
+ * @author Garth Terlizzi III
+ * This class is a fabricated gateway to all database functions
+ */
 public class DatabaseGateway {
 	private static final String DB_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
 	private static final String DB_CONNECTION = "jdbc:derby:Database/MyDB;";
 	private static final String DB_USER = "";
 	private static final String DB_PASSWORD = "";
-	
 	private static DatabaseGateway instance = null;
-	   protected DatabaseGateway() {
-	      // Exists only to defeat instantiation.
-	   }
-	   public static DatabaseGateway getInstance() {
+	/*
+	 * @author Garth Terlizzi
+	 * Database constructor, exists only to defeat instantiation.
+	 */
+    protected DatabaseGateway() { }
+    /*
+     * @author Garth Terlizzi
+     * @return DatabaseGateway instance, core of the singleton
+     * Returns the instance
+     */
+	public static DatabaseGateway getInstance() {
 	      if(instance == null) {
 	         instance = new DatabaseGateway();
 	      }
 	      return instance;
 	   }
-	
-//ToDO delete
-	public void createTable() throws SQLException {
-		Connection dbConnection = null;
-		Statement statement = null;
-		String createTableSQL = "CREATE TABLE Goals (User_ID int, Goal_Name VarChar(200))";
-		try {
-			dbConnection = getDBConnection();
-			statement = dbConnection.createStatement();
-			statement.execute(createTableSQL);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			if (statement != null) 
-				statement.close();
-			if (dbConnection != null) 
-				dbConnection.close();
-		}
-	}
-	
+
+	/*
+	 * @author Garth Terlizzi III
+	 * @param id- The id of the user that owns the goal
+	 * @param goal- The goal of the user in string format
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Inserts a goal to the database, with the user as the kety
+	 */
 	public void insertGoal(int id, String goal) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		
-		String insertTableSQL = "INSERT INTO Goals" + "(User_ID, Goal_Name) " + "VALUES"
-				+ "("+id+", '"+goal+"')";
+		String insertTableSQL = "INSERT INTO Goals" + "(User_ID, Goal_Name) " + "VALUES"+ "("+id+", '"+goal+"')";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -69,11 +64,16 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param id- The id of the user that owns the goal
+	 * @param goal- The goal of the user in string format
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Deletes the goal of the user from the database
+	 */
 	public void deleteGoal(int id, String goal) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
-		
 		String deleteTableSQL = "DELETE FROM Goals WHERE USER_ID = " +id+" AND Goal_Name = '"+goal+"'";
 		try {
 			dbConnection = getDBConnection();
@@ -88,7 +88,13 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The ID of the user
+	 * @return An arrayList of goals that belong to the user
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Gets all goals by the user
+	 */
 	public ArrayList<String> getGoals(int id) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -114,9 +120,15 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 		return myGoals;
-		
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The food name
+	 * @param The category the specific food belongs to
+	 * @param The calories attached to the food
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Adds a food to the Exercise Tracker
+	 */
 	public void addFoodToTable (String foodName,String category, int calories) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -135,7 +147,14 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The food name
+	 * @param The category the specific food belongs to
+	 * @param The calories attached to the food
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Adds a food to the Exercise Tracker
+	 */
 	public void addExerciseToTable (String exName,String category, int calories) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -154,7 +173,13 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	//This should be called if it is known the food is in the Database 
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The food name
+	 * @return The food associated with the name, loaded with category calories
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Retrieves a food from the database
+	 */
 	public Food retrieveFood(String foodName) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -181,7 +206,13 @@ public class DatabaseGateway {
 		}
 		return f;
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The exercise name
+	 * @return The exercise associated with the name, loaded with category calories
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Retrieves a exercise from the database
+	 */
 	public Exercise retrieveExercise(String exName) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -209,26 +240,36 @@ public class DatabaseGateway {
 		return ex;
 	}
 	
-	//Used for testing purposes
-		public void deleteFood(String name) throws SQLException {
-			Connection dbConnection = null;
-			Statement statement = null;
-			
-			String deleteSQL = "DELETE FROM Foods WHERE Food_name = ' "+name+"'";
-			try {
-				dbConnection = getDBConnection();
-				statement = dbConnection.createStatement();
-				statement.executeUpdate(deleteSQL);
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			} finally {
-				if (statement != null) 
-					statement.close();
-				if (dbConnection != null) 
-					dbConnection.close();
-			}
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The food name
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Deletes a food from the database (Used for testing purposes and database cleanup)
+	 */
+	public void deleteFood(String name) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String deleteSQL = "DELETE FROM Foods WHERE Food_name = ' "+name+"'";
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			statement.executeUpdate(deleteSQL);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) 
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();
 		}
-		
+	}
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The category name
+	 * @return An ArrayList with all foods associated from the category
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Shows all food in a given category
+	 */
 	public ArrayList<String> DisplayFoodFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -255,7 +296,13 @@ public class DatabaseGateway {
 		}
 		return myList;
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The exercise name
+	 * @return An ArrayList with all exercise associated from the category
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Shows all exercise in a given category
+	 */
 	public ArrayList<String> DisplayExerciseFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -283,7 +330,13 @@ public class DatabaseGateway {
 		return myList;
 	}
 	
-	//This should be called if it is known the food is in the Database 
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The name of the food
+	 * @param The new amount of calories the food should have
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Updates a food, provided it is in the database
+	 */
 	public void updateCaloriesFood(String foodName, int cals) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -301,7 +354,13 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The name of the exercise
+	 * @param The new amount of calories the food should have
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Updates a food, provided it is in the database
+	 */
 	public void updateCaloriesExercise(String exName, int cals) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -319,7 +378,15 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	//To change one tracker, put a 0 in the tracker you don't want to update
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
+	 * @param The new amount of calories the food should have
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Adds calories to both trackers.To change one tracker, put a 0 in the tracker you don't want to update
+	 * To change one tracker, put a 0 in the tracker you don't want to update
+	 */
+	
 	public void addCaloriesToTrackers(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -339,7 +406,13 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Adds calories to both trackers.To change one tracker, put a 0 in the tracker you don't want to update
+	 * To change one tracker, put a 0 in the tracker you don't want to update
+	 */
 	public void createTrackerEntry(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -359,10 +432,15 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Deletes a tracker, used for testing purposes only
+	 */
 	public static void  deleteTracker(int user, Date d) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-	
 		String deleteTableSQL = "DELETE FROM FITNESS_TRACKER WHERE USER_ID = " +user+" AND ENTRY_DATE = '"+d+"'";
 		try {
 			dbConnection = getDBConnection();
@@ -377,7 +455,14 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	//USE FOR NON-REGISTRATION LOGIN
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The email of the user
+	 * @param The password of the user
+	 * @return the user loaded from the database
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Loads a user from the database
+	 */
 	public User LoadUser(String email, String password) throws SQLException{
 		User userLoader=null;
 		Connection dbConnection = null;
@@ -392,9 +477,9 @@ public class DatabaseGateway {
 			else {
 					String gender= rs.getString("Gender");
 					if(gender.contentEquals("Male"))
-						userLoader= new MaleUser();
+						userLoader= MaleUser.getInstance();
 					else
-						userLoader= new FemaleUser();
+						userLoader= FemaleUser.getInstance();
 				userLoader.setEmail(email);
 				userLoader.setPassword(password);
 				userLoader.setUserId(rs.getInt("USER_ID"));
@@ -428,11 +513,16 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();	
 		}
-		
 		return userLoader;
 	}
 	
-	// Values you don't want do update is 0;
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The id of the user
+	 * @param The height,weight,neck, waist, and hip that can be updated by the values
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Updates the values of the user, if no update is wanted, a 0 is placed.
+	 */
 	public void updateValues(int id, Integer height, Integer weight, Double neck, Double waist, Double hip) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -472,7 +562,12 @@ public class DatabaseGateway {
 		}
 	}
 	
-	//USE WITH REGISTRATION, Loads a user to database. Should only occur once.
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The user
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Registers a user into the database
+	 */
 	public void registrationHelper(User u) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
@@ -501,11 +596,15 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	//Used for testing purposes
+	/*
+	 * @author Garth Terlizzi III
+	 * @param The email of the user
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Deletes the user from the database, used for mainly testing purposes.
+	 */
 	public void deleteUser(String email) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		
 		String deleteSQL = "DELETE FROM USERS WHERE EMAIL_ADDRESS = ' "+email+"'";
 		try {
 			dbConnection = getDBConnection();
@@ -520,7 +619,12 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @return An ArrayList
+	 * @throws A SQL Exception if there is an error in accessing the Database
+	 * Deletes the user from the database, used for mainly testing purposes.
+	 */
 	public ArrayList<Pair<String,Integer>> getTopTenLeaderBoard() throws SQLException{
 		
 		Connection dbConnection = null;
@@ -552,10 +656,13 @@ public class DatabaseGateway {
 			if (dbConnection != null) 
 				dbConnection.close();	
 		}
-		
 		return myList;
 	}
-	
+	/*
+	 * @author Garth Terlizzi III
+	 * @return The connection from the database
+	 * Deletes the user from the database, used for mainly testing purposes.
+	 */
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {
