@@ -95,12 +95,20 @@ public class DashboardController  {
 		}
 		
 
-		        
-		
-		
         //((Node)(action.getSource())).getScene().getWindow().hide();
 	}
 		
-		
+	@FXML
+	public void ribbonize() throws SQLException{
+		int score=DatabaseGateway.getInstance().LoadUser(usrname, pass).getScore();
+		RibbonContext rib=new RibbonContext();
+		if (score<33)
+			rib.setState(new BronzeRibbonState());
+		else if(score<66)
+			rib.setState(new SilverRibbonState());
+		else
+			rib.setState(new GoldRibbonState());
+		String img= rib.getState().doAction(rib);
+	}
 	
 }
