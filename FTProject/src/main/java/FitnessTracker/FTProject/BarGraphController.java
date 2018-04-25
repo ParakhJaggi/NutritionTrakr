@@ -19,7 +19,12 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will display the BarGraph
+ *
+ */
 public class BarGraphController implements Command{
 
 	@FXML
@@ -34,7 +39,10 @@ public class BarGraphController implements Command{
 	public CategoryAxis Xaxis;
 	@FXML
 	public NumberAxis Yaxis;
-	
+	/**
+	 * @author ParakhJaggi
+	 * This method will produce the graph 
+	 */
 	@FXML
 	private void getgraph() {
 		System.out.println(usrname);
@@ -85,6 +93,10 @@ public class BarGraphController implements Command{
 		*/
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * this method will open the graph when the button is pressed 
+	 */
 	@FXML
 	public void buttonhit() {
 		for(int x = 0; x<5; x++) {
@@ -94,13 +106,24 @@ public class BarGraphController implements Command{
 		
 		
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will keep track of the users credentials 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	    System.out.println(usrname);
 		System.out.println(usrname);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will open the bargraph screen when pressed
+	 */
 	@Override
 	public void execute(String username,String password) {
 		System.out.println(usrname);

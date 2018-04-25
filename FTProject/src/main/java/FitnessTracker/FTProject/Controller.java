@@ -12,26 +12,36 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This Class will control the opening page of the Application 
+ *
+ */
 public class Controller {
 	@FXML
 	public TextField usrname;
 	@FXML
 	public PasswordField pass;
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the users pressing of the button
+	 * @throws IOException
+	 * This method will let the user register themself into the database 
+	 */
 	public void pressSignUp(ActionEvent action) throws IOException {
-		Parent root;
-        
-        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
-		root = FXMLLoader.load(getClass().getResource("signup.fxml"));
-		
-        Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
-        stage.setScene(new Scene(root, 339, 409));
-        stage.show();
-        // Hide this current window (if this is what you want)
-         ((Node)(action.getSource())).getScene().getWindow().hide();
+		RegisterUserController r = new RegisterUserController();
+		r.execute(usrname.getText(), pass.getText());
+        ((Node)(action.getSource())).getScene().getWindow().hide();
+
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will allow the user to sign into the application 
+	 */
 	public void pressSignIn(ActionEvent action) throws SQLException, IOException {
 		/*
 		

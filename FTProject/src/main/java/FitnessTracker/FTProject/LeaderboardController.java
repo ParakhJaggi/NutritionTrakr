@@ -11,7 +11,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Pair;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will control the leaderboard screen
+ *
+ */
 public class LeaderboardController implements Command {
 	@FXML
 	private Label number;
@@ -53,7 +58,10 @@ public class LeaderboardController implements Command {
 	private Label number10;
 	@FXML
 	private Label user10;
-	
+	/**
+	 * This method will initialize the table of users
+	 * @throws SQLException
+	 */
 	@FXML
     public void initialize() throws SQLException{
 		DatabaseGateway d = new DatabaseGateway();
@@ -92,7 +100,12 @@ public class LeaderboardController implements Command {
 
 		
 	}
-
+	/**
+	 * @author ParakhJaggi
+	 * @param username-the users username
+	 * @param password-the users username
+	 * This method will read the fxml file
+	 */
 	@Override
 	public void execute(String username,String password) {
 		

@@ -10,7 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * THis class will manage the Score screen 
+ *
+ */
 public class MyScoreController implements Command{
 
 	
@@ -29,7 +34,11 @@ public class MyScoreController implements Command{
 	@FXML 
 	public Label BodyFat;
 	
-	
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This meathod will show the score when the button is hit 
+	 */
 	@FXML
 	public void buttonhit() throws SQLException {
 		User usr = null;
@@ -42,7 +51,12 @@ public class MyScoreController implements Command{
 		BodyFat.setText(String.valueOf(usr.calculateBFNavyMethod()));
 		
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will keep the users credentials 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
@@ -50,6 +64,12 @@ public class MyScoreController implements Command{
 		System.out.println(usrname);
 	}
 
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will load the fxml file 
+	 */
 	@Override
 	public void execute(String username,String password) {
 		System.out.println(usrname);

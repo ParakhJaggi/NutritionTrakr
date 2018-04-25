@@ -16,7 +16,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will control the goal screen
+ *
+ */
 public class GoalsController implements Command{
 	@FXML
 	public String usrname;
@@ -56,7 +61,11 @@ public class GoalsController implements Command{
 	public Button RemoveGoal;
 	
 	
-	
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will start the Goals list 
+	 */
 	@FXML
 	private void start() throws SQLException {
 		
@@ -125,13 +134,14 @@ public class GoalsController implements Command{
 			
 		}
 		
-	
-
-		
-		
-		
 		
 	}
+	
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will update the choicebox when a new goal is added
+	 */
 	@FXML
 	private void update() throws SQLException {
 		
@@ -206,6 +216,11 @@ public class GoalsController implements Command{
 		
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will remove a goal if the user doesnt want it
+	 */
 	@FXML
 	public void removeGoal() throws SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
@@ -281,7 +296,10 @@ public class GoalsController implements Command{
 		
 	
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * This method will use Memento to undo a goal 
+	 */
 	@FXML
 	public void restoreGoal() {
 		DatabaseGateway d = DatabaseGateway.getInstance();
@@ -293,6 +311,11 @@ public class GoalsController implements Command{
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will add a goal if a user wants to 
+	 */
 	@FXML
 	public void addGoal() throws SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
@@ -363,6 +386,12 @@ public class GoalsController implements Command{
 		
 	
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param previous
+	 * @throws SQLException
+	 * This method will add a goal if a user has a specific string to add 
+	 */
 	public void addGoal(String previous) throws SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
@@ -431,12 +460,24 @@ public class GoalsController implements Command{
 		}
 	
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will keep track of the Users email and password 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	    System.out.println(usrname);
 		System.out.println(usrname);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will load the fxml file 
+	 */
 	@Override
 	public void execute(String username,String password) {
 		System.out.println(usrname);

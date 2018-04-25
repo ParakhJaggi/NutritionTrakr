@@ -1,21 +1,36 @@
 package FitnessTracker.FTProject;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class is using memento to get the deleted goals back 
+ *
+ */
 public class PreviousGoals {
 	 private String state;
-	  
+	    /**
+	     * @author ParakhJaggi
+	     * @param state-the state of the object 
+	     * This method will set the state of the object 
+	     */
 	    public void setState(String state) {
-	        System.out.println("Originator: Setting state to " + state);
 	        this.state = state;
 	    }
-
+	    /**
+	     * @author ParakhJaggi
+	     * @return UndoListMemento-the memento object
+	     * This method will let the user set the memento string 
+	     */
 	    public UndoListMemento save() {
-	        System.out.println("Originator: Saving to Memento.");
 	        return new UndoListMemento(state);
 	    }
+	    /**
+	     * @author ParakhJaggi
+	     * @param m
+	     * This method will restore the last deleted goal 
+	     */
 	    public void restore(UndoListMemento m) {
 	    	
 	        state = m.getState();
-	        System.out.println("Originator: State after restoring from Memento: " + state);
 	    }
 
 }

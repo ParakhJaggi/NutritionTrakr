@@ -11,13 +11,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * 
+ * @author ParakhJaggi
+ * This is the heart of the APP, everything starts here 
  *
  */
 public class App extends Application  
 {
     
-
+	/**
+	 * @author ParakhJaggi
+	 * @param primaryStage-the appllication to open 
+	 * The method will all start here after launch is called
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
@@ -29,6 +35,12 @@ public class App extends Application
          primaryStage.show();
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param args
+	 * @throws SQLException
+	 * The main method of the APP
+	 */
 	public static void main( String[] args ) throws SQLException
     {
 		DatabaseGateway d = DatabaseGateway.getInstance();

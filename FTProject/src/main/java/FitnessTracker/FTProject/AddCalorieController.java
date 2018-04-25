@@ -21,7 +21,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will control the add calorie page 
+ */
 public class AddCalorieController implements Command {
 	private Boolean bool = true;
 	@FXML
@@ -51,11 +55,23 @@ public class AddCalorieController implements Command {
 	
 	
 	private User usr;
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @return void
+	 * This method will stop the choice box from reloading 
+	 */
 	@FXML
 	public void stop(MouseEvent action) {
 		bool = true;
 		System.out.println(bool);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @throws SQLException
+	 * This method will show the lists of available foods and categories in the choice boxes
+	 */
 	@FXML
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
@@ -85,6 +101,12 @@ public class AddCalorieController implements Command {
 		}
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the users action with the button
+	 * @throws SQLException
+	 * This method will update the choicebox when the mouse moves 
+	 */
 	@FXML
 	public void moving(MouseEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
@@ -108,6 +130,12 @@ public class AddCalorieController implements Command {
 		}
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws NumberFormatException
+	 * @throws SQLException
+	 * This Method will add a user typed food to the dataBase
+	 */
 	@FXML
 	public void pressAddFood() throws NumberFormatException, SQLException {
 		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
@@ -136,6 +164,12 @@ public class AddCalorieController implements Command {
 		}
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the users action with the button
+	 * @throws SQLException
+	 * This Method will add the amount of calories eaten to the database
+	 */
 	@FXML
 	public void addCalorie(ActionEvent action) throws SQLException {
 		DatabaseGateway d;
@@ -152,18 +186,36 @@ public class AddCalorieController implements Command {
          
 
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * @return void
+	 * This Method will initialize the choicebox to have categories
+	 */
 	@FXML
 	private void initialize() {
 		Catagory.setValue("Protein");
 		Catagory.setItems(CategoryList);
 		
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param email-the users email
+	 * @param pass-the users password
+	 * @return void 
+	 * This Method will 
+	 * 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	}
+	
+	
+	/**
+	 * @author ParakhJaggi
+	 * @param usrname-the users email
+	 * @param pass-the users password
+	 */
 	@Override
 	public void execute(String username,String password) {
 		// TODO Auto-generated method stub

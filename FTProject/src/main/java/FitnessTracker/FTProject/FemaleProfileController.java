@@ -28,7 +28,11 @@ public class FemaleProfileController implements Command {
 	public TextField hipMeasurement;
 	
 	String usrname,pass;
-	
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * This method will load stats when the button is hit 
+	 */
 	@FXML 
 	public void buttonhit() throws SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
@@ -70,10 +74,22 @@ public class FemaleProfileController implements Command {
 		
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will make sure the controller has the users credentials 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param usrname-the users email
+	 * @param password-the users password
+	 * This method will execute and open up the FemailProfileCHanger 
+	 */
 	@Override
 	public void execute(String username,String password) {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FemaleProfileChanger.fxml"));  

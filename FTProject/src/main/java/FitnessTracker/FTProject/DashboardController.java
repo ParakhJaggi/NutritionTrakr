@@ -18,14 +18,24 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will control the home screen of the APP
+ *
+ */
 public class DashboardController  {
 //test
 
 	public String usrname;
 	
 	public String pass;
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @throws IOException
+	 * This method will update the number of calories a food has  
+	 */
 	@FXML
 	private void UpdateCalories(ActionEvent action) throws IOException {
 		System.out.println(usrname);
@@ -35,33 +45,60 @@ public class DashboardController  {
 		controller.execute(usrname,pass);
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will calculate the users score
+	 */
 	@FXML
 	public void getScore() throws SQLException, IOException {
 		MyScoreController c = new MyScoreController();
 		c.execute(usrname, pass);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @throws IOException
+	 * This method will update the exercise choicebox 
+	 */
 	@FXML
 	private void UpdateExercise(ActionEvent action) throws IOException {
 		AddExerciseController e = new AddExerciseController();
 		e.execute(usrname, pass);
 		
 	}
-	@FXML
-	private void initialize() {
-		
-	}
+	
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will allow the controller to keep the users credentials 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	    
 	    
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will open up the graph screen 
+	 */
 	@FXML
 	public void getGraph() throws SQLException, IOException {
 		BarGraphController b = new BarGraphController();
 		b.execute(usrname, pass);
 
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will open the leaderboard screen
+	 */
 	@FXML
 	public void getLeaderboard() throws SQLException, IOException {
 		LeaderboardController l = new LeaderboardController();
@@ -70,17 +107,34 @@ public class DashboardController  {
 		
 
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will open the goals screen 
+	 */
 	@FXML
 	public void getGoals() throws SQLException, IOException {
 		GoalsController g = new GoalsController();
 		g.execute(usrname, pass);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws IOException
+	 * This method will open the aboutus screen
+	 */
 	@FXML
 	public void getAboutUs() throws IOException{
 		
 		AboutUsController a = new AboutUsController();
 		a.execute(usrname, pass);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will open up the my profile screen
+	 */
 	@FXML
 	public void getProfile() throws SQLException, IOException {
 		

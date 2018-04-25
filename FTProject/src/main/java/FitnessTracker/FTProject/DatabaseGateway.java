@@ -13,7 +13,7 @@ import FitnessTracker.Exceptions.UserAlreadyInDatabaseException;
 import FitnessTracker.Exceptions.UserNotFoundException;
 
 
-/*
+/**
  * @author Garth Terlizzi III
  * This class is a fabricated gateway to all database functions
  */
@@ -23,12 +23,12 @@ public class DatabaseGateway {
 	private static final String DB_USER = "";
 	private static final String DB_PASSWORD = "";
 	private static DatabaseGateway instance = null;
-	/*
+	/**
 	 * @author Garth Terlizzi
 	 * Database constructor, exists only to defeat instantiation.
 	 */
     protected DatabaseGateway() { }
-    /*
+    /**
      * @author Garth Terlizzi
      * @return DatabaseGateway instance, core of the singleton
      * Returns the instance
@@ -40,7 +40,7 @@ public class DatabaseGateway {
 	      return instance;
 	   }
 
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param id- The id of the user that owns the goal
 	 * @param goal- The goal of the user in string format
@@ -64,7 +64,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param id- The id of the user that owns the goal
 	 * @param goal- The goal of the user in string format
@@ -88,7 +88,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The ID of the user
 	 * @return An arrayList of goals that belong to the user
@@ -121,7 +121,7 @@ public class DatabaseGateway {
 		}
 		return myGoals;
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The food name
 	 * @param The category the specific food belongs to
@@ -147,7 +147,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The food name
 	 * @param The category the specific food belongs to
@@ -173,7 +173,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The food name
 	 * @return The food associated with the name, loaded with category calories
@@ -206,7 +206,7 @@ public class DatabaseGateway {
 		}
 		return f;
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The exercise name
 	 * @return The exercise associated with the name, loaded with category calories
@@ -240,7 +240,7 @@ public class DatabaseGateway {
 		return ex;
 	}
 	
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The food name
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -263,7 +263,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The category name
 	 * @return An ArrayList with all foods associated from the category
@@ -296,7 +296,7 @@ public class DatabaseGateway {
 		}
 		return myList;
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The exercise name
 	 * @return An ArrayList with all exercise associated from the category
@@ -330,7 +330,7 @@ public class DatabaseGateway {
 		return myList;
 	}
 	
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The name of the food
 	 * @param The new amount of calories the food should have
@@ -354,7 +354,7 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The name of the exercise
 	 * @param The new amount of calories the food should have
@@ -378,7 +378,7 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
 	 * @param The new amount of calories the food should have
@@ -406,7 +406,7 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -432,7 +432,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -455,7 +455,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The email of the user
 	 * @param The password of the user
@@ -516,7 +516,7 @@ public class DatabaseGateway {
 		return userLoader;
 	}
 	
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The id of the user
 	 * @param The height,weight,neck, waist, and hip that can be updated by the values
@@ -562,7 +562,7 @@ public class DatabaseGateway {
 		}
 	}
 	
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The user
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -596,7 +596,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @param The email of the user
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -619,7 +619,7 @@ public class DatabaseGateway {
 				dbConnection.close();
 		}
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @return An ArrayList
 	 * @throws A SQL Exception if there is an error in accessing the Database
@@ -658,7 +658,7 @@ public class DatabaseGateway {
 		}
 		return myList;
 	}
-	/*
+	/**
 	 * @author Garth Terlizzi III
 	 * @return The connection from the database
 	 * Deletes the user from the database, used for mainly testing purposes.

@@ -16,7 +16,12 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will manage the register page 
+ *
+ */
 public class RegisterUserController implements Command {
 	@FXML
 	public ChoiceBox<String> genderbox;
@@ -40,7 +45,13 @@ public class RegisterUserController implements Command {
 	public TextField firstname;
 	@FXML
 	public TextField lastname;
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the user hitting the button 
+	 * @throws SQLException
+	 * @throws IOException
+	 * This method will allow the user to register into the database when the button is clicked 
+	 */
 	@FXML 
 	private void PressRegister(ActionEvent action) throws SQLException, IOException {
 		User usr;
@@ -77,14 +88,34 @@ public class RegisterUserController implements Command {
 
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * This method will load the choiceboxes 
+	 */
 	@FXML
 	private void initialize() {
 		genderbox.setValue("Male");
 		genderbox.setItems(GenderList);
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will keep the users credentials 
+	 */
 	@Override
 	public void execute(String usernmae,String password) {
-		// TODO Auto-generated method stub
+Parent root;
+        
+        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
+		root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+		
+        Stage stage = new Stage();
+        stage.setTitle("My New Stage Title");
+        stage.setScene(new Scene(root, 339, 409));
+        stage.show();
+        // Hide this current window (if this is what you want)
+         ((Node)(action.getSource())).getScene().getWindow().hide();
 		
 	}
 

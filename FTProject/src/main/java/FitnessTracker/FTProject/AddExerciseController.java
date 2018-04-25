@@ -21,7 +21,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * This class will control the adding exercise screen
+ *
+ */
 public class AddExerciseController implements Command {
 	
 	public String usrname;
@@ -49,6 +54,11 @@ public class AddExerciseController implements Command {
 	
 	
 	private User usr;
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the users interaction with the choicebox
+	 * @throws SQLException
+	 */
 	@FXML
 	public void pressChoiceBox(MouseEvent action) throws SQLException {
 	
@@ -78,6 +88,12 @@ public class AddExerciseController implements Command {
 		}
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @throws NumberFormatException
+	 * @throws SQLException
+	 * This method adds an excercise to the database
+	 */
 	@FXML
 	public void pressAddExcersice() throws NumberFormatException, SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
@@ -94,6 +110,12 @@ public class AddExerciseController implements Command {
 		ExerciseChoice.setItems(ExerciseList);
 		
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param action
+	 * @throws SQLException
+	 * This method will subtract calories
+	 */
 	@FXML
 	public void SubtractCalorie(ActionEvent action) throws SQLException {
 		DatabaseGateway d;
@@ -110,7 +132,10 @@ public class AddExerciseController implements Command {
         ((Node)(action.getSource())).getScene().getWindow().hide();
         System.out.println(usrname+pass);
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * This method will initialize the choicebox 
+	 */
 	@FXML
 	private void initialize() {
 		Catagory.setValue("Cardio");
@@ -118,11 +143,21 @@ public class AddExerciseController implements Command {
 		
 		
 	}
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param email-the users email
+	 * @param pass-the users pass
+	 * This method will make sure the controller still has the users login credentials
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param username-the users email
+	 * @param password-the users password
+	 */
 	@Override
 	public void execute(String username,String password) {
 		System.out.println(usrname);

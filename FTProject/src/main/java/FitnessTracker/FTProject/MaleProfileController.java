@@ -16,7 +16,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author ParakhJaggi
+ * THis class will Control the MalePRofile Screen
+ *
+ */
 public class MaleProfileController implements Command {
 	@FXML
 	public Button registerButton;
@@ -29,7 +34,12 @@ public class MaleProfileController implements Command {
 	@FXML
 	public TextField neckMeasurement;
 	String usrname,pass;
-	
+	/**
+	 * @author ParakhJaggi
+	 * @param action-the event of pressing the button 
+	 * @throws SQLException
+	 * This method will edit the profile when the button is hit 
+	 */
 	@FXML 
 	public void buttonhit(ActionEvent action) throws SQLException {
 		final DatabaseGateway d = DatabaseGateway.getInstance();
@@ -111,10 +121,22 @@ public class MaleProfileController implements Command {
         ((Node)(action.getSource())).getScene().getWindow().hide();
 
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will keep the users credentials 
+	 */
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
 	}
+	/**
+	 * @author ParakhJaggi
+	 * @param email
+	 * @param pass
+	 * This method will load the fxml file  
+	 */
 	@Override
 	public void execute(String username,String password) {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MaleProfileChanger.fxml"));  
