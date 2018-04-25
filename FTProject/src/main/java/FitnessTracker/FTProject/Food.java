@@ -1,5 +1,8 @@
 package FitnessTracker.FTProject;
-
+/*
+ * @author Garth Terlizzi III
+ * Basic Food class to retreive database information
+ */
 public class Food {
 	int calories;
 	String category;
