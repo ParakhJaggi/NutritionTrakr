@@ -4,8 +4,8 @@ import java.io.IOException;
 /*
  * @author Garth Terlizzi III
  */
-public class UserNotFoundException extends IOException{
-	public UserNotFoundException(String message) {
+public class ExerciseNotFoundException extends IOException{
+	public ExerciseNotFoundException(String message) {
 		super("message");
 	}
 }
