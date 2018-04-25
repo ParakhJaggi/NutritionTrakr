@@ -2,7 +2,7 @@ package FitnessTracker.FTProject;
 
 import java.util.ArrayList;
 
-public class UndoListMemento {
+public class UndoListMemento extends GoalPrototype {
 	private String state;
 
     public UndoListMemento(String state) {
@@ -11,6 +11,9 @@ public class UndoListMemento {
 
     public String getState() {
         return state;
+    }
+    public GoalPrototype clone() throws CloneNotSupportedException{
+        return (UndoListMemento) super.clone();
     }
 
 }

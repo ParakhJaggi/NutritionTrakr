@@ -13,6 +13,7 @@ public class PreviousGoals {
 	        return new UndoListMemento(state);
 	    }
 	    public void restore(UndoListMemento m) {
+	    	
 	        state = m.getState();
 	        System.out.println("Originator: State after restoring from Memento: " + state);
 	    }
