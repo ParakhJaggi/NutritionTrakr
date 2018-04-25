@@ -105,17 +105,22 @@ public class RegisterUserController implements Command {
 	 */
 	@Override
 	public void execute(String usernmae,String password) {
-Parent root;
+Parent root = null;
         
         //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
-		root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+		try {
+			root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
         Stage stage = new Stage();
         stage.setTitle("My New Stage Title");
         stage.setScene(new Scene(root, 339, 409));
         stage.show();
         // Hide this current window (if this is what you want)
-         ((Node)(action.getSource())).getScene().getWindow().hide();
+         
 		
 	}
 
