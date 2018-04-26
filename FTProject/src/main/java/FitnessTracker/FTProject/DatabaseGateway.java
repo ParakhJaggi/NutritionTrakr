@@ -244,12 +244,16 @@ public class DatabaseGateway {
 	 * @author Garth Terlizzi III
 	 * @param The food name
 	 * @throws A SQL Exception if there is an error in accessing the Database
-	 * Deletes a food from the database (Used for testing purposes and database cleanup)
+	 * Deletes a food or exercise from the database (Used for testing purposes and database cleanup)
 	 */
-	public void deleteFood(String name) throws SQLException {
+	public void deleteFoodEx(String name, boolean isFood) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String deleteSQL = "DELETE FROM Foods WHERE Food_name = '"+name+"'";
+		String deleteSQL= null;
+		if (isFood)
+			 deleteSQL = "DELETE FROM Foods WHERE Food_name = '"+name+"'";
+		else
+			 deleteSQL = "DELETE FROM Exercise WHERE Exercise_name = '"+name+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -390,13 +394,22 @@ public class DatabaseGateway {
 	public void addCaloriesToTrackers(int userID, Date d, int calFood, int calEx) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
+		String selectCount= "Select * FROM FITNESS_TRACKER WHERE USER_ID = "+userID+" AND ENTRY_DATE = '"+d+"'";
+		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) "
+				+ "VALUES" + "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
 		String updateTableSQL = "UPDATE FITNESS_TRACKER SET Calories_FROM_FOOD = CALORIES_FROM_FOOD + "
 				+ ""+calFood+ ", CALORIES_FROM_EXERCISE =CALORIES_FROM_EXERCISE + "+calEx+ " WHERE USER_ID = " 
 				+userID+" AND ENTRY_DATE = '"+d+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
-			statement.executeUpdate(updateTableSQL);
+			
+			ResultSet rs=statement.executeQuery(selectCount);
+			if (rs.next()==false)	{
+				statement.executeUpdate(insertTableSQL);
+			}
+			else
+				statement.executeUpdate(updateTableSQL);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
@@ -406,32 +419,7 @@ public class DatabaseGateway {
 				dbConnection.close();	
 		}
 	}
-	/**
-	 * @author Garth Terlizzi III
-	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise
-	 * @throws A SQL Exception if there is an error in accessing the Database
-	 * Adds calories to both trackers.To change one tracker, put a 0 in the tracker you don't want to update
-	 * To change one tracker, put a 0 in the tracker you don't want to update
-	 */
-	public void createTrackerEntry(int userID, Date d, int calFood, int calEx) throws SQLException {
-		Connection dbConnection = null;
-		Statement statement = null;
-		deleteTracker(userID, d);
-		String insertTableSQL = "INSERT INTO FITNESS_TRACKER" + "(USER_ID, ENTRY_DATE, Calories_FROM_FOOD, CALORIES_FROM_EXERCISE) "
-		+ "VALUES" + "("+userID+",'"+d+"',"+calFood+ ","+calEx+")";
-		try {
-			dbConnection = getDBConnection();
-			statement = dbConnection.createStatement();
-			statement.executeUpdate(insertTableSQL);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			if (statement != null) 
-				statement.close();
-			if (dbConnection != null) 
-				dbConnection.close();
-		}
-	}
+	
 	/**
 	 * @author Garth Terlizzi III
 	 * @param The ID of the user, the Date associated with the tracker, The calories of the food, and The calories of the exercise

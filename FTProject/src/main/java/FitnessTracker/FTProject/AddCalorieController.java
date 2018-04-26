@@ -180,7 +180,7 @@ public class AddCalorieController implements Command {
 		Food f = new Food();
 		f = d.retrieveFood(FoodChoice.getValue());
 	
-		d.createTrackerEntry(usr.getUserId(), sqlDate, f.getCalories(), 0);
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,f.getCalories() ,0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
          

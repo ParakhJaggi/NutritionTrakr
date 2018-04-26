@@ -17,9 +17,7 @@ public class MaleUser extends User {
 	      }
 	      return instance;
 	   }
-	   public void clear() {
-	    	instance=null;
-	    }
+	  
 	   
    /*
 	* @author Garth Terlizzi III

@@ -2,6 +2,7 @@ package FitnessTracker.FTProject;
 
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashMap;
 /*
  * @author Garth Terlizzi III
@@ -129,7 +130,20 @@ public abstract class User {
 	 * @return a score that correlates to the Fitness Tracker
 	 */
 	public int getScore() {
-		//Implement later
-		return 50;
+		LocalDate date=LocalDate.now();
+		double exSum=0;
+		for(int i=0;i<30;i++) {
+			exSum= this.getDataPointExerciseMap(Date.valueOf(date));
+			date.minusDays(1);
+		}
+		double foodSum=0;
+		for(int i=0;i<30;i++) {
+			foodSum= this.getDataPointCalorieMap(Date.valueOf(date));
+			date.minusDays(1);
+		}
+		exSum=exSum/15.0;
+		foodSum=foodSum/30.0;
+		double score= 105.0-(foodSum-exSum)/this.calculateBMI();
+		return Math.max(0, (int)(Math.sqrt(score)*10.0));
 	}
 }

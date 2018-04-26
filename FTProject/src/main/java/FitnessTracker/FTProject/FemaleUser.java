@@ -18,9 +18,7 @@ public class FemaleUser extends User {
 	      }
 	      return instance;
 	   }
-    public void clear() {
-    	instance=null;
-    }
+ 
 	public double hipMeasurement;
 	
 	public void setHipMeasurment(double h) {
@@ -40,6 +38,6 @@ public class FemaleUser extends User {
 		*/
 	@Override
 	public double calculateBFNavyMethod() {
-		return 163.205*Math.log10(waistMeasurement+hipMeasurement-neckMeasurement)- 70.041*Math.log10(height)+36.76;
+		return 495 / ( 1.29579 - 0.35004 * Math.log10( waistMeasurement + hipMeasurement - neckMeasurement ) + 0.22100 * Math.log10( height ) ) - 450;
 	}
 }
