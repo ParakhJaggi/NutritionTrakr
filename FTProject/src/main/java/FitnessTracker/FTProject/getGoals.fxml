@@ -11,10 +11,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#update" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
    <children>
-      <ChoiceBox fx:id="Goals" layoutX="73.0" layoutY="84.0" onMouseEntered="#start" prefWidth="150.0" />
+      <ChoiceBox fx:id="Ggals" layoutX="73.0" layoutY="84.0" onMouseEntered="#start" prefWidth="150.0" />
       <TextField fx:id="newGoal" layoutX="260.0" layoutY="91.0" />
-      <Button fx:id="AddGoal" layoutX="323.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoal" text="add" />
-      <Button fx:id="RemoveGoal" layoutX="116.0" layoutY="118.0" mnemonicParsing="false" onAction="#removeGoal" text="remove" />
+      <Button fx:id="addGoal" layoutX="323.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoal" text="add" />
+      <Button fx:id="removeGoal" layoutX="116.0" layoutY="118.0" mnemonicParsing="false" onAction="#removeGoal" text="remove" />
       <Label layoutX="73.0" layoutY="52.0" prefHeight="27.0" prefWidth="187.0" text="Select a Goal to Delete " />
       <Label layoutX="281.0" layoutY="44.0" prefHeight="43.0" prefWidth="167.0" text="Enter a New Goal" />
       <GridPane layoutX="146.0" layoutY="187.0" prefHeight="200.0" prefWidth="309.0">

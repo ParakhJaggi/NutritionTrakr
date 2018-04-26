@@ -2,11 +2,10 @@ package FitnessTracker.FTProject;
 
 import java.sql.SQLException;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
 
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 public class UserTests {
 	private static MaleUser u= MaleUser.getInstance();

@@ -43,24 +43,8 @@ public class Controller {
 	 * This method will allow the user to sign into the application 
 	 */
 	public void pressSignIn(ActionEvent action) throws SQLException, IOException {
-		/*
 		
-		//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
-		Parent root;
-		root = FXMLLoader.load(getClass().getResource("home.fxml"));
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
-
-		Parent root1 = (Parent)fxmlLoader.load();          
-		DashboardController controller = fxmlLoader.<DashboardController>getController();
-		controller.setUser(usrname.getText().toString(), pass.getText().toString());
-        Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
-        stage.setScene(new Scene(root, 1091, 713));
-        stage.show();
-        // Hide this current window (if this is what you want)
-         ((Node)(action.getSource())).getScene().getWindow().hide();
-        */
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
 
 		Parent root = (Parent)fxmlLoader.load();          
 		DashboardController controller = fxmlLoader.<DashboardController>getController();

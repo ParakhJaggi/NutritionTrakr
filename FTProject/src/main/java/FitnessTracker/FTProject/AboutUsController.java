@@ -23,13 +23,12 @@ public class AboutUsController implements Command {
 	 */
 	@Override
 	public void execute(String username, String password) {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
 		
@@ -38,7 +37,6 @@ public class AboutUsController implements Command {
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 		
 	}

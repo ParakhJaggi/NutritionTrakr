@@ -1,6 +1,5 @@
 package FitnessTracker.FTProject;
 
-import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -44,7 +43,7 @@ public class MaleProfileController implements Command {
 	public void buttonhit(ActionEvent action) throws SQLException {
 		final DatabaseGateway d = DatabaseGateway.getInstance();
 		final User usr;
-		usr = d.LoadUser(usrname, pass);
+		usr = d.loadUser(usrname, pass);
 		
 		UpdateUser u = new UpdateUser();
 		
@@ -90,34 +89,7 @@ public class MaleProfileController implements Command {
         });
 		u.doNotify();
 		
-		/*int Height,Weight;
-		double Neck,Waist;
-		if(height.getText().isEmpty()) {
-			Height = (Integer) null;
-		}
-		else {
-			Height = Integer.parseInt(height.getText());
-		}
-		if(weight.getText().isEmpty()) {
-			Weight = (Integer) null;
-		}
-		else {
-			Weight = Integer.parseInt(weight.getText());
-		}
-		if(waistMeasurement.getText().isEmpty()) {
-			Waist = (Double) null;
-		}
-		else {
-			Waist = Double.parseDouble(waistMeasurement.getText());
-		}
-		if(neckMeasurement.getText().isEmpty()) {
-			Neck = (Double) null;
-		}
-		else {
-			Neck = Double.parseDouble(neckMeasurement.getText());
-		}
-		d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, null);
-		*/
+
         ((Node)(action.getSource())).getScene().getWindow().hide();
 
 	}
@@ -133,18 +105,17 @@ public class MaleProfileController implements Command {
 	}
 	/**
 	 * @author ParakhJaggi
-	 * @param email
-	 * @param pass
+	 * @param username
+	 * @param password
 	 * This method will load the fxml file  
 	 */
 	@Override
 	public void execute(String username,String password) {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MaleProfileChanger.fxml"));  
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MaleProfileChanger.fxml"));
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
 		MaleProfileController controller = fxmlLoader.<MaleProfileController>getController();

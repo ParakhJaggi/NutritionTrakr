@@ -73,11 +73,20 @@ public class RegisterUserController implements Command {
 		usr.setPassword(password.getText());
 		usr.setWaistMeasurment(Double.parseDouble(waistMeasurement.getText()));
 		usr.setWeight(Double.parseDouble(weight.getText()));
-		//usr.setUserId(i);
 		
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(email.getText())&&!checker.checkString(firstname.getText())
+				&&!checker.checkString(lastname.getText())&&!checker.checkString(height.getText())
+				&&!checker.checkString(neckMeasurement.getText())&&!checker.checkString(password.getText())
+				&&!checker.checkString(waistMeasurement.getText())&&!checker.checkString(weight.getText())) {
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
+		  
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		d.registrationHelper(usr);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
 
 		Parent root = (Parent)fxmlLoader.load();          
 		DashboardController controller = fxmlLoader.<DashboardController>getController();
@@ -110,11 +119,9 @@ public class RegisterUserController implements Command {
 	public void execute(String usernmae,String password) {
 Parent root = null;
         
-        //root = FXMLLoader.load(getClass().getClassLoader().getResource("signup.fxml"));
 		try {
 			root = FXMLLoader.load(getClass().getResource("signup.fxml"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -122,7 +129,6 @@ Parent root = null;
         stage.setTitle("My New Stage Title");
         stage.setScene(new Scene(root, 339, 409));
         stage.show();
-        // Hide this current window (if this is what you want)
          
 		
 	}

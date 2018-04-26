@@ -24,15 +24,15 @@ public class MyScoreController implements Command{
 	
 	public String pass;
 	@FXML
-	public Label Score;
+	public Label score;
 	@FXML 
 	public Button button; 
 	
 	@FXML
-	public Label BMI;
+	public Label bmi;
 	
 	@FXML 
-	public Label BodyFat;
+	public Label bodyFat;
 	
 	/**
 	 * @author ParakhJaggi
@@ -43,12 +43,12 @@ public class MyScoreController implements Command{
 	public void buttonhit() throws SQLException {
 		User usr = null;
 		DatabaseGateway d = DatabaseGateway.getInstance();
-		usr = d.LoadUser(usrname, pass);
+		usr = d.loadUser(usrname, pass);
 		d.updateFitnessScore(usrname, usr.getScore());
-		Score.setText(String.valueOf(usr.getScore()));
+		score.setText(String.valueOf(usr.getScore()));
 		
-		BMI.setText(String.valueOf(usr.calculateBMI()));
-		BodyFat.setText(String.valueOf(usr.calculateBFNavyMethod()));
+		bmi.setText(String.valueOf(usr.calculateBMI()));
+		bodyFat.setText(String.valueOf(usr.calculateBFNavyMethod()));
 		
 	}
 	/**
@@ -74,13 +74,12 @@ public class MyScoreController implements Command{
 	public void execute(String username,String password) {
 		System.out.println(usrname);
 		System.out.println(pass);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getScore.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("getScore.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
 		MyScoreController controller = fxmlLoader.<MyScoreController>getController();
@@ -90,7 +89,6 @@ public class MyScoreController implements Command{
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 	}
 }

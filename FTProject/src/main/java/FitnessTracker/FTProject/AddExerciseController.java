@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 /**
@@ -65,14 +64,13 @@ public class AddExerciseController implements Command {
 		DatabaseGateway d = DatabaseGateway.getInstance();
 
 		String catagory = Catagory.getValue();
-		System.out.println(usrname);
-		System.out.println(usrname);
+		
 		
 		ListFactory factory = new ListFactory();
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp = d.DisplayExerciseFromCategory(catagory);
+		temp = d.displayExerciseFromCategory(catagory);
 		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		System.out.println(temp.toString());
@@ -105,7 +103,7 @@ public class AddExerciseController implements Command {
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp = d.DisplayExerciseFromCategory(catagory);
+		temp = d.displayExerciseFromCategory(catagory);
 		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		
@@ -117,17 +115,15 @@ public class AddExerciseController implements Command {
 	 * This method will subtract calories
 	 */
 	@FXML
-	public void SubtractCalorie(ActionEvent action) throws SQLException {
+	public void subtractCalorie(ActionEvent action) throws SQLException {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
-		usr = d.LoadUser(usrname, pass);
+		usr = d.loadUser(usrname, pass);
 		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-		Exercise f = new Exercise();
-		f = d.retrieveExercise(ExerciseChoice.getValue());
-	
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , f.getCalories());
+
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , d.retrieveExercise(ExerciseChoice.getValue()).getCalories());
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
         System.out.println(usrname+pass);
@@ -160,16 +156,14 @@ public class AddExerciseController implements Command {
 	 */
 	@Override
 	public void execute(String username,String password) {
-		System.out.println(usrname);
-		System.out.println(usrname);
+		
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
 		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
@@ -179,7 +173,6 @@ public class AddExerciseController implements Command {
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();		
 	}
 
 	

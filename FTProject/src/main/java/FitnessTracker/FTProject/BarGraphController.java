@@ -1,16 +1,13 @@
 package FitnessTracker.FTProject;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -34,11 +31,11 @@ public class BarGraphController implements Command{
 	
 	public String pass;
 	@FXML
-	public BarChart<String,Number> CalorieChart;
+	public BarChart<String,Number> calorieChart;
 	@FXML
-	public CategoryAxis Xaxis;
+	public CategoryAxis xaxis;
 	@FXML
-	public NumberAxis Yaxis;
+	public NumberAxis yaxis;
 	/**
 	 * @author ParakhJaggi
 	 * This method will produce the graph 
@@ -51,15 +48,13 @@ public class BarGraphController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User user = null;
 		try {
-			user = d.LoadUser(usrname,pass);
+			user = d.loadUser(usrname,pass);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println(user.user_id);
-		CalorieChart.setTitle("FITNESS");
-        CalorieChart.setCategoryGap(0);
-        CalorieChart.setBarGap(-20);
+		calorieChart.setTitle("FITNESS");
+        calorieChart.setCategoryGap(0);
+        calorieChart.setBarGap(-20);
 		
 		ArrayList<XYChart.Series> list= new ArrayList<XYChart.Series>();
         LocalDate date= LocalDate.now().minusDays(30);
@@ -77,20 +72,15 @@ public class BarGraphController implements Command{
         
         for(int x =0; x<list.size();x++) {
         	
-        	CalorieChart.getData().addAll(list.get(x));
+        	calorieChart.getData().addAll(list.get(x));
         }
        
         
-       CalorieChart.setLegendVisible(false);
+       calorieChart.setLegendVisible(false);
         
 		
         
-        /*
         
-		XYChart.Series series1 = new XYChart.Series<>();
-		series1.getData().add(new XYChart.Data("James",5000));
-		CalorieChart.getData().addAll(series1);
-		*/
 		
 	}
 	/**
@@ -128,13 +118,12 @@ public class BarGraphController implements Command{
 	public void execute(String username,String password) {
 		System.out.println(usrname);
 		System.out.println(usrname);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bargraph.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bargraph.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
 		BarGraphController controller = fxmlLoader.<BarGraphController>getController();
@@ -144,7 +133,6 @@ public class BarGraphController implements Command{
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 		
 		

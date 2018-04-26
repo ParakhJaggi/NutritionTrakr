@@ -274,7 +274,7 @@ public class DatabaseGateway {
 	 * @throws A SQL Exception if there is an error in accessing the Database
 	 * Shows all food in a given category
 	 */
-	public ArrayList<String> DisplayFoodFromCategory(String cat) throws SQLException{
+	public ArrayList<String> displayFoodFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
 		String selectTableSQL = "SELECT * FROM Foods WHERE CATEGORY_NAME = '"+cat+"'";
@@ -307,7 +307,7 @@ public class DatabaseGateway {
 	 * @throws A SQL Exception if there is an error in accessing the Database
 	 * Shows all exercise in a given category
 	 */
-	public ArrayList<String> DisplayExerciseFromCategory(String cat) throws SQLException{
+	public ArrayList<String> displayExerciseFromCategory(String cat) throws SQLException{
 		Connection dbConnection = null;
 		Statement statement = null;
 		String selectTableSQL = "SELECT * FROM Exercise WHERE CATEGORY_NAME = '"+cat+"'";
@@ -451,7 +451,7 @@ public class DatabaseGateway {
 	 * @throws A SQL Exception if there is an error in accessing the Database
 	 * Loads a user from the database
 	 */
-	public User LoadUser(String email, String password) throws SQLException{
+	public User loadUser(String email, String password) throws SQLException{
 		User userLoader=null;
 		Connection dbConnection = null;
 		Statement statement = null;

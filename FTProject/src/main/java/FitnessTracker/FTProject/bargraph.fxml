@@ -8,12 +8,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.BarGraphController">
    <children>
-      <BarChart fx:id="CalorieChart" layoutX="27.0" layoutY="60.0" prefHeight="500.0" prefWidth="700.0">
+      <BarChart fx:id="calorieChart" layoutX="27.0" layoutY="60.0" prefHeight="500.0" prefWidth="700.0">
         <xAxis>
-          <CategoryAxis fx:id="Xaxis" animated="false" label="Date" side="BOTTOM" />
+          <CategoryAxis fx:id="xaxis" animated="false" label="Date" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="Yaxis" label="Calories" side="LEFT" />
+          <NumberAxis fx:id="yaxis" label="Calories" side="LEFT" />
         </yAxis>
       </BarChart>
       <Button layoutX="74.0" layoutY="33.0" mnemonicParsing="false" onAction="#getgraph" text="Button" />

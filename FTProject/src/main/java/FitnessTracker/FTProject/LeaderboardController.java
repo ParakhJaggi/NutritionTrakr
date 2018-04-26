@@ -67,29 +67,27 @@ public class LeaderboardController implements Command {
 		DatabaseGateway d = new DatabaseGateway();
 		d = d.getInstance();
 		
-		ArrayList<Pair<String,Integer>> leaderboard = new ArrayList<Pair<String,Integer>>();
-		leaderboard = d.getTopTenLeaderBoard();
-		user.setText(String.valueOf(leaderboard.get(0).getKey()));
-		user2.setText(String.valueOf(leaderboard.get(1).getKey()));
-		user3.setText(String.valueOf(leaderboard.get(2).getKey()));
-		user4.setText(String.valueOf(leaderboard.get(3).getKey()));
-		user5.setText(String.valueOf(leaderboard.get(4).getKey()));
-		user6.setText(String.valueOf(leaderboard.get(5).getKey()));
-		user7.setText(String.valueOf(leaderboard.get(6).getKey()));
-		user8.setText(String.valueOf(leaderboard.get(7).getKey()));
-		user9.setText(String.valueOf(leaderboard.get(8).getKey()));
-		user10.setText(String.valueOf(leaderboard.get(9).getKey()));
+		user.setText(String.valueOf(d.getTopTenLeaderBoard().get(0).getKey()));
+		user2.setText(String.valueOf(d.getTopTenLeaderBoard().get(1).getKey()));
+		user3.setText(String.valueOf(d.getTopTenLeaderBoard().get(2).getKey()));
+		user4.setText(String.valueOf(d.getTopTenLeaderBoard().get(3).getKey()));
+		user5.setText(String.valueOf(d.getTopTenLeaderBoard().get(4).getKey()));
+		user6.setText(String.valueOf(d.getTopTenLeaderBoard().get(5).getKey()));
+		user7.setText(String.valueOf(d.getTopTenLeaderBoard().get(6).getKey()));
+		user8.setText(String.valueOf(d.getTopTenLeaderBoard().get(7).getKey()));
+		user9.setText(String.valueOf(d.getTopTenLeaderBoard().get(8).getKey()));
+		user10.setText(String.valueOf(d.getTopTenLeaderBoard().get(9).getKey()));
 		
-		number.setText(String.valueOf(leaderboard.get(0).getValue()));
-		number2.setText(String.valueOf(leaderboard.get(1).getValue()));
-		number3.setText(String.valueOf(leaderboard.get(2).getValue()));
-		number4.setText(String.valueOf(leaderboard.get(3).getValue()));
-		number5.setText(String.valueOf(leaderboard.get(4).getValue()));
-		number6.setText(String.valueOf(leaderboard.get(5).getValue()));
-		number7.setText(String.valueOf(leaderboard.get(6).getValue()));
-		number8.setText(String.valueOf(leaderboard.get(7).getValue()));
-		number9.setText(String.valueOf(leaderboard.get(8).getValue()));
-		number10.setText(String.valueOf(leaderboard.get(9).getValue()));
+		number.setText(String.valueOf(d.getTopTenLeaderBoard().get(0).getValue()));
+		number2.setText(String.valueOf(d.getTopTenLeaderBoard().get(1).getValue()));
+		number3.setText(String.valueOf(d.getTopTenLeaderBoard().get(2).getValue()));
+		number4.setText(String.valueOf(d.getTopTenLeaderBoard().get(3).getValue()));
+		number5.setText(String.valueOf(d.getTopTenLeaderBoard().get(4).getValue()));
+		number6.setText(String.valueOf(d.getTopTenLeaderBoard().get(5).getValue()));
+		number7.setText(String.valueOf(d.getTopTenLeaderBoard().get(6).getValue()));
+		number8.setText(String.valueOf(d.getTopTenLeaderBoard().get(7).getValue()));
+		number9.setText(String.valueOf(d.getTopTenLeaderBoard().get(8).getValue()));
+		number10.setText(String.valueOf(d.getTopTenLeaderBoard().get(9).getValue()));
 
 
 
@@ -110,23 +108,20 @@ public class LeaderboardController implements Command {
 	@Override
 	public void execute(String username,String password) {
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leaderboard.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leaderboard.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
-		//BarGraphController controller = fxmlLoader.<BarGraphController>getController();
-		//controller.setUser(usrname.toString(), pass.toString());	
+			
 		Scene scene = new Scene(root); 
 		Stage stage = new Stage();
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
 				
 	}
 

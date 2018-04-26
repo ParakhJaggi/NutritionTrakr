@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 /**
@@ -80,7 +79,7 @@ public class AddCalorieController implements Command {
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp =d.DisplayFoodFromCategory(catagory);
+		temp =d.displayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 		
@@ -114,7 +113,7 @@ public class AddCalorieController implements Command {
 		ListFactory factory = new ListFactory();
 		
 		ArrayList<String> temp = factory.createArray();
-	    temp = d.DisplayFoodFromCategory(catagory);
+	    temp = d.displayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 		
@@ -145,11 +144,11 @@ public class AddCalorieController implements Command {
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp = d.DisplayFoodFromCategory(catagory);
+		temp = d.displayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(temp);
 		FoodChoice.setItems(FoodList);
 
-		FoodList = FXCollections.observableArrayList(d.DisplayFoodFromCategory(catagory));
+		FoodList = FXCollections.observableArrayList(d.displayFoodFromCategory(catagory));
 		FoodChoice.setItems(FoodList);
 		
 		if(temp.size()>0) {
@@ -174,13 +173,12 @@ public class AddCalorieController implements Command {
 	public void addCalorie(ActionEvent action) throws SQLException {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
-		usr = d.LoadUser(usrname, pass);
+		usr = d.loadUser(usrname, pass);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-		Food f = new Food();
-		f = d.retrieveFood(FoodChoice.getValue());
-	
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,f.getCalories() ,0);
+
+
+		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
          
@@ -218,15 +216,13 @@ public class AddCalorieController implements Command {
 	 */
 	@Override
 	public void execute(String username,String password) {
-		// TODO Auto-generated method stub
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddFood.fxml"));     
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddFood.fxml"));
 
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}          
 		
@@ -236,7 +232,6 @@ public class AddCalorieController implements Command {
 		stage.setScene(scene);    
 
 		stage.show();   
-        //((Node)(action.getSource())).getScene().getWindow().hide();
 		
 	}
 

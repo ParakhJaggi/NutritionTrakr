@@ -1,5 +1,7 @@
 package FitnessTracker.FTProject;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.sql.Date;
@@ -10,8 +12,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.junit.FixMethodOrder;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
 
 import FitnessTracker.Exceptions.UserNotFoundException;
@@ -40,7 +42,7 @@ public class DatabaseTest extends TestCase {
 		u.setNeckMeasurment(14);
 		u.setPassword("TestPassword");
 		gateway.registrationHelper(u);
-		u=(MaleUser)gateway.LoadUser("Testy@Test3.test", "TestPassword");
+		u=(MaleUser)gateway.loadUser("Testy@Test3.test", "TestPassword");
 		assert(u.getFirstName().equals("Testy"));
 		assert(u.getLastName().equals("McTestFace"));
 		assert(u.getEmail().equals("Testy@Test3.test"));
@@ -57,7 +59,7 @@ public class DatabaseTest extends TestCase {
 	 */
 	@Test
 	public synchronized void badLoad() throws SQLException {
-		User u=gateway.LoadUser("BAD_LOAD", "USER_NOT_FOUND");
+		User u=gateway.loadUser("BAD_LOAD", "USER_NOT_FOUND");
 		assert(u==null);
 	}
 	/**
@@ -98,7 +100,7 @@ public class DatabaseTest extends TestCase {
 		gateway.addFoodToTable("Test", "TestCategory", 100);
 		gateway.addFoodToTable("Test2", "TestCategory", 101);
 		gateway.addFoodToTable("Test3", "TestCategory", 101);
-		ArrayList<String> myArray=gateway.DisplayFoodFromCategory("TestCategory");
+		ArrayList<String> myArray=gateway.displayFoodFromCategory("TestCategory");
 		assert(myArray.get(0).equals("Test"));
 		assert(myArray.get(1).equals("Test2"));
 		assert(myArray.get(2).equals("Test3"));
@@ -116,7 +118,7 @@ public class DatabaseTest extends TestCase {
 		gateway.addExerciseToTable("Test", "TestCategory", 100);
 		gateway.addExerciseToTable("Test2", "TestCategory", 101);
 		gateway.addExerciseToTable("Test3", "TestCategory", 101);
-		ArrayList<String> myArray=gateway.DisplayExerciseFromCategory("TestCategory");
+		ArrayList<String> myArray=gateway.displayExerciseFromCategory("TestCategory");
 		assert(myArray.get(0).equals("Test"));
 		assert(myArray.get(1).equals("Test2"));
 		assert(myArray.get(2).equals("Test3"));
@@ -174,11 +176,11 @@ public class DatabaseTest extends TestCase {
 		u.setNeckMeasurment(14);
 		u.setPassword("TestPassword");
 		gateway.registrationHelper(u);
-		u=gateway.LoadUser("Testy@Testy.test", "TestPassword");
+		u=gateway.loadUser("Testy@Testy.test", "TestPassword");
 		int originalCal=u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
 		int originalEx=u.getDataPointExerciseMap(Date.valueOf(LocalDate.now()));
 		gateway.addCaloriesToTrackers(u.getUserId(), Date.valueOf(LocalDate.now()), 1, 2);
-		u=gateway.LoadUser("Testy@Testy.test", "TestPassword");
+		u=gateway.loadUser("Testy@Testy.test", "TestPassword");
 		
 		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==originalCal+1);
 		assert(u.getDataPointExerciseMap(Date.valueOf(LocalDate.now()))==originalEx+2);
@@ -198,14 +200,14 @@ public class DatabaseTest extends TestCase {
 		u2.setEmail("Test");
 		u2.setPassword("TestPassword");
 		gateway.registrationHelper(u2);
-		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		u2=(FemaleUser)gateway.loadUser("Test", "TestPassword");
 		gateway.addCaloriesToTrackers(u2.getUserId(), Date.valueOf(LocalDate.now()), 6, 2);
 		int originalCals=u2.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
-		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		u2=(FemaleUser)gateway.loadUser("Test", "TestPassword");
 		int cals=u2.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
 		assert(cals==originalCals+6);
 		gateway.addCaloriesToTrackers(u2.getUserId(),  Date.valueOf(LocalDate.now()), 5, 0);
-		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		u2=(FemaleUser)gateway.loadUser("Test", "TestPassword");
 		cals=u2.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
 		assert(cals==originalCals+11);
 		gateway.deleteUser("Test");//Clean up Database
