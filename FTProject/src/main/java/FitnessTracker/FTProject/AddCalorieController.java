@@ -196,7 +196,7 @@ public class AddCalorieController implements Command {
 		usr = d.loadUser(usrname, pass);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-
+		
 		
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
