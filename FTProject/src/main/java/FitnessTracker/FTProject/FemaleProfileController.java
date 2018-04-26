@@ -3,8 +3,6 @@ package FitnessTracker.FTProject;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Observable;
-import java.util.Observer;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,49 +37,53 @@ public class FemaleProfileController implements Command {
 		final DatabaseGateway d = DatabaseGateway.getInstance();
 		final User usr;
 		usr = d.loadUser(usrname, pass);
-
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(height.getText())&&!checker.checkString(weight.getText())
+				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(waistMeasurement.getText())
+				||!checker.checkString(hipMeasurement.getText())) {
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
 		UpdateUser u = new UpdateUser();
 
-		u.addObserver(new Observer() {
-			public void update(Observable obj, Object arg) {
-                Integer Height;
-                Integer Weight;
-                Double Neck;
-                Double Waist;
-                Double Hip= 0.0;
-                if (height.getText().isEmpty()) {
-                    Height = 0;
-                } else {
-                    Height = Integer.parseInt(height.getText());
-                }
-                if (weight.getText().isEmpty()) {
-                    Weight = 0;
-                } else {
-                    Weight = Integer.parseInt(weight.getText());
-                }
-                if (waistMeasurement.getText().isEmpty()) {
-                    Waist = Double.valueOf(0);
-                } else {
-                    Waist = Double.parseDouble(waistMeasurement.getText());
-                }
-                if (neckMeasurement.getText().isEmpty()) {
-                    Neck = Double.valueOf(0);
-                } else {
-                    Neck = Double.parseDouble(neckMeasurement.getText());
-                }
-                if (hipMeasurement.getText().isEmpty()) {
-                    Neck = Double.valueOf(0);
-                } else {
-                    Hip = Double.parseDouble(hipMeasurement.getText());
-                }
-                try {
-                    d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Hip);
-                } catch (SQLException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-	    });
+		u.addObserver((obj, arg) -> {
+		    Integer Height=0;
+		    Integer Weight=0;
+		    Double Neck=0.0;
+		    Double Waist=0.0;
+		    Double Hip= 0.0;
+		    if (height.getText().isEmpty()) {
+		        Height = 0;
+		    } else {
+		        Height = Integer.parseInt(height.getText());
+		    }
+		    if (weight.getText().isEmpty()) {
+		        Weight = 0;
+		    } else {
+		        Weight = Integer.parseInt(weight.getText());
+		    }
+		    if (waistMeasurement.getText().isEmpty()) {
+		        Waist = Double.valueOf(0);
+		    } else {
+		        Waist = Double.parseDouble(waistMeasurement.getText());
+		    }
+		    if (neckMeasurement.getText().isEmpty()) {
+		        Neck = Double.valueOf(0);
+		    } else {
+		        Neck = Double.parseDouble(neckMeasurement.getText());
+		    }
+		    if (hipMeasurement.getText().isEmpty()) {
+		        Neck = Double.valueOf(0);
+		    } else {
+		        Hip = Double.parseDouble(hipMeasurement.getText());
+		    }
+		    try {
+		        d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Hip);
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		    }
+		});
     }
 	/**
 	 * @author ParakhJaggi

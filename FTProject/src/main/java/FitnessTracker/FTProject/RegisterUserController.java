@@ -76,9 +76,9 @@ public class RegisterUserController implements Command {
 		
 		SqlInjectionChecker checker = new SqlInjectionChecker();
 		if(!checker.checkString(email.getText())&&!checker.checkString(firstname.getText())
-				&&!checker.checkString(lastname.getText())&&!checker.checkString(height.getText())
-				&&!checker.checkString(neckMeasurement.getText())&&!checker.checkString(password.getText())
-				&&!checker.checkString(waistMeasurement.getText())&&!checker.checkString(weight.getText())) {
+				||!checker.checkString(lastname.getText())||!checker.checkString(height.getText())
+				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(password.getText())
+				||!checker.checkString(waistMeasurement.getText())||!checker.checkString(weight.getText())) {
 			
 			System.out.println("You tyrna SQL Inject?");
 			return;
@@ -117,18 +117,20 @@ public class RegisterUserController implements Command {
 	 */
 	@Override
 	public void execute(String usernmae,String password) {
-Parent root = null;
-        
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("signup.fxml"));
+
+		Parent root = null;
 		try {
-			root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}          
 		
-        Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
-        stage.setScene(new Scene(root, 339, 409));
-        stage.show();
+		Scene scene = new Scene(root); 
+		Stage stage = new Stage();
+		stage.setScene(scene);    
+
+		stage.show();   
          
 		
 	}

@@ -25,7 +25,7 @@ public class App extends Application
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		 Parent root = FXMLLoader.load(getClass().getResource("FitnessTracker/FTProject/Intro.fxml"));
+		 Parent root = FXMLLoader.load(getClass().getResource("Intro.fxml"));
 
          primaryStage.setTitle("My Application");
          primaryStage.setScene(new Scene(root));

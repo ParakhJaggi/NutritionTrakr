@@ -3,8 +3,6 @@ package FitnessTracker.FTProject;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Observable;
-import java.util.Observer;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,47 +44,48 @@ public class MaleProfileController implements Command {
 		usr = d.loadUser(usrname, pass);
 		
 		UpdateUser u = new UpdateUser();
-		
-		u.addObserver(new Observer() {
-            public void update(Observable obj, Object arg) {
-            	System.out.println("here");
-            	Integer Height,Weight;
-        		Double Neck,Waist;
-        		if(height.getText().isEmpty()) {
-        			Height = 0;
-        		}
-        		else {
-        			Height = Integer.parseInt(height.getText());
-        		}
-        		if(weight.getText().isEmpty()) {
-        			Weight = 0;
-        		}
-        		else {
-        			Weight = Integer.parseInt(weight.getText());
-        		}
-        		if(waistMeasurement.getText().isEmpty()) {
-        			Waist = Double.valueOf(0);
-        		}
-        		else {
-        			Waist = Double.parseDouble(waistMeasurement.getText());
-        		}
-        		if(neckMeasurement.getText().isEmpty()) {
-        			Neck = Double.valueOf(0);
-        		}
-        		else {
-        			Neck = Double.parseDouble(neckMeasurement.getText());
-        		}
-        		try {
-					d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Double.valueOf(0));
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-        		
-            }
-
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(height.getText())||!checker.checkString(weight.getText())
+				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(waistMeasurement.getText())) {
 			
-        });
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
+		u.addObserver((obj, arg) -> {
+			System.out.println("here");
+			Integer Height,Weight;
+			Double Neck,Waist;
+			if(height.getText().isEmpty()) {
+				Height = 0;
+			}
+			else {
+				Height = Integer.parseInt(height.getText());
+			}
+			if(weight.getText().isEmpty()) {
+				Weight = 0;
+			}
+			else {
+				Weight = Integer.parseInt(weight.getText());
+			}
+			if(waistMeasurement.getText().isEmpty()) {
+				Waist = Double.valueOf(0);
+			}
+			else {
+				Waist = Double.parseDouble(waistMeasurement.getText());
+			}
+			if(neckMeasurement.getText().isEmpty()) {
+				Neck = Double.valueOf(0);
+			}
+			else {
+				Neck = Double.parseDouble(neckMeasurement.getText());
+			}
+			try {
+				d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Double.valueOf(0));
+			} catch (final SQLException e) {
+				e.printStackTrace();
+			}
+			
+		});
 		u.doNotify();
 		
 

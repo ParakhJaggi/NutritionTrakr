@@ -137,6 +137,13 @@ public class AddCalorieController implements Command {
 	 */
 	@FXML
 	public void pressAddFood() throws NumberFormatException, SQLException {
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(newFood.getText())||!checker.checkString(Catagory.getValue())
+				||!checker.checkString(Calorie.getText())){
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
 		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
 		
@@ -177,7 +184,7 @@ public class AddCalorieController implements Command {
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 
-
+		
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();

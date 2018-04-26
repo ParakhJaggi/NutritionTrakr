@@ -35,6 +35,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#getScore" prefHeight="80.0" prefWidth="200.0" text="Get My Score">
@@ -42,7 +43,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#UpdateCalories" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#UpdateCalories" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="2">
                <font>
                   <Font size="17.0" />
                </font>
@@ -52,7 +53,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#getGraph" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="5">
+            <Button mnemonicParsing="false" onAction="#getGraph" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="6">
                <font>
                   <Font size="17.0" />
                </font>
@@ -62,7 +63,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#getProfile" prefHeight="80.0" prefWidth="200.0" text="My Profile " GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#getProfile" prefHeight="80.0" prefWidth="200.0" text="My Profile " GridPane.columnIndex="7" GridPane.rowIndex="2">
                <font>
                   <Font size="17.0" />
                </font>
@@ -72,7 +73,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#getAboutUs" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="7" GridPane.rowIndex="5">
+            <Button mnemonicParsing="false" onAction="#getAboutUs" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="7" GridPane.rowIndex="6">
                <font>
                   <Font size="17.0" />
                </font>

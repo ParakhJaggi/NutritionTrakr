@@ -68,17 +68,15 @@ public class GoalsController implements Command{
 	@FXML
 	private void start() throws SQLException {
 		
-	
-		DatabaseGateway d = DatabaseGateway.getInstance();
-		User usr;
-		usr = d.loadUser(usrname, pass);
+		DatabaseGateway d = new DatabaseGateway();
+		d = DatabaseGateway.getInstance();
 		ListFactory factory = new ListFactory();
-		
-		ArrayList<String> temp = factory.createArray();
-		
-		temp = d.getGoals(usr.getUserId());
+		User usr = d.loadUser(usrname, pass);
+		ArrayList<String> temp =factory.createArray();
+		temp =d.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
+		
 		//To avoid getting Null Pointer Exceptions 
 		if(temp.size()==0) {
 			goal1.setText("");
@@ -318,6 +316,12 @@ public class GoalsController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(String.valueOf(usr.getUserId()))||!checker.checkString(newGoal.getText())) {
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
 		d.insertGoal(usr.getUserId(), newGoal.getText());
 		
 		ListFactory factory = new ListFactory();
@@ -392,6 +396,13 @@ public class GoalsController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+
+		if(!checker.checkString(String.valueOf(usr.getUserId()))||!checker.checkString(previous.toString())) {
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
 		d.insertGoal(usr.getUserId(), previous);
 		
 		ListFactory factory = new ListFactory();

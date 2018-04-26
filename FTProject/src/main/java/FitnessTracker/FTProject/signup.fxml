@@ -8,39 +8,47 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="339.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.RegisterUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1091.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.RegisterUserController">
    <children>
-      <ImageView fitHeight="409.0" fitWidth="339.0" pickOnBounds="true">
+      <ImageView fitHeight="715.0" fitWidth="1100.0" pickOnBounds="true">
          <image>
             <Image url="@../../images/9700.jpg" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" wrappingWidth="97.2548828125">
+    <Button fx:id="registerButton" layoutX="504.0" layoutY="660.0" mnemonicParsing="false" onAction="#PressRegister" text="Start Tracking!" />
+      <Label layoutX="377.0" layoutY="44.0" text="Start Your Free Trial!" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font size="32.0" />
          </font>
-      </Text>
-      <ChoiceBox fx:id="genderbox" layoutX="98.0" layoutY="200.0" prefWidth="150.0" />
-      <Label layoutX="30.0" layoutY="130.0" text="Email:" textFill="WHITE" />
-      <TextField fx:id="email" layoutX="97.0" layoutY="125.0" />
-      <Label layoutX="32.0" layoutY="166.0" text="Password:" textFill="WHITE" />
-      <PasswordField fx:id="password" layoutX="97.0" layoutY="161.0" />
-      <Label layoutX="24.0" layoutY="205.0" text="Gender:" textFill="WHITE" />
-      <Label layoutX="29.0" layoutY="240.0" text="Height(inch):" textFill="WHITE" />
-      <Label layoutX="29.0" layoutY="275.0" text="Weight(lb):" textFill="WHITE" />
-      <TextField fx:id="height" layoutX="110.0" layoutY="235.0" prefHeight="27.0" prefWidth="64.0" />
-      <TextField fx:id="weight" layoutX="109.0" layoutY="270.0" prefHeight="27.0" prefWidth="64.0" />
-      <Label layoutX="30.0" layoutY="299.0" text="Waist Measurement(inch):" textFill="WHITE" />
-      <TextField fx:id="waistMeasurement" layoutX="192.0" layoutY="294.0" prefHeight="27.0" prefWidth="73.0" />
-      <Label layoutX="30.0" layoutY="332.0" text="Neck Measurement(inch):" textFill="WHITE" />
-      <TextField fx:id="neckMeasurement" layoutX="192.0" layoutY="327.0" prefHeight="27.0" prefWidth="73.0" />
-    <Button fx:id="registerButton" layoutX="118.0" layoutY="361.0" mnemonicParsing="false" onAction="#PressRegister" text="Start Tracking!" />
-      <Label layoutX="29.0" layoutY="52.0" text="First Name:" textFill="WHITE" />
-      <Label layoutX="29.0" layoutY="87.0" text="Last Name:" textFill="WHITE" />
-      <TextField fx:id="firstname" layoutX="99.0" layoutY="47.0" />
-      <TextField fx:id="lastname" layoutX="99.0" layoutY="82.0" />
+      </Label>
+      <GridPane layoutX="253.0" layoutY="125.0" prefHeight="457.0" prefWidth="605.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="155.07301330566406" minHeight="0.0" prefHeight="87.75912475585938" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="182.78829956054688" minHeight="0.0" prefHeight="112.81390380859375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="379.0" minHeight="0.0" prefHeight="111.18609619140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="379.0" minHeight="0.0" prefHeight="146.08029174804688" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="firstname" prefHeight="45.0" prefWidth="200.0" promptText="First" />
+            <TextField fx:id="lastname" prefHeight="45.0" prefWidth="200.0" promptText="Last" GridPane.columnIndex="2" />
+            <TextField fx:id="email" prefHeight="45.0" prefWidth="200.0" promptText="Email" GridPane.rowIndex="1" />
+            <PasswordField fx:id="password" prefHeight="45.0" prefWidth="200.0" promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="height" prefHeight="41.0" prefWidth="202.0" promptText="Height(Inch)" GridPane.rowIndex="2" />
+            <TextField fx:id="weight" prefHeight="45.0" prefWidth="200.0" promptText="Weight(lb)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="waistMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Waist(Inch)" GridPane.rowIndex="3" />
+            <TextField fx:id="neckMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Neck(Inch)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <ChoiceBox fx:id="genderbox" layoutX="468.0" layoutY="594.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

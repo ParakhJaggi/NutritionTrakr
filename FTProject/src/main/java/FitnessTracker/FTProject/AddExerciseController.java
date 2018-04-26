@@ -95,7 +95,13 @@ public class AddExerciseController implements Command {
 	@FXML
 	public void pressAddExcersice() throws NumberFormatException, SQLException {
 		DatabaseGateway d = DatabaseGateway.getInstance();
-
+		SqlInjectionChecker checker = new SqlInjectionChecker();
+		if(!checker.checkString(newExercise.getText())||!checker.checkString(Catagory.getValue())
+				||!checker.checkString(Calorie.getText())){
+			
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
 		d.addExerciseToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
 		
@@ -119,10 +125,9 @@ public class AddExerciseController implements Command {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
 		usr = d.loadUser(usrname, pass);
-		System.out.println(usr.user_id);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
-
+		
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , d.retrieveExercise(ExerciseChoice.getValue()).getCalories());
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
@@ -165,7 +170,8 @@ public class AddExerciseController implements Command {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}          
+		}
+		       
 		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
 		controller.setUser(username.toString(), password.toString());
 		Scene scene = new Scene(root); 
