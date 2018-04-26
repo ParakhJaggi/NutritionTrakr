@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -79,7 +80,7 @@ public class AddCalorieController implements Command {
 	 * This method will show the lists of available foods and categories in the choice boxes
 	 */
 	@FXML
-	public void pressChoiceBox(ActionEvent action) throws SQLException {
+	public void pressChoiceBox(Event action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
 		ListFactory factory = new ListFactory();
