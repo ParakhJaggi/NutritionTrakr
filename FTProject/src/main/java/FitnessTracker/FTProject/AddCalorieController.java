@@ -15,9 +15,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 /**
@@ -137,14 +139,25 @@ public class AddCalorieController implements Command {
 	 */
 	@FXML
 	public void pressAddFood() throws NumberFormatException, SQLException {
-		SqlInjectionChecker checker = new SqlInjectionChecker();
 		if(!checker.checkString(newFood.getText())||!checker.checkString(Catagory.getValue())
 				||!checker.checkString(Calorie.getText())){
-			
-			System.out.println("You tyrna SQL Inject?");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Special Characters are not allowed");
+			alert.setContentText("Special characters are not allowed");
+			alert.showAndWait();
+			return;
+		}try {
+		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
+		}
+		catch(NumberFormatException e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Number error");
+			alert.setContentText("These have to be a number");
+			alert.showAndWait();
 			return;
 		}
-		d.addFoodToTable(newFood.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
 		String catagory = Catagory.getValue();
 		
 		ListFactory factory = new ListFactory();

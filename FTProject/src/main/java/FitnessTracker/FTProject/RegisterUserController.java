@@ -51,7 +51,7 @@ public class RegisterUserController implements Command {
 	@FXML
 	public TextField lastname;
 	
-	final Pattern emailPattern = Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*@[a-zA-Z][a-zA-Z0-9_]+(\\.[a-zA-Z][a-zA-Z0-9_]*)+");
+
 	/**
 	 * @author ParakhJaggi
 	 * @param action-the user hitting the button 
@@ -86,7 +86,7 @@ public class RegisterUserController implements Command {
 			alert.showAndWait();
 			return;
 		}
-		SqlInjectionChecker checker = new SqlInjectionChecker();
+		
 		if(!checker.checkString(email.getText())||!checker.checkString(firstname.getText())
 				||!checker.checkString(lastname.getText())||!checker.checkString(height.getText())
 				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(password.getText())

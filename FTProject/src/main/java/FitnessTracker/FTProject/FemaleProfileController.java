@@ -8,8 +8,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class FemaleProfileController implements Command {
@@ -37,22 +39,24 @@ public class FemaleProfileController implements Command {
 		final DatabaseGateway d = DatabaseGateway.getInstance();
 		final User usr;
 		usr = d.loadUser(usrname, pass);
-		SqlInjectionChecker checker = new SqlInjectionChecker();
 		if(!checker.checkString(height.getText())&&!checker.checkString(weight.getText())
 				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(waistMeasurement.getText())
 				||!checker.checkString(hipMeasurement.getText())) {
-			
-			System.out.println("You tyrna SQL Inject?");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Special Character Error");
+			alert.setContentText("We do not allow Special characters");
+			alert.showAndWait();
 			return;
 		}
 		UpdateUser u = new UpdateUser();
-
 		u.addObserver((obj, arg) -> {
 		    Integer Height=0;
 		    Integer Weight=0;
 		    Double Neck=0.0;
 		    Double Waist=0.0;
 		    Double Hip= 0.0;
+		    try {
 		    if (height.getText().isEmpty()) {
 		        Height = 0;
 		    } else {
@@ -77,12 +81,15 @@ public class FemaleProfileController implements Command {
 		        Neck = Double.valueOf(0);
 		    } else {
 		        Hip = Double.parseDouble(hipMeasurement.getText());
-		    }
-		    try {
+		    } 
 		        d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Hip);
-		    } catch (SQLException e) {
-		        e.printStackTrace();
-		    }
+		    } catch (Exception e) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error!");
+				alert.setHeaderText("Error");
+				alert.setContentText("An Error has occurred");
+				alert.showAndWait();
+			}
 		});
     }
 	/**

@@ -10,8 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 /**
  * 
@@ -44,17 +46,21 @@ public class MaleProfileController implements Command {
 		usr = d.loadUser(usrname, pass);
 		
 		UpdateUser u = new UpdateUser();
-		SqlInjectionChecker checker = new SqlInjectionChecker();
+		
 		if(!checker.checkString(height.getText())||!checker.checkString(weight.getText())
 				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(waistMeasurement.getText())) {
-			
-			System.out.println("You tyrna SQL Inject?");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Special Character Error");
+			alert.setContentText("We do not allow Special characters");
+			alert.showAndWait();
 			return;
 		}
 		u.addObserver((obj, arg) -> {
 			System.out.println("here");
 			Integer Height,Weight;
 			Double Neck,Waist;
+			try {
 			if(height.getText().isEmpty()) {
 				Height = 0;
 			}
@@ -79,10 +85,13 @@ public class MaleProfileController implements Command {
 			else {
 				Neck = Double.parseDouble(neckMeasurement.getText());
 			}
-			try {
 				d.updateValues(usr.getUserId(), Height, Weight, Neck, Waist, Double.valueOf(0));
-			} catch (final SQLException e) {
-				e.printStackTrace();
+			} catch (Exception e) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error!");
+				alert.setHeaderText("Error");
+				alert.setContentText("An Error has occurred");
+				alert.showAndWait();
 			}
 			
 		});
