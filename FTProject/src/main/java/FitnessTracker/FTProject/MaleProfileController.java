@@ -41,7 +41,7 @@ public class MaleProfileController implements Command {
 	 */
 	@FXML 
 	public void buttonhit(ActionEvent action) throws SQLException {
-		final DatabaseGateway d = DatabaseGateway.getInstance();
+		final UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		final User usr;
 		usr = d.loadUser(usrname, pass);
 		

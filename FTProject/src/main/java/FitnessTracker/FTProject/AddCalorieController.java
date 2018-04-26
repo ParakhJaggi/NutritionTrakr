@@ -49,7 +49,7 @@ public class AddCalorieController implements Command {
 	@FXML
 	public Button AddFood;
 	
-	DatabaseGateway d = DatabaseGateway.getInstance();
+	FoodDatabaseGateway d = FoodDatabaseGateway.getInstance();
 	
 	@FXML
 	ObservableList<String> FoodList;
@@ -190,15 +190,15 @@ public class AddCalorieController implements Command {
 	 */
 	@FXML
 	public void addCalorie(ActionEvent action) throws SQLException {
-		DatabaseGateway d;
-		d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d  = UserDatabaseGateway.getInstance();
 		usr = d.loadUser(usrname, pass);
 		System.out.println("Here "+usrname);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		
 		System.out.println(usrname+pass);
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
+		FoodDatabaseGateway f= FoodDatabaseGateway.getInstance();
+		f.addCaloriesToTrackers(usr.getUserId(), sqlDate,f.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
          

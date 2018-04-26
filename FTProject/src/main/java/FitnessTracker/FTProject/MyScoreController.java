@@ -42,7 +42,7 @@ public class MyScoreController implements Command{
 	@FXML
 	public void buttonhit() throws SQLException {
 		User usr = null;
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		usr = d.loadUser(usrname, pass);
 		d.updateFitnessScore(usrname, usr.getScore());
 		score.setText(String.valueOf(usr.getScore()));

@@ -36,7 +36,7 @@ public class FemaleProfileController implements Command {
 	 */
 	@FXML 
 	public void buttonhit() throws SQLException {
-		final DatabaseGateway d = DatabaseGateway.getInstance();
+		final UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		final User usr;
 		usr = d.loadUser(usrname, pass);
 		if(!checker.checkString(height.getText())&&!checker.checkString(weight.getText())

@@ -45,7 +45,7 @@ public class BarGraphController implements Command{
 		System.out.println(usrname);
 		System.out.println(usrname);
 	
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		User user = null;
 		try {
 			user = d.loadUser(usrname,pass);

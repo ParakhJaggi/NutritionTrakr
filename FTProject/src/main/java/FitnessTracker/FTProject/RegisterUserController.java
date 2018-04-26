@@ -102,7 +102,7 @@ public class RegisterUserController implements Command {
 		}
 		
 		  
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		if(d.loadUser(email.getText(), password.getText())!=null) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Error!");

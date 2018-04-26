@@ -56,7 +56,7 @@ public class Controller {
 			System.out.println("You tyrna SQL Inject?");
 			return;
 		}
-		if(DatabaseGateway.getInstance().loadUser(usrname.getText(), pass.getText()) ==null){
+		if(UserDatabaseGateway.getInstance().loadUser(usrname.getText(), pass.getText()) ==null){
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error!");
 			alert.setHeaderText("Username/Password");
