@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f643e0c1-a4c8-4a5e-9acf-80667ec23c24" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FitnessTracker/FTProject/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/UserTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/DatabaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JAVA/FitnessTracker.FTProject" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/FitnessTracker.FTProject">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>FitnessTracker.FTProject</OriginalElement>
+              <nodes>
+                <node x="2147.333333333333" y="457.0">FitnessTracker.FTProject.BarGraphController</node>
+                <node x="1271.3333333333333" y="457.0">FitnessTracker.FTProject.App</node>
+                <node x="1753.3333333333333" y="457.0">FitnessTracker.FTProject.FemaleProfileController</node>
+                <node x="1322.72737063406" y="228.0">FitnessTracker.FTProject.DatabaseGateway</node>
+                <node x="2414.0" y="745.0">FitnessTracker.FTProject.RegisterUserController</node>
+                <node x="367.3333333333335" y="457.0">FitnessTracker.FTProject.SilverRibbonState</node>
+                <node x="1057.9791666666665" y="119.0">FitnessTracker.FTProject.Food</node>
+                <node x="1075.3333333333333" y="457.0">FitnessTracker.FTProject.AddCalorieController</node>
+                <node x="1201.6372555847897" y="646.0">FitnessTracker.FTProject.DashboardController</node>
+                <node x="1365.3333333333333" y="457.0">FitnessTracker.FTProject.LeaderboardController</node>
+                <node x="200.7566811123138" y="119.0">FitnessTracker.FTProject.RibbonState</node>
+                <node x="494.83333333333326" y="228.0">FitnessTracker.FTProject.GoalsSaver</node>
+                <node x="1968.97737063406" y="0.0">FitnessTracker.FTProject.User</node>
+                <node x="834.3633241758239" y="119.0">FitnessTracker.FTProject.Exercise</node>
+                <node x="870.3333333333333" y="457.0">FitnessTracker.FTProject.AddExerciseController</node>
+                <node x="1963.3333333333333" y="457.0">FitnessTracker.FTProject.AboutUsController</node>
+                <node x="2106.22737063406" y="119.0">FitnessTracker.FTProject.FemaleUser</node>
+                <node x="631.8333333333333" y="228.0">FitnessTracker.FTProject.PreviousGoals</node>
+                <node x="1571.3333333333333" y="457.0">FitnessTracker.FTProject.MyScoreController</node>
+                <node x="2435.333333333333" y="824.0">FitnessTracker.FTProject.Controller</node>
+                <node x="1981.22737063406" y="119.0">FitnessTracker.FTProject.MaleUser</node>
+                <node x="172.0" y="457.0">FitnessTracker.FTProject.BronzeRibbonState</node>
+                <node x="534.5833333333333" y="119.0">FitnessTracker.FTProject.UndoListMemento</node>
+                <node x="546.5833333333333" y="0.0">FitnessTracker.FTProject.GoalPrototype</node>
+                <node x="918.0476190476189" y="228.0">FitnessTracker.FTProject.ListFactory</node>
+                <node x="1823.4412784398694" y="228.0">FitnessTracker.FTProject.Command</node>
+                <node x="2429.4412784398696" y="228.0">FitnessTracker.FTProject.UpdateUser</node>
+                <node x="2336.333333333333" y="457.0">FitnessTracker.FTProject.MaleProfileController</node>
+                <node x="0.0" y="457.0">FitnessTracker.FTProject.GoldRibbonState</node>
+                <node x="666.2479750296645" y="457.0">FitnessTracker.FTProject.GoalsController</node>
+                <node x="0.0" y="898.0">FitnessTracker.FTProject.UserTests</node>
+                <node x="279.5" y="228.0">FitnessTracker.FTProject.RibbonContext</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="FitnessTracker.FTProject.BronzeRibbonState" target="FitnessTracker.FTProject.RibbonState">
+                  <point x="-41.75" y="-14.5" />
+                  <point x="213.75" y="208.0" />
+                  <point x="231.5066811123138" y="208.0" />
+                  <point x="-30.75" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RibbonState" target="FitnessTracker.FTProject.RibbonContext">
+                  <point x="30.75" y="14.5" />
+                  <point x="293.0066811123138" y="188.0" />
+                  <point x="396.16666666666674" y="188.0" />
+                  <point x="46.66666666666674" y="-14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.User">
+                  <point x="0.0" y="-14.5" />
+                  <point x="738.2479750296645" y="297.0" />
+                  <point x="778.3333333333333" y="297.0" />
+                  <point x="778.3333333333333" y="49.0" />
+                  <point x="1971.9389090955985" y="49.0" />
+                  <point x="-35.53846153846143" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.UpdateUser">
+                  <point x="35.19999999999982" y="-14.5" />
+                  <point x="2459.533333333333" y="427.0" />
+                  <point x="2520.9412784398696" y="427.0" />
+                  <point x="30.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.Command">
+                  <point x="77.0" y="-14.5" />
+                  <point x="1240.3333333333333" y="407.0" />
+                  <point x="1850.9412784398694" y="407.0" />
+                  <point x="-27.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-47.0" y="-14.5" />
+                  <point x="2461.0" y="715.0" />
+                  <point x="2325.833333333333" y="715.0" />
+                  <point x="2325.833333333333" y="327.0" />
+                  <point x="1462.4966014032907" y="327.0" />
+                  <point x="60.76923076923072" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.MyScoreController">
+                  <point x="18.333333333333258" y="-14.5" />
+                  <point x="1307.9705889181228" y="536.0" />
+                  <point x="1611.8333333333333" y="536.0" />
+                  <point x="-40.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.GoalsController">
+                  <point x="-47.666666666666515" y="-14.5" />
+                  <point x="1241.9705889181232" y="576.0" />
+                  <point x="702.2479750296645" y="576.0" />
+                  <point x="-36.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.SilverRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+                  <point x="-39.0" y="-14.5" />
+                  <point x="56.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.BronzeRibbonState">
+                  <point x="-77.0" y="-14.5" />
+                  <point x="1212.6372555847897" y="616.0" />
+                  <point x="255.5" y="616.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.User">
+                  <point x="56.0" y="-14.5" />
+                  <point x="2287.333333333333" y="437.0" />
+                  <point x="2292.72737063406" y="437.0" />
+                  <point x="2292.72737063406" y="69.0" />
+                  <point x="2031.1696783263676" y="69.0" />
+                  <point x="23.692307692307566" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MaleUser" target="FitnessTracker.FTProject.User">
+                  <point x="26.25" y="-14.5" />
+                  <point x="2059.97737063406" y="99.0" />
+                  <point x="2013.400447557137" y="99.0" />
+                  <point x="5.923076923077133" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoldRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+                  <point x="38.0" y="-14.5" />
+                  <point x="114.0" y="427.0" />
+                  <point x="293.5" y="427.0" />
+                  <point x="-56.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.Command">
+                  <point x="64.0" y="-14.5" />
+                  <point x="802.2479750296645" y="387.0" />
+                  <point x="1828.9412784398694" y="387.0" />
+                  <point x="-49.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.Command">
+                  <point x="54.0" y="-14.5" />
+                  <point x="1706.3333333333333" y="427.0" />
+                  <point x="1872.9412784398694" y="427.0" />
+                  <point x="-5.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.Exercise">
+                  <point x="-67.71428571428578" y="-14.5" />
+                  <point x="1334.0130849197742" y="198.0" />
+                  <point x="896.2383241758239" y="198.0" />
+                  <point x="12.375" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RibbonContext" target="FitnessTracker.FTProject.RibbonState">
+                  <point x="-46.66666666666666" y="-14.5" />
+                  <point x="302.83333333333326" y="208.0" />
+                  <point x="252.0066811123138" y="208.0" />
+                  <point x="-10.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AboutUsController">
+                  <point x="47.66666666666674" y="-14.5" />
+                  <point x="1337.3039222514562" y="576.0" />
+                  <point x="2004.3333333333333" y="576.0" />
+                  <point x="-41.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-3.666666666666515" y="-14.5" />
+                  <point x="1285.9705889181232" y="506.0" />
+                  <point x="1354.8333333333333" y="506.0" />
+                  <point x="1354.8333333333333" y="377.0" />
+                  <point x="1389.5735244802138" y="377.0" />
+                  <point x="-12.153846153846189" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.User">
+                  <point x="0.0" y="-14.5" />
+                  <point x="1652.3333333333333" y="377.0" />
+                  <point x="1687.9412784398694" y="377.0" />
+                  <point x="1687.9412784398694" y="89.0" />
+                  <point x="1995.6312167879062" y="89.0" />
+                  <point x="-11.846153846153811" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.Command">
+                  <point x="0.0" y="-14.5" />
+                  <point x="1848.3333333333333" y="437.0" />
+                  <point x="1883.9412784398694" y="437.0" />
+                  <point x="5.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.Command">
+                  <point x="-15.666666666666515" y="-14.5" />
+                  <point x="2492.333333333333" y="695.0" />
+                  <point x="2522.833333333333" y="695.0" />
+                  <point x="2522.833333333333" y="297.0" />
+                  <point x="1927.9412784398694" y="297.0" />
+                  <point x="49.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.ListFactory">
+                  <point x="26.42857142857133" y="-14.5" />
+                  <point x="989.2619047619046" y="317.0" />
+                  <point x="985.7142857142857" y="317.0" />
+                  <point x="9.666666666666742" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.Controller" target="FitnessTracker.FTProject.RegisterUserController">
+                  <point x="0.0" y="-14.5" />
+                  <point x="2489.833333333333" y="799.0" />
+                  <point x="2461.0" y="799.0" />
+                  <point x="-47.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.ListFactory">
+                  <point x="32.0" y="-14.5" />
+                  <point x="770.2479750296645" y="317.0" />
+                  <point x="947.0476190476189" y="317.0" />
+                  <point x="-29.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.LeaderboardController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-62.0" y="-14.5" />
+                  <point x="1396.3333333333333" y="377.0" />
+                  <point x="1401.72737063406" y="377.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.BronzeRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+                  <point x="41.75" y="-14.5" />
+                  <point x="297.25" y="437.0" />
+                  <point x="321.5" y="437.0" />
+                  <point x="-28.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.User">
+                  <point x="-79.28571428571422" y="-14.5" />
+                  <point x="883.547619047619" y="297.0" />
+                  <point x="823.8633241758239" y="297.0" />
+                  <point x="823.8633241758239" y="59.0" />
+                  <point x="1977.8619860186752" y="59.0" />
+                  <point x="-29.615384615384755" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.MaleProfileController">
+                  <point x="84.33333333333326" y="-14.5" />
+                  <point x="1373.9705889181228" y="626.0" />
+                  <point x="2468.333333333333" y="626.0" />
+                  <point x="44.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.DashboardController">
+                  <point x="-78.33333333333348" y="-14.5" />
+                  <point x="2429.666666666666" y="725.0" />
+                  <point x="1333.6372555847897" y="725.0" />
+                  <point x="44.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.BarGraphController">
+                  <point x="62.33333333333326" y="-14.5" />
+                  <point x="1351.9705889181228" y="596.0" />
+                  <point x="2189.333333333333" y="596.0" />
+                  <point x="-42.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.PreviousGoals" target="FitnessTracker.FTProject.UndoListMemento">
+                  <point x="-34.0" y="-14.5" />
+                  <point x="665.8333333333333" y="208.0" />
+                  <point x="635.2083333333333" y="208.0" />
+                  <point x="20.125" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.SilverRibbonState" target="FitnessTracker.FTProject.RibbonState">
+                  <point x="39.0" y="-14.5" />
+                  <point x="484.3333333333335" y="178.0" />
+                  <point x="313.5066811123138" y="178.0" />
+                  <point x="51.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.FemaleUser">
+                  <point x="47.0" y="-14.5" />
+                  <point x="2555.0" y="715.0" />
+                  <point x="2583.9412784398696" y="715.0" />
+                  <point x="2583.9412784398696" y="188.0" />
+                  <point x="2195.47737063406" y="188.0" />
+                  <point x="29.75" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.Food">
+                  <point x="-22.57142857142844" y="-14.5" />
+                  <point x="1379.1559420626315" y="178.0" />
+                  <point x="1107.3541666666665" y="178.0" />
+                  <point x="9.875" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsSaver" target="FitnessTracker.FTProject.UndoListMemento">
+                  <point x="-29.25" y="-14.5" />
+                  <point x="524.0833333333333" y="208.0" />
+                  <point x="554.7083333333333" y="208.0" />
+                  <point x="-60.375" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.UndoListMemento" target="FitnessTracker.FTProject.GoalPrototype">
+                  <point x="-40.25" y="-14.5" />
+                  <point x="574.8333333333333" y="99.0" />
+                  <point x="580.8333333333333" y="99.0" />
+                  <point x="-34.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-54.0" y="-14.5" />
+                  <point x="1598.3333333333333" y="367.0" />
+                  <point x="1426.0350629417524" y="367.0" />
+                  <point x="24.307692307692378" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.PreviousGoals">
+                  <point x="-16.0" y="-14.5" />
+                  <point x="722.2479750296645" y="287.0" />
+                  <point x="733.8333333333333" y="287.0" />
+                  <point x="34.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-63.333333333333485" y="-14.5" />
+                  <point x="1784.9999999999998" y="357.0" />
+                  <point x="1438.1889090955983" y="357.0" />
+                  <point x="36.46153846153834" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.FemaleUser" target="FitnessTracker.FTProject.User">
+                  <point x="-29.75" y="-14.5" />
+                  <point x="2135.97737063406" y="89.0" />
+                  <point x="2019.3235244802138" y="89.0" />
+                  <point x="11.846153846153811" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.Controller" target="FitnessTracker.FTProject.DashboardController">
+                  <point x="-36.333333333333485" y="-14.5" />
+                  <point x="2453.4999999999995" y="799.0" />
+                  <point x="1245.6372555847897" y="799.0" />
+                  <point x="-44.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.GoldRibbonState">
+                  <point x="-84.33333333333326" y="-14.5" />
+                  <point x="1205.3039222514562" y="626.0" />
+                  <point x="76.0" y="626.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.User">
+                  <point x="78.33333333333348" y="-14.5" />
+                  <point x="2586.333333333333" y="725.0" />
+                  <point x="2594.9412784398696" y="725.0" />
+                  <point x="2594.9412784398696" y="49.0" />
+                  <point x="2043.0158321725214" y="49.0" />
+                  <point x="35.53846153846138" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.ListFactory">
+                  <point x="-77.0" y="-14.5" />
+                  <point x="1086.3333333333333" y="317.0" />
+                  <point x="1005.0476190476189" y="317.0" />
+                  <point x="29.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="52.85714285714289" y="-14.5" />
+                  <point x="1015.6904761904761" y="337.0" />
+                  <point x="1340.9581398648293" y="337.0" />
+                  <point x="-60.76923076923072" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="48.0" y="-14.5" />
+                  <point x="786.2479750296645" y="327.0" />
+                  <point x="1328.804293710983" y="327.0" />
+                  <point x="-72.9230769230769" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.FemaleUser">
+                  <point x="67.71428571428578" y="-14.5" />
+                  <point x="1469.4416563483458" y="208.0" />
+                  <point x="2135.97737063406" y="208.0" />
+                  <point x="-29.75" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="55.0" y="-14.5" />
+                  <point x="1218.3333333333333" y="357.0" />
+                  <point x="1365.2658321725214" y="357.0" />
+                  <point x="-36.46153846153857" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.Command">
+                  <point x="-35.19999999999982" y="-14.5" />
+                  <point x="2389.133333333333" y="307.0" />
+                  <point x="1916.9412784398694" y="307.0" />
+                  <point x="38.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-56.0" y="-14.5" />
+                  <point x="2175.333333333333" y="347.0" />
+                  <point x="1450.3427552494445" y="347.0" />
+                  <point x="48.61538461538453" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.User">
+                  <point x="22.57142857142867" y="-14.5" />
+                  <point x="1424.2987992054886" y="79.0" />
+                  <point x="1989.708139864829" y="79.0" />
+                  <point x="-17.769230769230944" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoldRibbonState" target="FitnessTracker.FTProject.RibbonState">
+                  <point x="-38.0" y="-14.5" />
+                  <point x="38.0" y="198.0" />
+                  <point x="211.0066811123138" y="198.0" />
+                  <point x="-51.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.SilverRibbonState">
+                  <point x="-55.0" y="-14.5" />
+                  <point x="1234.6372555847897" y="586.0" />
+                  <point x="445.3333333333335" y="586.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.Command">
+                  <point x="79.28571428571422" y="-14.5" />
+                  <point x="1042.1190476190475" y="397.0" />
+                  <point x="1839.9412784398694" y="397.0" />
+                  <point x="-38.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AddCalorieController">
+                  <point x="-11.0" y="-14.5" />
+                  <point x="1278.6372555847897" y="526.0" />
+                  <point x="1207.3333333333333" y="526.0" />
+                  <point x="44.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.LeaderboardController">
+                  <point x="3.6666666666667425" y="-14.5" />
+                  <point x="1293.3039222514562" y="516.0" />
+                  <point x="1411.8333333333333" y="516.0" />
+                  <point x="-46.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AddExerciseController">
+                  <point x="-25.666666666666515" y="-14.5" />
+                  <point x="1263.9705889181232" y="546.0" />
+                  <point x="1009.0833333333333" y="546.0" />
+                  <point x="46.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.MaleUser">
+                  <point x="15.666666666666515" y="-14.5" />
+                  <point x="2523.666666666666" y="705.0" />
+                  <point x="2572.9412784398696" y="705.0" />
+                  <point x="2572.9412784398696" y="198.0" />
+                  <point x="2059.97737063406" y="198.0" />
+                  <point x="26.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.GoalsSaver">
+                  <point x="-64.0" y="-14.5" />
+                  <point x="674.2479750296645" y="437.0" />
+                  <point x="524.0833333333333" y="437.0" />
+                  <point x="-29.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.App" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="0.0" y="-14.5" />
+                  <point x="1307.8333333333333" y="367.0" />
+                  <point x="1377.4196783263676" y="367.0" />
+                  <point x="-24.307692307692378" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.MaleUser">
+                  <point x="45.14285714285711" y="-14.5" />
+                  <point x="1446.870227776917" y="198.0" />
+                  <point x="2007.47737063406" y="198.0" />
+                  <point x="-26.25" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.User">
+                  <point x="70.40000000000009" y="-14.5" />
+                  <point x="2494.7333333333336" y="437.0" />
+                  <point x="2561.9412784398696" y="437.0" />
+                  <point x="2561.9412784398696" y="59.0" />
+                  <point x="2037.0927552494447" y="59.0" />
+                  <point x="29.6153846153847" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.LeaderboardController" target="FitnessTracker.FTProject.Command">
+                  <point x="62.0" y="-14.5" />
+                  <point x="1520.3333333333333" y="417.0" />
+                  <point x="1861.9412784398694" y="417.0" />
+                  <point x="-16.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.Food">
+                  <point x="-33.0" y="-14.5" />
+                  <point x="1130.3333333333333" y="297.0" />
+                  <point x="1072.2291666666665" y="297.0" />
+                  <point x="1072.2291666666665" y="208.0" />
+                  <point x="1067.8541666666665" y="208.0" />
+                  <point x="-29.625" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.Command">
+                  <point x="0.0" y="-14.5" />
+                  <point x="2231.333333333333" y="337.0" />
+                  <point x="1905.9412784398694" y="337.0" />
+                  <point x="27.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.RibbonContext">
+                  <point x="-69.66666666666674" y="-14.5" />
+                  <point x="1219.9705889181228" y="606.0" />
+                  <point x="349.5" y="606.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.FemaleProfileController">
+                  <point x="40.33333333333326" y="-14.5" />
+                  <point x="1329.9705889181228" y="566.0" />
+                  <point x="1895.8333333333333" y="566.0" />
+                  <point x="47.5" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.User">
+                  <point x="11.0" y="-14.5" />
+                  <point x="1174.3333333333333" y="317.0" />
+                  <point x="1168.8333333333333" y="317.0" />
+                  <point x="1168.8333333333333" y="69.0" />
+                  <point x="1983.7850629417524" y="69.0" />
+                  <point x="-23.692307692307622" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.Exercise">
+                  <point x="-26.428571428571445" y="-14.5" />
+                  <point x="936.4047619047618" y="277.0" />
+                  <point x="864.6133241758239" y="277.0" />
+                  <point x="864.6133241758239" y="208.0" />
+                  <point x="871.4883241758239" y="208.0" />
+                  <point x="-12.375" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.User">
+                  <point x="63.333333333333485" y="-14.5" />
+                  <point x="1911.6666666666667" y="437.0" />
+                  <point x="1943.9412784398694" y="437.0" />
+                  <point x="1943.9412784398694" y="99.0" />
+                  <point x="2001.5542937109828" y="99.0" />
+                  <point x="-5.923076923077133" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.DatabaseGateway">
+                  <point x="-70.40000000000009" y="-14.5" />
+                  <point x="2353.9333333333334" y="317.0" />
+                  <point x="1474.6504475571369" y="317.0" />
+                  <point x="72.9230769230769" y="14.5" />
+                </edge>
+                <edge source="FitnessTracker.FTProject.AboutUsController" target="FitnessTracker.FTProject.Command">
+                  <point x="0.0" y="-14.5" />
+                  <point x="2045.3333333333333" y="427.0" />
+                  <point x="1894.9412784398694" y="427.0" />
+                  <point x="16.5" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.6432424804663439" x="794.2529193627024" y="389.60118968295524" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/UserTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/DatabaseTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="23" />
+    <option name="width" value="1225" />
+    <option name="height" value="737" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="FitnessTracker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FTProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="FitnessTracker" type="462c0819:PsiDirectoryNode" />
+              <item name="FTProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="FitnessTracker.FTProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="FitnessTracker.FTProject.App" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="FTProject" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f643e0c1-a4c8-4a5e-9acf-80667ec23c24" name="Default" comment="" />
+      <created>1524704783805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524704783805</updated>
+      <workItem from="1524704793318" duration="1681000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1681000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="23" width="1225" height="737" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24936602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FitnessTracker/FTProject/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/UserTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/FitnessTracker/FTProject/DatabaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">images</node>
+            <node x="" y="">junit</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">junit3.8.1</node>
+            <node x="" y="">resources</node>
+            <node x="" y="">toolbarButtonGraphics</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">FitnessTracker</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">apple</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.6684303350970018" x="255.5" y="283.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/FitnessTracker.FTProject">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>FitnessTracker.FTProject</OriginalElement>
+          <nodes>
+            <node x="2147.333333333333" y="457.0">FitnessTracker.FTProject.BarGraphController</node>
+            <node x="1271.3333333333333" y="457.0">FitnessTracker.FTProject.App</node>
+            <node x="1753.3333333333333" y="457.0">FitnessTracker.FTProject.FemaleProfileController</node>
+            <node x="1322.72737063406" y="228.0">FitnessTracker.FTProject.DatabaseGateway</node>
+            <node x="2414.0" y="745.0">FitnessTracker.FTProject.RegisterUserController</node>
+            <node x="367.3333333333335" y="457.0">FitnessTracker.FTProject.SilverRibbonState</node>
+            <node x="1057.9791666666665" y="119.0">FitnessTracker.FTProject.Food</node>
+            <node x="1075.3333333333333" y="457.0">FitnessTracker.FTProject.AddCalorieController</node>
+            <node x="1201.6372555847897" y="646.0">FitnessTracker.FTProject.DashboardController</node>
+            <node x="1365.3333333333333" y="457.0">FitnessTracker.FTProject.LeaderboardController</node>
+            <node x="200.7566811123138" y="119.0">FitnessTracker.FTProject.RibbonState</node>
+            <node x="494.83333333333326" y="228.0">FitnessTracker.FTProject.GoalsSaver</node>
+            <node x="1968.97737063406" y="0.0">FitnessTracker.FTProject.User</node>
+            <node x="834.3633241758239" y="119.0">FitnessTracker.FTProject.Exercise</node>
+            <node x="870.3333333333333" y="457.0">FitnessTracker.FTProject.AddExerciseController</node>
+            <node x="1963.3333333333333" y="457.0">FitnessTracker.FTProject.AboutUsController</node>
+            <node x="2106.22737063406" y="119.0">FitnessTracker.FTProject.FemaleUser</node>
+            <node x="631.8333333333333" y="228.0">FitnessTracker.FTProject.PreviousGoals</node>
+            <node x="1571.3333333333333" y="457.0">FitnessTracker.FTProject.MyScoreController</node>
+            <node x="2435.333333333333" y="824.0">FitnessTracker.FTProject.Controller</node>
+            <node x="1981.22737063406" y="119.0">FitnessTracker.FTProject.MaleUser</node>
+            <node x="172.0" y="457.0">FitnessTracker.FTProject.BronzeRibbonState</node>
+            <node x="534.5833333333333" y="119.0">FitnessTracker.FTProject.UndoListMemento</node>
+            <node x="546.5833333333333" y="0.0">FitnessTracker.FTProject.GoalPrototype</node>
+            <node x="918.0476190476189" y="228.0">FitnessTracker.FTProject.ListFactory</node>
+            <node x="1823.4412784398694" y="228.0">FitnessTracker.FTProject.Command</node>
+            <node x="2429.4412784398696" y="228.0">FitnessTracker.FTProject.UpdateUser</node>
+            <node x="2336.333333333333" y="457.0">FitnessTracker.FTProject.MaleProfileController</node>
+            <node x="0.0" y="457.0">FitnessTracker.FTProject.GoldRibbonState</node>
+            <node x="666.2479750296645" y="457.0">FitnessTracker.FTProject.GoalsController</node>
+            <node x="0.0" y="898.0">FitnessTracker.FTProject.UserTests</node>
+            <node x="279.5" y="228.0">FitnessTracker.FTProject.RibbonContext</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="FitnessTracker.FTProject.BronzeRibbonState" target="FitnessTracker.FTProject.RibbonState">
+              <point x="-41.75" y="-14.5" />
+              <point x="213.75" y="208.0" />
+              <point x="231.5066811123138" y="208.0" />
+              <point x="-30.75" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RibbonState" target="FitnessTracker.FTProject.RibbonContext">
+              <point x="30.75" y="14.5" />
+              <point x="293.0066811123138" y="188.0" />
+              <point x="396.16666666666674" y="188.0" />
+              <point x="46.66666666666674" y="-14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.User">
+              <point x="0.0" y="-14.5" />
+              <point x="738.2479750296645" y="297.0" />
+              <point x="778.3333333333333" y="297.0" />
+              <point x="778.3333333333333" y="49.0" />
+              <point x="1971.9389090955985" y="49.0" />
+              <point x="-35.53846153846143" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.UpdateUser">
+              <point x="35.19999999999982" y="-14.5" />
+              <point x="2459.533333333333" y="427.0" />
+              <point x="2520.9412784398696" y="427.0" />
+              <point x="30.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.Command">
+              <point x="77.0" y="-14.5" />
+              <point x="1240.3333333333333" y="407.0" />
+              <point x="1850.9412784398694" y="407.0" />
+              <point x="-27.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-47.0" y="-14.5" />
+              <point x="2461.0" y="715.0" />
+              <point x="2325.833333333333" y="715.0" />
+              <point x="2325.833333333333" y="327.0" />
+              <point x="1462.4966014032907" y="327.0" />
+              <point x="60.76923076923072" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.MyScoreController">
+              <point x="18.333333333333258" y="-14.5" />
+              <point x="1307.9705889181228" y="536.0" />
+              <point x="1611.8333333333333" y="536.0" />
+              <point x="-40.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.GoalsController">
+              <point x="-47.666666666666515" y="-14.5" />
+              <point x="1241.9705889181232" y="576.0" />
+              <point x="702.2479750296645" y="576.0" />
+              <point x="-36.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.SilverRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+              <point x="-39.0" y="-14.5" />
+              <point x="56.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.BronzeRibbonState">
+              <point x="-77.0" y="-14.5" />
+              <point x="1212.6372555847897" y="616.0" />
+              <point x="255.5" y="616.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.User">
+              <point x="56.0" y="-14.5" />
+              <point x="2287.333333333333" y="437.0" />
+              <point x="2292.72737063406" y="437.0" />
+              <point x="2292.72737063406" y="69.0" />
+              <point x="2031.1696783263676" y="69.0" />
+              <point x="23.692307692307566" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MaleUser" target="FitnessTracker.FTProject.User">
+              <point x="26.25" y="-14.5" />
+              <point x="2059.97737063406" y="99.0" />
+              <point x="2013.400447557137" y="99.0" />
+              <point x="5.923076923077133" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoldRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+              <point x="38.0" y="-14.5" />
+              <point x="114.0" y="427.0" />
+              <point x="293.5" y="427.0" />
+              <point x="-56.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.Command">
+              <point x="64.0" y="-14.5" />
+              <point x="802.2479750296645" y="387.0" />
+              <point x="1828.9412784398694" y="387.0" />
+              <point x="-49.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.Command">
+              <point x="54.0" y="-14.5" />
+              <point x="1706.3333333333333" y="427.0" />
+              <point x="1872.9412784398694" y="427.0" />
+              <point x="-5.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.Exercise">
+              <point x="-67.71428571428578" y="-14.5" />
+              <point x="1334.0130849197742" y="198.0" />
+              <point x="896.2383241758239" y="198.0" />
+              <point x="12.375" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RibbonContext" target="FitnessTracker.FTProject.RibbonState">
+              <point x="-46.66666666666666" y="-14.5" />
+              <point x="302.83333333333326" y="208.0" />
+              <point x="252.0066811123138" y="208.0" />
+              <point x="-10.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AboutUsController">
+              <point x="47.66666666666674" y="-14.5" />
+              <point x="1337.3039222514562" y="576.0" />
+              <point x="2004.3333333333333" y="576.0" />
+              <point x="-41.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-3.666666666666515" y="-14.5" />
+              <point x="1285.9705889181232" y="506.0" />
+              <point x="1354.8333333333333" y="506.0" />
+              <point x="1354.8333333333333" y="377.0" />
+              <point x="1389.5735244802138" y="377.0" />
+              <point x="-12.153846153846189" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.User">
+              <point x="0.0" y="-14.5" />
+              <point x="1652.3333333333333" y="377.0" />
+              <point x="1687.9412784398694" y="377.0" />
+              <point x="1687.9412784398694" y="89.0" />
+              <point x="1995.6312167879062" y="89.0" />
+              <point x="-11.846153846153811" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.Command">
+              <point x="0.0" y="-14.5" />
+              <point x="1848.3333333333333" y="437.0" />
+              <point x="1883.9412784398694" y="437.0" />
+              <point x="5.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.Command">
+              <point x="-15.666666666666515" y="-14.5" />
+              <point x="2492.333333333333" y="695.0" />
+              <point x="2522.833333333333" y="695.0" />
+              <point x="2522.833333333333" y="297.0" />
+              <point x="1927.9412784398694" y="297.0" />
+              <point x="49.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.ListFactory">
+              <point x="26.42857142857133" y="-14.5" />
+              <point x="989.2619047619046" y="317.0" />
+              <point x="985.7142857142857" y="317.0" />
+              <point x="9.666666666666742" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.Controller" target="FitnessTracker.FTProject.RegisterUserController">
+              <point x="0.0" y="-14.5" />
+              <point x="2489.833333333333" y="799.0" />
+              <point x="2461.0" y="799.0" />
+              <point x="-47.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.ListFactory">
+              <point x="32.0" y="-14.5" />
+              <point x="770.2479750296645" y="317.0" />
+              <point x="947.0476190476189" y="317.0" />
+              <point x="-29.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.LeaderboardController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-62.0" y="-14.5" />
+              <point x="1396.3333333333333" y="377.0" />
+              <point x="1401.72737063406" y="377.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.BronzeRibbonState" target="FitnessTracker.FTProject.RibbonContext">
+              <point x="41.75" y="-14.5" />
+              <point x="297.25" y="437.0" />
+              <point x="321.5" y="437.0" />
+              <point x="-28.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.User">
+              <point x="-79.28571428571422" y="-14.5" />
+              <point x="883.547619047619" y="297.0" />
+              <point x="823.8633241758239" y="297.0" />
+              <point x="823.8633241758239" y="59.0" />
+              <point x="1977.8619860186752" y="59.0" />
+              <point x="-29.615384615384755" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.MaleProfileController">
+              <point x="84.33333333333326" y="-14.5" />
+              <point x="1373.9705889181228" y="626.0" />
+              <point x="2468.333333333333" y="626.0" />
+              <point x="44.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.DashboardController">
+              <point x="-78.33333333333348" y="-14.5" />
+              <point x="2429.666666666666" y="725.0" />
+              <point x="1333.6372555847897" y="725.0" />
+              <point x="44.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.BarGraphController">
+              <point x="62.33333333333326" y="-14.5" />
+              <point x="1351.9705889181228" y="596.0" />
+              <point x="2189.333333333333" y="596.0" />
+              <point x="-42.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.PreviousGoals" target="FitnessTracker.FTProject.UndoListMemento">
+              <point x="-34.0" y="-14.5" />
+              <point x="665.8333333333333" y="208.0" />
+              <point x="635.2083333333333" y="208.0" />
+              <point x="20.125" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.SilverRibbonState" target="FitnessTracker.FTProject.RibbonState">
+              <point x="39.0" y="-14.5" />
+              <point x="484.3333333333335" y="178.0" />
+              <point x="313.5066811123138" y="178.0" />
+              <point x="51.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.FemaleUser">
+              <point x="47.0" y="-14.5" />
+              <point x="2555.0" y="715.0" />
+              <point x="2583.9412784398696" y="715.0" />
+              <point x="2583.9412784398696" y="188.0" />
+              <point x="2195.47737063406" y="188.0" />
+              <point x="29.75" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.Food">
+              <point x="-22.57142857142844" y="-14.5" />
+              <point x="1379.1559420626315" y="178.0" />
+              <point x="1107.3541666666665" y="178.0" />
+              <point x="9.875" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsSaver" target="FitnessTracker.FTProject.UndoListMemento">
+              <point x="-29.25" y="-14.5" />
+              <point x="524.0833333333333" y="208.0" />
+              <point x="554.7083333333333" y="208.0" />
+              <point x="-60.375" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.UndoListMemento" target="FitnessTracker.FTProject.GoalPrototype">
+              <point x="-40.25" y="-14.5" />
+              <point x="574.8333333333333" y="99.0" />
+              <point x="580.8333333333333" y="99.0" />
+              <point x="-34.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MyScoreController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-54.0" y="-14.5" />
+              <point x="1598.3333333333333" y="367.0" />
+              <point x="1426.0350629417524" y="367.0" />
+              <point x="24.307692307692378" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.PreviousGoals">
+              <point x="-16.0" y="-14.5" />
+              <point x="722.2479750296645" y="287.0" />
+              <point x="733.8333333333333" y="287.0" />
+              <point x="34.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-63.333333333333485" y="-14.5" />
+              <point x="1784.9999999999998" y="357.0" />
+              <point x="1438.1889090955983" y="357.0" />
+              <point x="36.46153846153834" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.FemaleUser" target="FitnessTracker.FTProject.User">
+              <point x="-29.75" y="-14.5" />
+              <point x="2135.97737063406" y="89.0" />
+              <point x="2019.3235244802138" y="89.0" />
+              <point x="11.846153846153811" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.Controller" target="FitnessTracker.FTProject.DashboardController">
+              <point x="-36.333333333333485" y="-14.5" />
+              <point x="2453.4999999999995" y="799.0" />
+              <point x="1245.6372555847897" y="799.0" />
+              <point x="-44.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.GoldRibbonState">
+              <point x="-84.33333333333326" y="-14.5" />
+              <point x="1205.3039222514562" y="626.0" />
+              <point x="76.0" y="626.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.User">
+              <point x="78.33333333333348" y="-14.5" />
+              <point x="2586.333333333333" y="725.0" />
+              <point x="2594.9412784398696" y="725.0" />
+              <point x="2594.9412784398696" y="49.0" />
+              <point x="2043.0158321725214" y="49.0" />
+              <point x="35.53846153846138" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.ListFactory">
+              <point x="-77.0" y="-14.5" />
+              <point x="1086.3333333333333" y="317.0" />
+              <point x="1005.0476190476189" y="317.0" />
+              <point x="29.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="52.85714285714289" y="-14.5" />
+              <point x="1015.6904761904761" y="337.0" />
+              <point x="1340.9581398648293" y="337.0" />
+              <point x="-60.76923076923072" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="48.0" y="-14.5" />
+              <point x="786.2479750296645" y="327.0" />
+              <point x="1328.804293710983" y="327.0" />
+              <point x="-72.9230769230769" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.FemaleUser">
+              <point x="67.71428571428578" y="-14.5" />
+              <point x="1469.4416563483458" y="208.0" />
+              <point x="2135.97737063406" y="208.0" />
+              <point x="-29.75" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="55.0" y="-14.5" />
+              <point x="1218.3333333333333" y="357.0" />
+              <point x="1365.2658321725214" y="357.0" />
+              <point x="-36.46153846153857" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.Command">
+              <point x="-35.19999999999982" y="-14.5" />
+              <point x="2389.133333333333" y="307.0" />
+              <point x="1916.9412784398694" y="307.0" />
+              <point x="38.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-56.0" y="-14.5" />
+              <point x="2175.333333333333" y="347.0" />
+              <point x="1450.3427552494445" y="347.0" />
+              <point x="48.61538461538453" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.User">
+              <point x="22.57142857142867" y="-14.5" />
+              <point x="1424.2987992054886" y="79.0" />
+              <point x="1989.708139864829" y="79.0" />
+              <point x="-17.769230769230944" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoldRibbonState" target="FitnessTracker.FTProject.RibbonState">
+              <point x="-38.0" y="-14.5" />
+              <point x="38.0" y="198.0" />
+              <point x="211.0066811123138" y="198.0" />
+              <point x="-51.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.SilverRibbonState">
+              <point x="-55.0" y="-14.5" />
+              <point x="1234.6372555847897" y="586.0" />
+              <point x="445.3333333333335" y="586.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.Command">
+              <point x="79.28571428571422" y="-14.5" />
+              <point x="1042.1190476190475" y="397.0" />
+              <point x="1839.9412784398694" y="397.0" />
+              <point x="-38.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AddCalorieController">
+              <point x="-11.0" y="-14.5" />
+              <point x="1278.6372555847897" y="526.0" />
+              <point x="1207.3333333333333" y="526.0" />
+              <point x="44.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.LeaderboardController">
+              <point x="3.6666666666667425" y="-14.5" />
+              <point x="1293.3039222514562" y="516.0" />
+              <point x="1411.8333333333333" y="516.0" />
+              <point x="-46.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.AddExerciseController">
+              <point x="-25.666666666666515" y="-14.5" />
+              <point x="1263.9705889181232" y="546.0" />
+              <point x="1009.0833333333333" y="546.0" />
+              <point x="46.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.RegisterUserController" target="FitnessTracker.FTProject.MaleUser">
+              <point x="15.666666666666515" y="-14.5" />
+              <point x="2523.666666666666" y="705.0" />
+              <point x="2572.9412784398696" y="705.0" />
+              <point x="2572.9412784398696" y="198.0" />
+              <point x="2059.97737063406" y="198.0" />
+              <point x="26.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.GoalsController" target="FitnessTracker.FTProject.GoalsSaver">
+              <point x="-64.0" y="-14.5" />
+              <point x="674.2479750296645" y="437.0" />
+              <point x="524.0833333333333" y="437.0" />
+              <point x="-29.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.App" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="0.0" y="-14.5" />
+              <point x="1307.8333333333333" y="367.0" />
+              <point x="1377.4196783263676" y="367.0" />
+              <point x="-24.307692307692378" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DatabaseGateway" target="FitnessTracker.FTProject.MaleUser">
+              <point x="45.14285714285711" y="-14.5" />
+              <point x="1446.870227776917" y="198.0" />
+              <point x="2007.47737063406" y="198.0" />
+              <point x="-26.25" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.User">
+              <point x="70.40000000000009" y="-14.5" />
+              <point x="2494.7333333333336" y="437.0" />
+              <point x="2561.9412784398696" y="437.0" />
+              <point x="2561.9412784398696" y="59.0" />
+              <point x="2037.0927552494447" y="59.0" />
+              <point x="29.6153846153847" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.LeaderboardController" target="FitnessTracker.FTProject.Command">
+              <point x="62.0" y="-14.5" />
+              <point x="1520.3333333333333" y="417.0" />
+              <point x="1861.9412784398694" y="417.0" />
+              <point x="-16.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.Food">
+              <point x="-33.0" y="-14.5" />
+              <point x="1130.3333333333333" y="297.0" />
+              <point x="1072.2291666666665" y="297.0" />
+              <point x="1072.2291666666665" y="208.0" />
+              <point x="1067.8541666666665" y="208.0" />
+              <point x="-29.625" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.BarGraphController" target="FitnessTracker.FTProject.Command">
+              <point x="0.0" y="-14.5" />
+              <point x="2231.333333333333" y="337.0" />
+              <point x="1905.9412784398694" y="337.0" />
+              <point x="27.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.RibbonContext">
+              <point x="-69.66666666666674" y="-14.5" />
+              <point x="1219.9705889181228" y="606.0" />
+              <point x="349.5" y="606.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.DashboardController" target="FitnessTracker.FTProject.FemaleProfileController">
+              <point x="40.33333333333326" y="-14.5" />
+              <point x="1329.9705889181228" y="566.0" />
+              <point x="1895.8333333333333" y="566.0" />
+              <point x="47.5" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddCalorieController" target="FitnessTracker.FTProject.User">
+              <point x="11.0" y="-14.5" />
+              <point x="1174.3333333333333" y="317.0" />
+              <point x="1168.8333333333333" y="317.0" />
+              <point x="1168.8333333333333" y="69.0" />
+              <point x="1983.7850629417524" y="69.0" />
+              <point x="-23.692307692307622" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AddExerciseController" target="FitnessTracker.FTProject.Exercise">
+              <point x="-26.428571428571445" y="-14.5" />
+              <point x="936.4047619047618" y="277.0" />
+              <point x="864.6133241758239" y="277.0" />
+              <point x="864.6133241758239" y="208.0" />
+              <point x="871.4883241758239" y="208.0" />
+              <point x="-12.375" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.FemaleProfileController" target="FitnessTracker.FTProject.User">
+              <point x="63.333333333333485" y="-14.5" />
+              <point x="1911.6666666666667" y="437.0" />
+              <point x="1943.9412784398694" y="437.0" />
+              <point x="1943.9412784398694" y="99.0" />
+              <point x="2001.5542937109828" y="99.0" />
+              <point x="-5.923076923077133" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.MaleProfileController" target="FitnessTracker.FTProject.DatabaseGateway">
+              <point x="-70.40000000000009" y="-14.5" />
+              <point x="2353.9333333333334" y="317.0" />
+              <point x="1474.6504475571369" y="317.0" />
+              <point x="72.9230769230769" y="14.5" />
+            </edge>
+            <edge source="FitnessTracker.FTProject.AboutUsController" target="FitnessTracker.FTProject.Command">
+              <point x="0.0" y="-14.5" />
+              <point x="2045.3333333333333" y="427.0" />
+              <point x="1894.9412784398694" y="427.0" />
+              <point x="16.5" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6432424804663439" x="794.2529193627024" y="389.60118968295524" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

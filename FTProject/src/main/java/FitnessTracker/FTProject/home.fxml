@@ -19,14 +19,14 @@
       </ImageView>
       <GridPane fx:id="Bronze" layoutX="23.0" layoutY="1.0" prefHeight="691.0" prefWidth="1047.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="155.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="0.0" prefWidth="86.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="24.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="72.37103271484375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.5300598144531" minWidth="10.0" prefWidth="300.62896728515625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="74.9522705078125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="103.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="200.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -39,7 +39,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#getScore" prefHeight="80.0" prefWidth="200.0" text="Get My Score">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#UpdateCalories" prefHeight="80.0" prefWidth="200.0" text="Track My Calories" GridPane.rowIndex="1">
@@ -54,40 +54,40 @@
             </Button>
             <Button mnemonicParsing="false" onAction="#getGraph" prefHeight="80.0" prefWidth="200.0" text="Graphs" GridPane.rowIndex="5">
                <font>
-                  <Font size="28.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#getGoals" prefHeight="80.0" prefWidth="200.0" text="Edit Goals" GridPane.columnIndex="7">
                <font>
-                  <Font size="23.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#getProfile" prefHeight="80.0" prefWidth="200.0" text="My Profile " GridPane.columnIndex="7" GridPane.rowIndex="1">
                <font>
-                  <Font size="26.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#getLeaderboard" prefHeight="80.0" prefWidth="200.0" text="Leaderboard" GridPane.columnIndex="7" GridPane.rowIndex="4">
                <font>
-                  <Font size="21.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#getAboutUs" prefHeight="80.0" prefWidth="200.0" text="About Us " GridPane.columnIndex="7" GridPane.rowIndex="5">
                <font>
-                  <Font size="28.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
-            <ImageView fx:id="bronze" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ImageView fx:id="bronze" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../images/bronzeRibbon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="silver" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ImageView fx:id="silver" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../images/silverRibbon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="gold" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ImageView fx:id="gold" fitHeight="459.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../images/goldRibbon.png" />
                </image>
