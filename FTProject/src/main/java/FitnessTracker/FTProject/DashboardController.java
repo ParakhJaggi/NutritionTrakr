@@ -173,12 +173,18 @@ public class DashboardController  {
 		String img= rib.getState().doAction(rib);
 		if(img.equals("bronzeRibbon.png")) {
 			bronze.setVisible(true);
+			silver.setVisible(false);
+			gold.setVisible(false);
 		}
 		else if(img.equals("silverRibbon.png")) {
 			silver.setVisible(true);
+			bronze.setVisible(false);
+			gold.setVisible(false);
 		}
 		else if(img.equals("goldRibbon.png")) {
 			gold.setVisible(true);
+			bronze.setVisible(false);
+			silver.setVisible(false);
 		}
 	}
 	

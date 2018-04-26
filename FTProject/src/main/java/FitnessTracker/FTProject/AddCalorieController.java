@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
@@ -48,7 +49,8 @@ public class AddCalorieController implements Command {
 	public TextField Calorie;
 	@FXML
 	public Button AddFood;
-	
+	@FXML
+	public Label daily;
 	DatabaseGateway d = DatabaseGateway.getInstance();
 	
 	@FXML
@@ -199,9 +201,8 @@ public class AddCalorieController implements Command {
 		
 		System.out.println(usrname+pass);
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
-		
-        ((Node)(action.getSource())).getScene().getWindow().hide();
-         
+		int cal = usr.getDataPointCalorieMap(sqlDate);
+		daily.setText(String.valueOf(cal));
 
 	}
 	/**

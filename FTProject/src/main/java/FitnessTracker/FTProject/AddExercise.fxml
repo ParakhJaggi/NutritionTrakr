@@ -16,37 +16,43 @@
             <Image url="@../../images/9700.jpg" />
          </image>
       </ImageView>
-      <ChoiceBox fx:id="ExerciseChoice" layoutX="416.0" layoutY="230.0" prefWidth="150.0" />
-      <Label layoutX="389.0" layoutY="42.0" prefHeight="60.0" prefWidth="177.0" text="Select a Workout" textFill="WHITE">
+      <ChoiceBox fx:id="ExerciseChoice" layoutX="417.0" layoutY="198.0" prefWidth="150.0" />
+      <Label layoutX="211.0" layoutY="14.0" prefHeight="60.0" prefWidth="177.0" text="Select a Workout" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Label layoutX="78.0" layoutY="54.0" prefHeight="37.0" prefWidth="135.0" text="Add Exercise" textFill="WHITE">
+      <Label layoutX="62.0" layoutY="120.0" prefHeight="37.0" prefWidth="135.0" text="Add Exercise" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Label>
-      <TextField fx:id="newExercise" layoutX="149.0" layoutY="138.0" prefHeight="27.0" prefWidth="102.0" />
-      <TextField fx:id="Calorie" layoutX="151.0" layoutY="199.0" prefHeight="27.0" prefWidth="49.0" />
-      <Button fx:id="AddFood" layoutX="33.0" layoutY="265.0" mnemonicParsing="false" onAction="#pressAddExcersice" prefHeight="37.0" prefWidth="112.0" text="Add Exercise " />
-      <Label layoutX="17.0" layoutY="133.0" prefHeight="37.0" prefWidth="112.0" text="Exercise Name:" textFill="WHITE">
+      <TextField fx:id="newExercise" layoutX="147.0" layoutY="198.0" prefHeight="27.0" prefWidth="102.0" />
+      <TextField fx:id="Calorie" layoutX="149.0" layoutY="261.0" prefHeight="27.0" prefWidth="49.0" />
+      <Button fx:id="AddFood" layoutX="76.0" layoutY="317.0" mnemonicParsing="false" onAction="#pressAddExcersice" prefHeight="37.0" prefWidth="112.0" text="Add Exercise " />
+      <Label layoutX="17.0" layoutY="193.0" prefHeight="37.0" prefWidth="112.0" text="Exercise Name:" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="14.0" layoutY="203.0" text="Calories Burned:" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="265.0" text="Calories Burned:" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <ChoiceBox fx:id="Catagory" layoutX="416.0" layoutY="124.0" onAction="#pressChoiceBox"  prefWidth="150.0" />
-      <Button fx:id="Submit" layoutX="417.0" layoutY="284.0" mnemonicParsing="false" onAction="#subtractCalorie" text="Submit Workout " />
-      <Label layoutX="397.0" layoutY="174.0" prefHeight="37.0" prefWidth="198.0" text="Chose your exercise " textFill="WHITE">
+      <ChoiceBox fx:id="Catagory" layoutX="225.0" layoutY="80.0" onAction="#pressChoiceBox" prefWidth="150.0" />
+      <Button fx:id="Submit" layoutX="431.0" layoutY="275.0" mnemonicParsing="false" onAction="#subtractCalorie" text="Submit Workout " />
+      <Label layoutX="417.0" layoutY="120.0" prefHeight="37.0" prefWidth="198.0" text="Choose Exercise " textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="269.0" layoutY="27.0" prefHeight="90.0" prefWidth="102.0" text="Or" textFill="WHITE">
+      <Label layoutX="287.0" layoutY="93.0" prefHeight="90.0" prefWidth="102.0" text="-or-" textFill="WHITE">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
+      <Label layoutX="449.0" layoutY="36.0" text="Today's Calories:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="daily" layoutX="488.0" layoutY="66.0" text="0" textFill="WHITE" />
    </children>
 </AnchorPane>
