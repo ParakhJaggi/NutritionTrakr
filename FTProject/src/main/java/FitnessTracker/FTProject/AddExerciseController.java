@@ -66,7 +66,7 @@ public class AddExerciseController implements Command {
 	@FXML
 	public void pressChoiceBox(Event action) throws SQLException {
 	
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		ExerciseDatabaseGateway e = ExerciseDatabaseGateway.getInstance();
 
 		String catagory = Catagory.getValue();
 		
@@ -75,7 +75,7 @@ public class AddExerciseController implements Command {
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp = d.displayExerciseFromCategory(catagory);
+		temp = e.displayExerciseFromCategory(catagory);
 		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		System.out.println(temp.toString());
@@ -99,7 +99,7 @@ public class AddExerciseController implements Command {
 	 */
 	@FXML
 	public void pressAddExcersice() throws NumberFormatException, SQLException {
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		ExerciseDatabaseGateway e = ExerciseDatabaseGateway.getInstance();
 		if(!checker.checkString(newExercise.getText())||!checker.checkString(Catagory.getValue())
 				||!checker.checkString(Calorie.getText())){
 			Alert alert = new Alert(AlertType.ERROR);
@@ -109,8 +109,8 @@ public class AddExerciseController implements Command {
 			alert.showAndWait();
 		}
 		try {
-		d.addExerciseToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
-		}catch(NumberFormatException e) {
+		e.addExerciseToTable(newExercise.getText(), Catagory.getValue(), Integer.parseInt(Calorie.getText()));
+		}catch(NumberFormatException ex) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error!");
 			alert.setHeaderText("Number error");
@@ -124,7 +124,7 @@ public class AddExerciseController implements Command {
 		
 		
 		ArrayList<String> temp = factory.createArray();
-		temp = d.displayExerciseFromCategory(catagory);
+		temp = e.displayExerciseFromCategory(catagory);
 		ExerciseList = FXCollections.observableArrayList(temp);
 		ExerciseChoice.setItems(ExerciseList);
 		
@@ -136,14 +136,15 @@ public class AddExerciseController implements Command {
 	 * This method will subtract calories
 	 */
 	@FXML
+
 	public void subtractCalorie(Event action) throws SQLException {
-		DatabaseGateway d;
-		d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d=UserDatabaseGateway.getInstance();
+		ExerciseDatabaseGateway e=ExerciseDatabaseGateway.getInstance();
 		usr = d.loadUser(usrname, pass);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		
-		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , d.retrieveExercise(ExerciseChoice.getValue()).getCalories());
+		e.addCaloriesToTrackers(usr.getUserId(), sqlDate,0 , e.retrieveExercise(ExerciseChoice.getValue()).getCalories());
 		
         daily.setText(String.valueOf(usr.getDataPointCalorieMap(sqlDate)-usr.getDataPointExerciseMap(sqlDate)));
 	}
@@ -175,27 +176,18 @@ public class AddExerciseController implements Command {
 	 */
 	@Override
 	public void execute(String username,String password) {
-		
-
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddExercise.fxml"));
-
 		Parent root = null;
 		try {
 			root = (Parent)fxmlLoader.load();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		       
+		}       
 		AddExerciseController controller = fxmlLoader.<AddExerciseController>getController();
 		controller.setUser(username.toString(), password.toString());
 		Scene scene = new Scene(root); 
 		Stage stage = new Stage();
 		stage.setScene(scene);    
-
 		stage.show();   
 	}
-
-	
-
-
 }

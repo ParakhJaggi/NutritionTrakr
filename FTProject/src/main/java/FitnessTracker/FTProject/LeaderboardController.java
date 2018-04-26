@@ -64,8 +64,7 @@ public class LeaderboardController implements Command {
 	 */
 	@FXML
     public void initialize() throws SQLException{
-		DatabaseGateway d = new DatabaseGateway();
-		d = d.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		
 		user.setText(String.valueOf(d.getTopTenLeaderBoard().get(0).getKey()));
 		user2.setText(String.valueOf(d.getTopTenLeaderBoard().get(1).getKey()));
@@ -89,15 +88,6 @@ public class LeaderboardController implements Command {
 		number9.setText(String.valueOf(d.getTopTenLeaderBoard().get(8).getValue()));
 		number10.setText(String.valueOf(d.getTopTenLeaderBoard().get(9).getValue()));
 
-
-
-
-
-
-
-
-
-		
 	}
 	/**
 	 * @author ParakhJaggi

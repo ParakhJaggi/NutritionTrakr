@@ -146,7 +146,7 @@ public class DashboardController  {
 	public void getProfile() throws SQLException, IOException {
 		
 		
-		if(DatabaseGateway.getInstance().loadUser(usrname, pass).getGender().equals("Male")) {
+		if(UserDatabaseGateway.getInstance().loadUser(usrname, pass).getGender().equals("Male")) {
 			MaleProfileController m = new MaleProfileController();
 			m.execute(usrname, pass);
 		}
@@ -162,7 +162,7 @@ public class DashboardController  {
 	 */
 	@FXML
 	public void ribbonize() throws SQLException{
-		int score=DatabaseGateway.getInstance().loadUser(usrname, pass).getScore();
+		int score=UserDatabaseGateway.getInstance().loadUser(usrname, pass).getScore();
 		RibbonContext rib=new RibbonContext();
 		if (score<33)
 			rib.setState(new BronzeRibbonState());

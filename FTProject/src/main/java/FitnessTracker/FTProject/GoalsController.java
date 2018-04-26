@@ -69,13 +69,12 @@ public class GoalsController implements Command{
 	 */
 	@FXML
 	private void start() throws SQLException {
-		
-		DatabaseGateway d = new DatabaseGateway();
-		d = DatabaseGateway.getInstance();
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
+		UserDatabaseGateway d =  UserDatabaseGateway.getInstance();
 		ListFactory factory = new ListFactory();
 		User usr = d.loadUser(usrname, pass);
 		ArrayList<String> temp =factory.createArray();
-		temp =d.getGoals(usr.getUserId());
+		temp =g.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
 		
@@ -145,14 +144,14 @@ public class GoalsController implements Command{
 	private void update() throws SQLException {
 		
 	
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
 		ListFactory factory = new ListFactory();
 		
 		ArrayList<String> temp = factory.createArray();
-		
-		temp = d.getGoals(usr.getUserId());
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
+		temp = g.getGoals(usr.getUserId());
 		
 		
 		if(temp.size()==0) {
@@ -222,22 +221,22 @@ public class GoalsController implements Command{
 	 */
 	@FXML
 	public void removeGoal() throws SQLException {
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
 	
 		previous.setState(goals.getValue());
 		saver.addMemento(previous.save());
 		
-		
-		d.deleteGoal(usr.getUserId(), goals.getValue());
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
+		g.deleteGoal(usr.getUserId(), goals.getValue());
 		ListFactory factory = new ListFactory();
 
 		usr = d.loadUser(usrname, pass);
 		
 		ArrayList<String> temp = factory.createArray();
 		
-		temp = d.getGoals(usr.getUserId());
+		temp = g.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
 		if(temp.size()==0) {
@@ -315,7 +314,7 @@ public class GoalsController implements Command{
 	 */
 	@FXML
 	public void addGoal() throws SQLException {
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
 		DataValidator checker = new DataValidator();
@@ -336,12 +335,13 @@ public class GoalsController implements Command{
 			System.out.println("You tyrna SQL Inject?");
 			return;
 		}
-		d.insertGoal(usr.getUserId(), newGoal.getText());
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
+		g.insertGoal(usr.getUserId(), newGoal.getText());
 		
 		ListFactory factory = new ListFactory();
 
 		ArrayList<String> temp =factory.createArray();
-		d.getGoals(usr.getUserId());
+		g.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
 		
@@ -407,18 +407,19 @@ public class GoalsController implements Command{
 	 * This method will add a goal if a user has a specific string to add 
 	 */
 	public void addGoal(String previous) throws SQLException {
-		DatabaseGateway d = DatabaseGateway.getInstance();
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
 		
-		d.insertGoal(usr.getUserId(), previous);
+		g.insertGoal(usr.getUserId(), previous);
 		
 		ListFactory factory = new ListFactory();
 		DataValidator checker = new DataValidator();
 
 		
 		ArrayList<String> temp =factory.createArray();
-		d.getGoals(usr.getUserId());
+		g.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
 		
