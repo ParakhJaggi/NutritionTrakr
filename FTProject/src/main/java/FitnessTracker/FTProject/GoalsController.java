@@ -117,7 +117,7 @@ public class GoalsController implements Command{
 			goal4.setText(temp.get(3));
 			goal5.setText("");
 		}
-		else if(temp.size()==5) {
+		else if(temp.size()>4) {
 			goal1.setText(temp.get(0));
 			goal2.setText(temp.get(1));
 			goal3.setText(temp.get(2));
