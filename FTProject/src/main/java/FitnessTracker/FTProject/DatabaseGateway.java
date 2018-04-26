@@ -249,7 +249,7 @@ public class DatabaseGateway {
 	public void deleteFood(String name) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String deleteSQL = "DELETE FROM Foods WHERE Food_name = ' "+name+"'";
+		String deleteSQL = "DELETE FROM Foods WHERE Food_name = '"+name+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -459,7 +459,7 @@ public class DatabaseGateway {
 	 * @author Garth Terlizzi III
 	 * @param The email of the user
 	 * @param The password of the user
-	 * @return the user loaded from the database
+	 * @return the user loaded from the database, null if not found
 	 * @throws A SQL Exception if there is an error in accessing the Database
 	 * Loads a user from the database
 	 */
@@ -473,7 +473,7 @@ public class DatabaseGateway {
 			statement = dbConnection.createStatement();
 			ResultSet rs = statement.executeQuery(selectTableSQL);
 			if (rs.next() == false) 
-				throw new UserNotFoundException("User NOT FOUND");
+				userLoader=null;
 			else {
 					String gender= rs.getString("Gender");
 					if(gender.contentEquals("Male"))
@@ -505,7 +505,7 @@ public class DatabaseGateway {
 					userLoader.setDataPointExerciseMap(rs.getDate("ENTRY_DATE"), rs.getInt("CALORIES_FROM_EXERCISE"));
 				} 
 			} 
-		}catch (SQLException|UserNotFoundException e) {
+		}catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
 			if (statement != null)
@@ -576,7 +576,7 @@ public class DatabaseGateway {
 				+ "WAIST_MEASUREMENT, FITNESS_SCORE, GENDER, EMAIL_ADDRESS, "
 				+ "PASSWORD, FIRST_NAME,LAST_NAME) " + "VALUES"
 				+ "("+u.getHeight()+","+u.getWeight()+ ","+u.getNeckMeasurement()+","+u.getWaistMeasurement()+
-				 ","+50+ ",'"+ u.getGender()+ "','"+ u.getEmail()+"','"+
+				 ","+u.getFitnessScore()+ ",'"+ u.getGender()+ "','"+ u.getEmail()+"','"+
 				u.getPassword()+"','"+u.getFirstName()+"','"+u.getLastName()+"')";
 		try {
 			dbConnection = getDBConnection();
@@ -605,7 +605,7 @@ public class DatabaseGateway {
 	public void deleteUser(String email) throws SQLException {
 		Connection dbConnection = null;
 		Statement statement = null;
-		String deleteSQL = "DELETE FROM USERS WHERE EMAIL_ADDRESS = ' "+email+"'";
+		String deleteSQL = "DELETE FROM USERS WHERE EMAIL_ADDRESS = '"+email+"'";
 		try {
 			dbConnection = getDBConnection();
 			statement = dbConnection.createStatement();
@@ -641,7 +641,7 @@ public class DatabaseGateway {
 			else {
 				
 				for(int i=0;i<10;i++) {
-					String fullName= rs.getString("FIRST_NAME") + rs.getString("LAST_NAME");
+					String fullName= rs.getString("FIRST_NAME") +" "+ rs.getString("LAST_NAME");
 					Pair<String,Integer> p = new Pair<String,Integer>(fullName,rs.getInt("FITNESS_SCORE") );
 					myList.add(p);
 					if(rs.next()==false)

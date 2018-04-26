@@ -18,7 +18,9 @@ public class FemaleUser extends User {
 	      }
 	      return instance;
 	   }
-
+    public void clear() {
+    	instance=null;
+    }
 	public double hipMeasurement;
 	
 	public void setHipMeasurment(double h) {

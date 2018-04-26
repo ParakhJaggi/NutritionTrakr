@@ -20,40 +20,40 @@ import junit.framework.TestCase;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DatabaseTest extends TestCase {
 	private static DatabaseGateway gateway= DatabaseGateway.getInstance();
+	private static MaleUser u= MaleUser.getInstance();
+	private static FemaleUser u2= FemaleUser.getInstance();
 	@Test
-	public void testInsert() throws SQLException {
-			MaleUser u= new MaleUser();
-			u.setFitnessScore(50);
-			u.setFirstName("Testy");
-			u.setLastName("McTestFace");
-			u.setEmail("Testy@Test3.test");
-			u.setHeight(60);
-			u.setWeight(50);
-			u.setWaistMeasurment(30);
-			u.setNeckMeasurment(14);
-			u.setPassword("TestPassword");
-			gateway.registrationHelper(u);
-			User u2=gateway.LoadUser("Testy@Test3.test", "TestPassword");
-			assert(u2.getFirstName().equals(u.getFirstName()));
-			assert(u2.getLastName().equals(u.getLastName()));
-			assert(u2.getEmail().equals(u.getEmail()));
-			assert(u2.getGender().equals(u.getGender()));
-			assert(u2.getFitnessScore()==u.getFitnessScore());
-			assert(u2.getHeight()==u.getHeight());
-			assert(u2.getWaistMeasurement()==u.getWaistMeasurement());
-			
-			gateway.deleteUser("Testy@Test3.test");//Clean up Database
+	public synchronized void testInsert() throws SQLException {
+		u.setFitnessScore(50);
+		u.setFirstName("Testy");
+		u.setLastName("McTestFace");
+		u.setEmail("Testy@Test3.test");
+		u.setHeight(60);
+		u.setWeight(50);
+		u.setWaistMeasurment(30);
+		u.setNeckMeasurment(14);
+		u.setPassword("TestPassword");
+		gateway.registrationHelper(u);
+		u=(MaleUser)gateway.LoadUser("Testy@Test3.test", "TestPassword");
+		assert(u.getFirstName().equals("Testy"));
+		assert(u.getLastName().equals("McTestFace"));
+		assert(u.getEmail().equals("Testy@Test3.test"));
+		assert(u.getGender().equals(u.getGender()));
+		assert(u.getFitnessScore()==50);
+		assert(u.getHeight()==60);
+		assert(u.getWaistMeasurement()==30);
+		gateway.deleteUser("Testy@Test3.test");//Clean up Database
 			
 	}
 	
 	@Test
-	public void badLoad() throws SQLException {
+	public synchronized void badLoad() throws SQLException {
 		User u=gateway.LoadUser("BAD_LOAD", "USER_NOT_FOUND");
 		assert(u==null);
 	}
 	
 	@Test
-	public void testAddFood() throws SQLException {
+	public synchronized void testAddFood() throws SQLException {
 		gateway.addFoodToTable("Test4", "TestCategory", 100);
 		Food f= gateway.retrieveFood("Test4");
 		assert(f.getName().equals("Test4"));
@@ -63,7 +63,7 @@ public class DatabaseTest extends TestCase {
 	}
 	
 	@Test
-	public void testDisplayCategory() throws SQLException {
+	public synchronized void testDisplayCategory() throws SQLException {
 		gateway.addFoodToTable("Test", "TestCategory", 100);
 		gateway.addFoodToTable("Test2", "TestCategory", 101);
 		gateway.addFoodToTable("Test3", "TestCategory", 101);
@@ -77,7 +77,7 @@ public class DatabaseTest extends TestCase {
 	}
 	
 	@Test
-	public void testUpdateCalories() throws SQLException {
+	public synchronized void testUpdateCalories() throws SQLException {
 		gateway.addFoodToTable("Test", "TestCategory", 100);
 		gateway.updateCaloriesFood("Test", 5000);
 		Food f= gateway.retrieveFood("Test");
@@ -88,7 +88,7 @@ public class DatabaseTest extends TestCase {
 	}
 	
 	@Test
-	public void testTrackers() throws SQLException {
+	public synchronized void testTrackers() throws SQLException {
 		User u= new MaleUser();
 		u.setFitnessScore(50);
 		u.setFirstName("Testy");
@@ -110,45 +110,41 @@ public class DatabaseTest extends TestCase {
 	
 	
 	@Test
-	public void testTrackerUpdate() throws SQLException {
-		User u= new MaleUser();
-		u.setFitnessScore(50);
-		u.setFirstName("Testy");
-		u.setLastName("McTestFace");
-		u.setEmail("Testy@Testy2.test");
-		u.setPassword("TestPassword");
-		u.setHeight(60);
-		u.setWeight(50);
-		u.setWaistMeasurment(30);
-		u.setNeckMeasurment(14);
-		u.setPassword("TestPassword");
-		gateway.registrationHelper(u);
-		u=gateway.LoadUser("Testy@Testy2.test", "TestPassword");
-		gateway.createTrackerEntry(u.getUserId(), Date.valueOf(LocalDate.now().plusDays(500)), 1, 2);
-		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now()))==1);
-		gateway.addCaloriesToTrackers(u.getUserId(), Date.valueOf(LocalDate.now().plusDays(500)), 5, 0);
-		u=gateway.LoadUser("Testy@Testy2.test", "TestPassword");
-		assert(u.getDataPointCalorieMap(Date.valueOf(LocalDate.now().plusDays(500)))==6);
-		
-		gateway.deleteUser("Testy@Testy2.test");//Clean up Database
+	public synchronized void testTrackerUpdate() throws SQLException {
+		gateway.deleteUser("Test");//If exists, deletes from database
+		u2.setFirstName("Testy");
+		u2.setLastName("McTestFace");
+		u2.setEmail("Test");
+		u2.setPassword("TestPassword");
+		gateway.registrationHelper(u2);
+		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		gateway.createTrackerEntry(u2.getUserId(), Date.valueOf(LocalDate.now()), 6, 2);
+		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		int cals=u2.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
+		assert(cals==6);
+		gateway.addCaloriesToTrackers(u2.getUserId(),  Date.valueOf(LocalDate.now()), 5, 0);
+		u2=(FemaleUser)gateway.LoadUser("Test", "TestPassword");
+		cals=u2.getDataPointCalorieMap(Date.valueOf(LocalDate.now()));
+		assert(cals==11);
+		gateway.deleteUser("Test");//Clean up Database
 	}
 	
 	@Test
-	public void testleaderboard() throws SQLException {
-		gateway.getTopTenLeaderBoard();
+	public synchronized void testleaderboard() throws SQLException {
+		u2.clear();
+		u2=FemaleUser.getInstance();
+		gateway.deleteUser("leaderboard");
+		u2.setFitnessScore(101);
+		u2.setEmail("leaderboard");
+		u2.setFirstName("Test");
+		u2.setLastName("Test");
+		gateway.registrationHelper(u2);
+		String x=gateway.getTopTenLeaderBoard().get(0).getKey();
+		int y=gateway.getTopTenLeaderBoard().get(0).getValue();
+		assert(x.equals("Test Test"));
+		assert(y==101);
+		gateway.deleteUser("leaderboard");
 	}
 	
-	Lock sequential = new ReentrantLock();
-
-	@Override
-	protected void setUp() throws Exception {
-	    super.setUp();
-	    sequential.lock();
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-	    sequential.unlock();
-	    super.tearDown();
-	}
+	
 }
