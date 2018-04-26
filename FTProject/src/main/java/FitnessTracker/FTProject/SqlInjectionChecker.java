@@ -6,15 +6,17 @@ public class SqlInjectionChecker {
 		String matches[] = {";"," "};
 		boolean flag = true;
 		for (String s : matches) {
-			
 			  if (str.contains(s)) {
 				  flag = false;
-			    
 			  }
-
+		}
+		matches[0]="=";
+		for (String s : matches) {
+			  if (str.contains(s)) {
+				  flag = false;
+			  }
 		}
 		return flag;
-
 	}
 }
 	

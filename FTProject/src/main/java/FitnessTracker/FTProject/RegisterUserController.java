@@ -12,11 +12,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 /**
  * 
  * @author ParakhJaggi
@@ -68,23 +72,45 @@ public class RegisterUserController implements Command {
 		usr.setFirstName(firstname.getText());
 		usr.setLastName(lastname.getText());
 		usr.setGender(genderbox.getValue());
+		usr.setPassword(password.getText());
+		try {
 		usr.setHeight(Double.parseDouble(height.getText()));
 		usr.setNeckMeasurment(Double.parseDouble(neckMeasurement.getText()));
-		usr.setPassword(password.getText());
 		usr.setWaistMeasurment(Double.parseDouble(waistMeasurement.getText()));
 		usr.setWeight(Double.parseDouble(weight.getText()));
-		
+		} catch(Exception e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Number error");
+			alert.setContentText("These have to be a number");
+			alert.showAndWait();
+			return;
+		}
 		SqlInjectionChecker checker = new SqlInjectionChecker();
-		if(!checker.checkString(email.getText())&&!checker.checkString(firstname.getText())
+		if(!checker.checkString(email.getText())||!checker.checkString(firstname.getText())
 				||!checker.checkString(lastname.getText())||!checker.checkString(height.getText())
 				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(password.getText())
 				||!checker.checkString(waistMeasurement.getText())||!checker.checkString(weight.getText())) {
 			
 			System.out.println("You tyrna SQL Inject?");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Special character error");
+			alert.setContentText("We do not allow semicolons or equals symbols. Try again.");
+			alert.showAndWait();
 			return;
 		}
+		
 		  
 		DatabaseGateway d = DatabaseGateway.getInstance();
+		if(d.loadUser(email.getText(), password.getText())!=null) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Error!");
+		alert.setHeaderText("Email");
+		alert.setContentText("Email already found. Try agian.");
+		alert.showAndWait();
+			return;
+		}
 		d.registrationHelper(usr);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
 

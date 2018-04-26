@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 /**
  * 
  * @author ParakhJaggi
@@ -54,6 +56,14 @@ public class Controller {
 			System.out.println("You tyrna SQL Inject?");
 			return;
 		}
+		if(DatabaseGateway.getInstance().loadUser(usrname.getText(), pass.getText()) ==null){
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Username/Password");
+			alert.setContentText("Combination of Username/Password not found. Try agian.");
+			alert.showAndWait();
+			return;
+			}
 		controller.setUser(usrname.getText().toString(), pass.getText().toString());
 		Scene scene = new Scene(root); 
 		Stage stage = new Stage();

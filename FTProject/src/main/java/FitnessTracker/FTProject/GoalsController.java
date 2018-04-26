@@ -10,10 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 /**
  * 
@@ -317,8 +319,20 @@ public class GoalsController implements Command{
 		User usr;
 		usr = d.loadUser(usrname, pass);
 		SqlInjectionChecker checker = new SqlInjectionChecker();
-		if(!checker.checkString(String.valueOf(usr.getUserId()))||!checker.checkString(newGoal.getText())) {
-			
+
+		if(!checker.checkString(newGoal.getText())) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Goal Error");
+			alert.showAndWait();
+			System.out.println("You tyrna SQL Inject?");
+			return;
+		}
+		if(newGoal.getText().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error!");
+			alert.setHeaderText("Empty Field");
+			alert.showAndWait();
 			System.out.println("You tyrna SQL Inject?");
 			return;
 		}
@@ -396,17 +410,13 @@ public class GoalsController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
-		SqlInjectionChecker checker = new SqlInjectionChecker();
-
-		if(!checker.checkString(String.valueOf(usr.getUserId()))||!checker.checkString(previous.toString())) {
-			
-			System.out.println("You tyrna SQL Inject?");
-			return;
-		}
+		
 		d.insertGoal(usr.getUserId(), previous);
 		
 		ListFactory factory = new ListFactory();
+		SqlInjectionChecker checker = new SqlInjectionChecker();
 
+		
 		ArrayList<String> temp =factory.createArray();
 		d.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);

@@ -4,7 +4,7 @@ package FitnessTracker.FTProject;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.HashMap;
-/*
+/**
  * @author Garth Terlizzi III
  * Abstract class with setters and getters, references the user at login
  */
@@ -61,7 +61,7 @@ public abstract class User {
 	}
 	public int getDataPointCalorieMap(Date d) {
 		if(calorieMap.get(d)==null)
-			return 0;
+			return 2000;//Default value
 		return calorieMap.get(d);
 	}
 	public int getDataPointExerciseMap(Date d) {
@@ -133,17 +133,20 @@ public abstract class User {
 		LocalDate date=LocalDate.now();
 		double exSum=0;
 		for(int i=0;i<30;i++) {
-			exSum= this.getDataPointExerciseMap(Date.valueOf(date));
+			exSum=exSum+ this.getDataPointExerciseMap(Date.valueOf(date));
 			date.minusDays(1);
 		}
 		double foodSum=0;
 		for(int i=0;i<30;i++) {
-			foodSum= this.getDataPointCalorieMap(Date.valueOf(date));
+			if(this.getDataPointCalorieMap(Date.valueOf(date)) ==0)
+				foodSum=foodSum+2000;//Default placeholder calories
+			else
+				foodSum= foodSum=this.getDataPointCalorieMap(Date.valueOf(date));
 			date.minusDays(1);
 		}
-		exSum=exSum/15.0;
+		exSum=exSum/30.0;
 		foodSum=foodSum/30.0;
-		double score= 100.0-(foodSum-exSum)/this.calculateBMI();
-		return Math.max(0, (int)(Math.sqrt(score)*10.0));
+		int score= (int)(foodSum-exSum);
+		return Math.max(0, (int)(1.4*(60.0-Math.sqrt(score))));
 	}
 }
