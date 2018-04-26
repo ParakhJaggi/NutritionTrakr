@@ -74,7 +74,7 @@ public class AddCalorieController implements Command {
 	 * This method will show the lists of available foods and categories in the choice boxes
 	 */
 	@FXML
-	public void pressChoiceBox(MouseEvent action) throws SQLException {
+	public void pressChoiceBox(ActionEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
 		ListFactory factory = new ListFactory();
@@ -109,7 +109,7 @@ public class AddCalorieController implements Command {
 	 * This method will update the choicebox when the mouse moves 
 	 */
 	@FXML
-	public void moving(MouseEvent action) throws SQLException {
+	public void moving(ActionEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
 		ListFactory factory = new ListFactory();
@@ -117,7 +117,6 @@ public class AddCalorieController implements Command {
 		ArrayList<String> temp = factory.createArray();
 	    temp = d.displayFoodFromCategory(catagory);
 		FoodList = FXCollections.observableArrayList(temp);
-		FoodChoice.setItems(FoodList);
 		
 		if(temp.size()>0) {
 			FoodChoice.setValue(temp.get(0).toString());
@@ -194,10 +193,11 @@ public class AddCalorieController implements Command {
 		DatabaseGateway d;
 		d = DatabaseGateway.getInstance();
 		usr = d.loadUser(usrname, pass);
+		System.out.println("Here "+usrname);
 		LocalDate todayLocalDate = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		
-		
+		System.out.println(usrname+pass);
 		d.addCaloriesToTrackers(usr.getUserId(), sqlDate,d.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
         ((Node)(action.getSource())).getScene().getWindow().hide();
@@ -226,6 +226,7 @@ public class AddCalorieController implements Command {
 	public void setUser(String email,String pass){
 	    this.usrname = email;
 	    this.pass = pass;
+
 	}
 	
 	
@@ -245,8 +246,8 @@ public class AddCalorieController implements Command {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}          
-		
-		this.setUser(username.toString(), password.toString());
+		AddCalorieController controller = fxmlLoader.<AddCalorieController>getController();
+		controller.setUser(username.toString(), password.toString());
 		Scene scene = new Scene(root); 
 		Stage stage = new Stage();
 		stage.setScene(scene);    

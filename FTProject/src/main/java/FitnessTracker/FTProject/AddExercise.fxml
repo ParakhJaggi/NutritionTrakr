@@ -36,7 +36,7 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <ChoiceBox fx:id="Catagory" layoutX="416.0" layoutY="124.0" onContextMenuRequested="#pressChoiceBox" onMouseClicked="#pressChoiceBox" onMouseEntered="#pressChoiceBox" onMouseExited="#pressChoiceBox" onMousePressed="#pressChoiceBox" onMouseReleased="#pressChoiceBox" prefWidth="150.0" />
+      <ChoiceBox fx:id="Catagory" layoutX="416.0" layoutY="124.0" onAction="#pressChoiceBox"  prefWidth="150.0" />
       <Button fx:id="Submit" layoutX="417.0" layoutY="284.0" mnemonicParsing="false" onAction="#subtractCalorie" text="Submit Workout " />
       <Label layoutX="397.0" layoutY="174.0" prefHeight="37.0" prefWidth="198.0" text="Chose your exercise " textFill="WHITE">
          <font>

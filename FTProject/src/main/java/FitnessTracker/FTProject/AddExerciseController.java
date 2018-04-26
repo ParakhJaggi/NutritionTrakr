@@ -61,7 +61,7 @@ public class AddExerciseController implements Command {
 	 * @throws SQLException
 	 */
 	@FXML
-	public void pressChoiceBox(MouseEvent action) throws SQLException {
+	public void pressChoiceBox(ActionEvent action) throws SQLException {
 	
 		DatabaseGateway d = DatabaseGateway.getInstance();
 
