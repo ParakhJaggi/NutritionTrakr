@@ -49,7 +49,7 @@ public class FemaleProfileController implements Command {
 			alert.showAndWait();
 			return;
 		}
-		UpdateUser u = new UpdateUser();
+		UpdateUserObserve u = new UpdateUserObserve();
 		u.addObserver((obj, arg) -> {
 		    Integer Height=0;
 		    Integer Weight=0;

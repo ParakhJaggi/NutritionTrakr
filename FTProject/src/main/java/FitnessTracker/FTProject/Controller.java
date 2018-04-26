@@ -50,7 +50,7 @@ public class Controller {
 
 		Parent root = (Parent)fxmlLoader.load();          
 		DashboardController controller = fxmlLoader.<DashboardController>getController();
-		SqlInjectionChecker checker = new SqlInjectionChecker();
+		DataValidator checker = new DataValidator();
 		if(!checker.checkString(usrname.getText())||!checker.checkString(pass.getText())){
 			
 			System.out.println("You tyrna SQL Inject?");

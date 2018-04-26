@@ -45,7 +45,7 @@ public class MaleProfileController implements Command {
 		final User usr;
 		usr = d.loadUser(usrname, pass);
 		
-		UpdateUser u = new UpdateUser();
+		UpdateUserObserve u = new UpdateUserObserve();
 		
 		if(!checker.checkString(height.getText())||!checker.checkString(weight.getText())
 				||!checker.checkString(neckMeasurement.getText())||!checker.checkString(waistMeasurement.getText())) {

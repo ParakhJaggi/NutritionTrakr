@@ -61,7 +61,7 @@ public abstract class User {
 	}
 	public int getDataPointCalorieMap(Date d) {
 		if(calorieMap.get(d)==null)
-			return 2000;//Default value
+			return 0;
 		return calorieMap.get(d);
 	}
 	public int getDataPointExerciseMap(Date d) {

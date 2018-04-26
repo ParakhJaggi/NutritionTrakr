@@ -1,6 +1,6 @@
 package FitnessTracker.FTProject;
 
-public class SqlInjectionChecker {
+public class DataValidator {
 	
 	public boolean checkString(String str) {
 		String matches[] = {";"," "};

@@ -7,5 +7,5 @@ package FitnessTracker.FTProject;
  */
 public interface Command {
 	void execute(String username, String password);
-    SqlInjectionChecker checker = new SqlInjectionChecker();
+    DataValidator checker = new DataValidator();
 }

@@ -318,7 +318,7 @@ public class GoalsController implements Command{
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		User usr;
 		usr = d.loadUser(usrname, pass);
-		SqlInjectionChecker checker = new SqlInjectionChecker();
+		DataValidator checker = new DataValidator();
 
 		if(!checker.checkString(newGoal.getText())) {
 			Alert alert = new Alert(AlertType.ERROR);
@@ -414,7 +414,7 @@ public class GoalsController implements Command{
 		d.insertGoal(usr.getUserId(), previous);
 		
 		ListFactory factory = new ListFactory();
-		SqlInjectionChecker checker = new SqlInjectionChecker();
+		DataValidator checker = new DataValidator();
 
 		
 		ArrayList<String> temp =factory.createArray();

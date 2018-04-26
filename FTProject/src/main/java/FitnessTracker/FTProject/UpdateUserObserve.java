@@ -1,6 +1,6 @@
 package FitnessTracker.FTProject;
 
-public class UpdateUser extends java.util.Observable {
+public class UpdateUserObserve extends java.util.Observable {
 	private int id;
 	
 	private void setid(int id) {
