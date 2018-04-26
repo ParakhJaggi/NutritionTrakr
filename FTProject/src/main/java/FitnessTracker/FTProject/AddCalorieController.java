@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
@@ -50,10 +48,6 @@ public class AddCalorieController implements Command {
 	public TextField Calorie;
 	@FXML
 	public Button AddFood;
-
-	@FXML
-	public Label daily;
-
 	
 	FoodDatabaseGateway d = FoodDatabaseGateway.getInstance();
 	
@@ -80,7 +74,7 @@ public class AddCalorieController implements Command {
 	 * This method will show the lists of available foods and categories in the choice boxes
 	 */
 	@FXML
-	public void pressChoiceBox(Event action) throws SQLException {
+	public void pressChoiceBox(ActionEvent action) throws SQLException {
 		String catagory = Catagory.getValue();
 		
 		ListFactory factory = new ListFactory();
@@ -103,8 +97,6 @@ public class AddCalorieController implements Command {
 			}
 			
 			FoodChoice.setValue("Press Here for Food");
-
-			
 		}
 		
 	}
@@ -203,13 +195,10 @@ public class AddCalorieController implements Command {
 		Date sqlDate = java.sql.Date.valueOf( todayLocalDate );
 		
 		System.out.println(usrname+pass);
-		int cal = usr.getDataPointCalorieMap(sqlDate);
-		daily.setText(String.valueOf(cal));
 		FoodDatabaseGateway f= FoodDatabaseGateway.getInstance();
 		f.addCaloriesToTrackers(usr.getUserId(), sqlDate,f.retrieveFood(FoodChoice.getValue()).getCalories() ,0);
 		
-         
-
+        ((Node)(action.getSource())).getScene().getWindow().hide();
 	}
 	/**
 	 * @author ParakhJaggi
