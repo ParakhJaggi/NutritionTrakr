@@ -44,7 +44,7 @@ public class MyScoreController implements Command{
 		User usr = null;
 		DatabaseGateway d = DatabaseGateway.getInstance();
 		usr = d.LoadUser(usrname, pass);
-		
+		d.updateFitnessScore(usrname, usr.getScore());
 		Score.setText(String.valueOf(usr.getScore()));
 		
 		BMI.setText(String.valueOf(usr.calculateBMI()));

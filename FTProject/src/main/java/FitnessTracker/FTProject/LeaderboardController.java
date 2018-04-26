@@ -66,6 +66,7 @@ public class LeaderboardController implements Command {
     public void initialize() throws SQLException{
 		DatabaseGateway d = new DatabaseGateway();
 		d = d.getInstance();
+		
 		ArrayList<Pair<String,Integer>> leaderboard = new ArrayList<Pair<String,Integer>>();
 		leaderboard = d.getTopTenLeaderBoard();
 		user.setText(String.valueOf(leaderboard.get(0).getKey()));

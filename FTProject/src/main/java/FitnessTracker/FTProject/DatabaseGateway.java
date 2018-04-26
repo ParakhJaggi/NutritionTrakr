@@ -550,6 +550,28 @@ public class DatabaseGateway {
 		}
 	}
 	
+	
+	public void updateFitnessScore(String email, int score) throws SQLException {
+		Connection dbConnection = null;
+		Statement statement = null;
+		String selectTableSQL = null;
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+			
+			selectTableSQL = "UPDATE Users SET FITNESS_SCORE = "+score+ " WHERE EMAIL_ADDRESS = '"+email+"'";
+			statement.executeUpdate(selectTableSQL);
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if (statement != null)
+				statement.close();
+			if (dbConnection != null) 
+				dbConnection.close();	
+		}
+	}
+	
 	/**
 	 * @author Garth Terlizzi III
 	 * @param The user

@@ -2,6 +2,7 @@ package FitnessTracker.FTProject;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,6 +46,8 @@ public class RegisterUserController implements Command {
 	public TextField firstname;
 	@FXML
 	public TextField lastname;
+	
+	final Pattern emailPattern = Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*@[a-zA-Z][a-zA-Z0-9_]+(\\.[a-zA-Z][a-zA-Z0-9_]*)+");
 	/**
 	 * @author ParakhJaggi
 	 * @param action-the user hitting the button 

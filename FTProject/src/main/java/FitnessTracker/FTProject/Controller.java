@@ -67,7 +67,8 @@ public class Controller {
 		controller.setUser(usrname.getText().toString(), pass.getText().toString());
 		Scene scene = new Scene(root); 
 		Stage stage = new Stage();
-		stage.setScene(scene);    
+		stage.setScene(scene);
+		
 
 		stage.show();   
         ((Node)(action.getSource())).getScene().getWindow().hide();

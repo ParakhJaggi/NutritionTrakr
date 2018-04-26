@@ -154,8 +154,6 @@ public class DashboardController  {
 			FemaleProfileController f = new FemaleProfileController();
 			f.execute(usrname, pass);
 		}
-		
-
         //((Node)(action.getSource())).getScene().getWindow().hide();
 	}
 	/**
@@ -180,7 +178,7 @@ public class DashboardController  {
 		else if(img.equals("silverRibbon.png")) {
 			silver.setVisible(true);
 		}
-		else if(img.equals("goldeRibbon.png")) {
+		else if(img.equals("goldRibbon.png")) {
 			gold.setVisible(true);
 		}
 	}

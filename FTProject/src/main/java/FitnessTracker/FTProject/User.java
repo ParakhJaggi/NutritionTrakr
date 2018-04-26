@@ -143,7 +143,7 @@ public abstract class User {
 		}
 		exSum=exSum/15.0;
 		foodSum=foodSum/30.0;
-		double score= 105.0-(foodSum-exSum)/this.calculateBMI();
+		double score= 100.0-(foodSum-exSum)/this.calculateBMI();
 		return Math.max(0, (int)(Math.sqrt(score)*10.0));
 	}
 }
