@@ -23,11 +23,11 @@
       <TextField fx:id="newGoal" layoutX="372.0" layoutY="84.0" />
       <Button fx:id="addGoall" layoutX="434.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoal" text="Add" />
       <Button fx:id="removeGoal" layoutX="131.0" layoutY="132.0" mnemonicParsing="false" onAction="#removeGoal" text="Remove" />
-      <Label layoutX="30.0" layoutY="35.0" prefHeight="36.0" prefWidth="233.0" text="Select a Goal to Delete " textFill="WHITE">
+      <Label layoutX="22.0" layoutY="36.0" prefHeight="36.0" prefWidth="233.0" text="Select a Goal to Delete " textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Label layoutX="390.0" layoutY="31.0" prefHeight="43.0" prefWidth="167.0" text="Enter a New Goal" textFill="WHITE">
+      <Label layoutX="372.0" layoutY="32.0" prefHeight="43.0" prefWidth="167.0" text="Enter a New Goal" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Label>

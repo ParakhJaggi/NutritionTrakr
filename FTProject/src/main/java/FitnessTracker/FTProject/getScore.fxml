@@ -15,13 +15,13 @@
          </image>
       </ImageView>
       <Label layoutX="198.0" layoutY="108.0" prefHeight="34.0" prefWidth="116.0" text="Your Score is: " textFill="WHITE" />
-      <Label fx:id="score" layoutX="360.0" layoutY="116.0" text="Score" textFill="WHITE" />
+      <Label fx:id="score" layoutX="354.0" layoutY="117.0" text="Score" textFill="WHITE" />
       <Button fx:id="button" layoutX="246.0" layoutY="232.0" mnemonicParsing="false" onAction="#buttonhit" text="Calculate My Score" />
       <Label layoutX="210.0" layoutY="141.0" prefHeight="27.0" prefWidth="93.0" text="Your BMI is: " textFill="WHITE" />
-      <Label fx:id="bmi" layoutX="360.0" layoutY="141.0" prefHeight="27.0" prefWidth="46.0" text="BMI" textFill="WHITE" />
-      <Label layoutX="180.0" layoutY="177.0" prefHeight="27.0" prefWidth="139.0" text="Your Body Fat is: " textFill="WHITE" />
-      <Label fx:id="bodyFat" layoutX="354.0" layoutY="174.0" prefHeight="34.0" prefWidth="59.0" text="Body Fat" textFill="WHITE" />
-      <Label layoutX="231.0" layoutY="34.0" prefHeight="57.0" prefWidth="175.0" text="Get My Score!" textFill="WHITE">
+      <Label fx:id="bmi" layoutX="355.0" layoutY="141.0" prefHeight="27.0" prefWidth="46.0" text="BMI" textFill="WHITE" />
+      <Label layoutX="187.0" layoutY="168.0" prefHeight="27.0" prefWidth="139.0" text="Your Body Fat is: " textFill="WHITE" />
+      <Label fx:id="bodyFat" layoutX="354.0" layoutY="165.0" prefHeight="34.0" prefWidth="59.0" text="Body Fat" textFill="WHITE" />
+      <Label layoutX="239.0" layoutY="34.0" prefHeight="57.0" prefWidth="150.0" text="Get My Score" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>

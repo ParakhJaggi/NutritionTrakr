@@ -10,12 +10,12 @@
    <children>
       <BarChart fx:id="calorieChart" layoutX="27.0" layoutY="60.0" prefHeight="500.0" prefWidth="700.0">
         <xAxis>
-          <CategoryAxis fx:id="xaxis" animated="false" label="Date" side="BOTTOM" />
+          <CategoryAxis animated="false" label="Date" side="BOTTOM" fx:id="xaxis" />
         </xAxis>
         <yAxis>
           <NumberAxis fx:id="yaxis" label="Calories" side="LEFT" />
         </yAxis>
       </BarChart>
-      <Button layoutX="74.0" layoutY="33.0" mnemonicParsing="false" onAction="#getgraph" text="Button" />
+      <Button layoutX="74.0" layoutY="33.0" mnemonicParsing="false" onAction="#getgraph" text="Get Graph " />
    </children>
 </AnchorPane>

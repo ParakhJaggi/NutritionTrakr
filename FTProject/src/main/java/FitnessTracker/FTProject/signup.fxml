@@ -39,14 +39,14 @@
             <RowConstraints maxHeight="379.0" minHeight="0.0" prefHeight="146.08029174804688" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="firstname" prefHeight="45.0" prefWidth="200.0" promptText="First" />
-            <TextField fx:id="lastname" prefHeight="45.0" prefWidth="200.0" promptText="Last" GridPane.columnIndex="2" />
+            <TextField fx:id="firstname" prefHeight="45.0" prefWidth="200.0" promptText="First Name" />
+            <TextField fx:id="lastname" prefHeight="45.0" prefWidth="200.0" promptText=" Last Name" GridPane.columnIndex="2" />
             <TextField fx:id="email" prefHeight="45.0" prefWidth="200.0" promptText="Email" GridPane.rowIndex="1" />
             <PasswordField fx:id="password" prefHeight="45.0" prefWidth="200.0" promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="height" prefHeight="41.0" prefWidth="202.0" promptText="Height(Inch)" GridPane.rowIndex="2" />
-            <TextField fx:id="weight" prefHeight="45.0" prefWidth="200.0" promptText="Weight(lb)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="waistMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Waist(Inch)" GridPane.rowIndex="3" />
-            <TextField fx:id="neckMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Neck(Inch)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="height" prefHeight="41.0" prefWidth="202.0" promptText="Height (inches)" GridPane.rowIndex="2" />
+            <TextField fx:id="weight" prefHeight="45.0" prefWidth="200.0" promptText="Weight (lbs)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="waistMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Waist (inches)" GridPane.rowIndex="3" />
+            <TextField fx:id="neckMeasurement" prefHeight="45.0" prefWidth="202.0" promptText="Neck (inches)" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <ChoiceBox fx:id="genderbox" layoutX="468.0" layoutY="594.0" prefWidth="150.0" />

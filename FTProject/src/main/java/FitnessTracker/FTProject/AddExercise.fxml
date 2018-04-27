@@ -17,17 +17,17 @@
          </image>
       </ImageView>
       <ChoiceBox fx:id="ExerciseChoice" layoutX="417.0" layoutY="198.0" prefWidth="150.0" />
-      <Label layoutX="211.0" layoutY="14.0" prefHeight="60.0" prefWidth="177.0" text="Select a Workout" textFill="WHITE">
+      <Label layoutX="222.0" layoutY="15.0" prefHeight="60.0" prefWidth="158.0" text="Select a Workout" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Label layoutX="62.0" layoutY="120.0" prefHeight="37.0" prefWidth="135.0" text="Add Exercise" textFill="WHITE">
+      <Label layoutX="64.0" layoutY="121.0" prefHeight="37.0" prefWidth="135.0" text="Add Exercise" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Label>
       <TextField fx:id="newExercise" layoutX="147.0" layoutY="198.0" prefHeight="27.0" prefWidth="102.0" />
-      <TextField fx:id="Calorie" layoutX="149.0" layoutY="261.0" prefHeight="27.0" prefWidth="49.0" />
-      <Button fx:id="AddFood" layoutX="76.0" layoutY="317.0" mnemonicParsing="false" onAction="#pressAddExcersice" prefHeight="37.0" prefWidth="112.0" text="Add Exercise " />
+      <TextField fx:id="Calorie" layoutX="149.0" layoutY="261.0" prefHeight="27.0" prefWidth="102.0" />
+      <Button fx:id="AddFood" layoutX="93.0" layoutY="317.0" mnemonicParsing="false" onAction="#pressAddExcersice" prefHeight="37.0" prefWidth="112.0" text="Add Exercise " />
       <Label layoutX="17.0" layoutY="193.0" prefHeight="37.0" prefWidth="112.0" text="Exercise Name:" textFill="WHITE">
          <font>
             <Font size="15.0" />
@@ -38,17 +38,17 @@
          </font></Label>
       <ChoiceBox fx:id="Catagory" layoutX="225.0" layoutY="80.0" onAction="#pressChoiceBox" prefWidth="150.0" />
       <Button fx:id="Submit" layoutX="431.0" layoutY="275.0" mnemonicParsing="false" onAction="#subtractCalorie" text="Submit Workout " />
-      <Label layoutX="417.0" layoutY="120.0" prefHeight="37.0" prefWidth="198.0" text="Choose Exercise " textFill="WHITE">
+      <Label layoutX="417.0" layoutY="121.0" prefHeight="37.0" prefWidth="198.0" text="Choose Exercise " textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="287.0" layoutY="93.0" prefHeight="90.0" prefWidth="102.0" text="-or-" textFill="WHITE">
+      <Label layoutX="273.0" layoutY="94.0" prefHeight="90.0" prefWidth="55.0" text="-or-" textFill="WHITE">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="449.0" layoutY="36.0" text="Today's Calories:" textFill="WHITE">
+      <Label layoutX="435.0" layoutY="36.0" text="Today's Calories:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

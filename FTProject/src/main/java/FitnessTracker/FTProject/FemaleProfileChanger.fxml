@@ -16,36 +16,36 @@
             <Image url="@../../images/9700.jpg" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="317.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Info" wrappingWidth="166.14193725585938">
+      <Text fill="WHITE" layoutX="200.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Measurements" textAlignment="CENTER" wrappingWidth="381.0000122785568">
          <font>
             <Font size="38.0" />
          </font>
       </Text>
-      <Label layoutX="203.0" layoutY="128.0" prefHeight="34.0" prefWidth="128.0" text="Height(inch):" textFill="WHITE">
+      <Label layoutX="179.0" layoutY="128.0" prefHeight="34.0" prefWidth="152.0" text="Height (inches):" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Label layoutX="211.0" layoutY="178.0" text="Weight(lb):" textFill="WHITE">
+      <Label layoutX="206.0" layoutY="179.0" prefHeight="28.0" prefWidth="125.0" text="Weight (lbs):" textFill="WHITE">
          <font>
-            <Font size="22.0" />
+            <Font size="19.0" />
          </font></Label>
       <TextField fx:id="height" layoutX="356.0" layoutY="132.0" prefHeight="27.0" prefWidth="84.0" />
-      <TextField fx:id="weight" layoutX="363.0" layoutY="179.0" prefHeight="27.0" prefWidth="64.0" />
-      <Label layoutX="47.0" layoutY="232.0" text="Waist Measurement(inch):" textFill="WHITE">
+      <TextField fx:id="weight" layoutX="356.0" layoutY="179.0" prefHeight="27.0" prefWidth="84.0" />
+      <Label layoutX="193.0" layoutY="232.0" prefHeight="29.0" prefWidth="152.0" text="Waist(inches):" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font size="19.0" />
          </font></Label>
-      <TextField fx:id="waistMeasurement" layoutX="366.0" layoutY="235.0" prefHeight="27.0" prefWidth="73.0" />
-      <Label layoutX="20.0" layoutY="299.0" text="Neck Measurement(inch):" textFill="WHITE">
+      <TextField fx:id="waistMeasurement" layoutX="357.0" layoutY="233.0" prefHeight="27.0" prefWidth="84.0" />
+      <Label layoutX="200.0" layoutY="289.0" text="Neck(inches):" textFill="WHITE">
          <font>
-            <Font size="25.0" />
+            <Font size="19.0" />
          </font></Label>
-      <TextField fx:id="neckMeasurement" layoutX="363.0" layoutY="300.0" prefHeight="27.0" prefWidth="73.0" />
-       <Label layoutX="20.0" layoutY="350.0" text="Hip Measurement(inch):" textFill="WHITE">
+      <TextField fx:id="neckMeasurement" layoutX="357.0" layoutY="287.0" prefHeight="27.0" prefWidth="84.0" />
+       <Label layoutX="215.0" layoutY="340.0" text="Hip(inches):" textFill="WHITE">
          <font>
-            <Font size="25.0" />
+            <Font size="19.0" />
          </font></Label>
-      <TextField fx:id="hipMeasurement" layoutX="363.0" layoutY="350.0" prefHeight="27.0" prefWidth="73.0" />
+      <TextField fx:id="hipMeasurement" layoutX="356.0" layoutY="338.0" prefHeight="27.0" prefWidth="84.0" />
       
     <Button fx:id="buttonhit" layoutX="294.0" layoutY="400.0" mnemonicParsing="false" onAction="#buttonhit" prefHeight="44.0" prefWidth="152.0" text="Start Tracking!" />
    </children>

@@ -17,7 +17,7 @@
          </image>
       </ImageView>
       <ChoiceBox fx:id="FoodChoice" layoutX="416.0" layoutY="217.0" onContextMenuRequested="#pressChoiceBox" prefWidth="150.0" />
-      <Label layoutX="205.0" layoutY="12.0" prefHeight="66.0" prefWidth="191.0" text="Select a Food Group" textFill="WHITE">
+      <Label layoutX="206.0" layoutY="13.0" prefHeight="66.0" prefWidth="188.0" text="Select a Food Group" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font></Label>

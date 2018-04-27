@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FitnessTracker.FTProject.GoalsController">
    <children>
-      <Label layoutX="191.0" layoutY="51.0" prefHeight="54.0" prefWidth="219.0" text="Nutrition Trakr">
+      <ImageView fitHeight="406.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../images/9700.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="191.0" layoutY="51.0" prefHeight="54.0" prefWidth="219.0" text="Nutrition Trakr" textFill="WHITE">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="157.0" layoutY="149.0" prefHeight="69.0" prefWidth="339.0" text="Made By Parakh Jaggi and Garth ">
+      <Label layoutX="108.0" layoutY="116.0" prefHeight="100.0" prefWidth="385.0" text="Created by Parakh Jaggi and Garth Terlizzi for Software Engineering I &amp; Intro to Java." textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="19.0" />
          </font>
