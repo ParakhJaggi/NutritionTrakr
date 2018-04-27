@@ -211,12 +211,12 @@ it is hard to test anything other than database calls and functions.
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Use Case ID:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-UC Add Goal\strut
+UC Access Dashboard\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Scope:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-Data Input and Collection\strut
+Sign Up Form\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Level:\strut
@@ -226,39 +226,44 @@ User goal\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Stake Holders and Interests:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-User- Person entering data for Fitness Trakr\strut
+Unregistered User- Person trying to register for Fitness Trakr.
+Registered User- The end result of the use case.
+\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Description:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-The user logs on, views their goals, and adds a new goal.\strut
+The user signs up to for a user account within the program Fitness Trakr.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Preconditions:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-The user has an account registered within the database.\strut
+The user has opened the application.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Post conditions:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-Data entry is saved, and the goal is stored in the database\strut
+Registration occurs and is saved.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Main Success Scenario:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-The user enters his username and password. The user is directed to the
-dashboard. The user selects ``View Goals'' The user types a goal in the
-text field The user submits the goal The goal appears on the goal
-List\strut
+1. The user clicks the sign-up button.
+2. The user enters their first/last name.
+3. The user enters their email address.
+4. The user enters their password.
+5. The user enters their gender.
+6. The user enters their height/weight.
+7. The user enters their waist and neck measurement.
+8. If all the fields above are valid, the form is submitted and the user becomes registered.
+\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Extensions:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-1.* The input is entered wrong, and the program re-allows for proper
-entry. 6.1 The user has more than 5 goals, in which case not all goals
-are shown. 6.2 The user deletes a goal from the drop down list of goals.
-6.2.1. The user accidentally deletes a goal, and which case he uses the
-undo button.\strut
+1.* The user already has an account, and logs in
+3.* The email is taken, and the form prevents a submission until the field is changed to a valid input.
+\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}\selectlanguage{english}
@@ -267,7 +272,7 @@ undo button.\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Use Case ID:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-UC Add Goal\strut
+UC InputData/View Graphs\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Scope:\strut
@@ -287,7 +292,7 @@ User- Person entering data for Fitness Trakr\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Description:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-The user logs on, views their goals, and adds a new goal.\strut
+The user logs into their account, adds their entries for the day, and then views their data compared to the past 30 days.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Preconditions:\strut
@@ -297,24 +302,25 @@ The user has an account registered within the database.\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Post conditions:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-Data entry is saved, and the goal is stored in the database\strut
+Data entry is saved, and the graph screen is showing.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Main Success Scenario:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-The user enters his username and password. The user is directed to the
-dashboard. The user selects ``View Goals'' The user types a goal in the
-text field The user submits the goal The goal appears on the goal
-List\strut
+1.	The user enters his username and password.
+2.	The user is directed to the dashboard.
+3.	The user selects “Track my Calories”
+4.	The user inputs a food category, and selects from a drop down list.
+5.	The user exits to the dashboard.
+6.	The user selects “View graphs” to see his data for the past 30 days.
+\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Extensions:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-1.* The input is entered wrong, and the program re-allows for proper
-entry. 6.1 The user has more than 5 goals, in which case not all goals
-are shown. 6.2 The user deletes a goal from the drop down list of goals.
-6.2.1. The user accidentally deletes a goal, and which case he uses the
-undo button.\strut
+1.* The input is entered wrong, and the program re-allows for proper entry.
+4.* The food is not in the database, and the user inputs a new food item with its calories, category name, and name
+\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}\selectlanguage{english}
@@ -323,7 +329,7 @@ undo button.\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Use Case ID:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-UC Add Goal\strut
+UC View BFA/BMI/FitnessScore\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Scope:\strut
@@ -338,12 +344,15 @@ User goal\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Stake Holders and Interests:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-User- Person entering data for Fitness Trakr\strut
+User- Person editing goals for Fitness Trakr.
+MaleUser- Uses a different set of data to calculate BFA/BMI.
+FemaleUser- Uses a different set of data to calculate BFA/BMI.
+\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Description:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-The user logs on, views their goals, and adds a new goal.\strut
+The user logs into their account, edits their profile to contain current information, and checks their BMI/BFA.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Preconditions:\strut
@@ -353,24 +362,28 @@ The user has an account registered within the database.\strut
 \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
 Post conditions:\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-Data entry is saved, and the goal is stored in the database\strut
+Data entry is saved, and the view BMI/BFA is saved.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Main Success Scenario:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-The user enters his username and password. The user is directed to the
-dashboard. The user selects ``View Goals'' The user types a goal in the
-text field The user submits the goal The goal appears on the goal
-List\strut
+1.	The user enters his username and password.
+2.	The user is directed to the dashboard.
+3.	The user selects “Views Profile”
+4.	The user edits the information to ensure everything is current and up-to-date.
+5.	The user returns to the dashboard.
+6.	The user selects FitnessScore.
+7.	The user views BMI/BFA.
+\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Extensions:\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-1.* The input is entered wrong, and the program re-allows for proper
-entry. 6.1 The user has more than 5 goals, in which case not all goals
-are shown. 6.2 The user deletes a goal from the drop down list of goals.
-6.2.1. The user accidentally deletes a goal, and which case he uses the
-undo button.\strut
+1.* The input is entered wrong, and the program re-allows for proper entry.
+4.1 The information is up-to-date, in which case no editing is necessary.
+4.2a If the user is Male, the information is only waist measurement and neck.
+4.2b If the user is Female, a hip measurement is required.
+\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}\selectlanguage{english}
