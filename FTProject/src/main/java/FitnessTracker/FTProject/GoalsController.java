@@ -191,20 +191,12 @@ public class GoalsController implements Command{
 			goal4.setText(temp.get(3));
 			goal5.setText("");
 		}
-		else if(temp.size()==5) {
+		else if(temp.size()>4) {
 			goal1.setText(temp.get(0));
 			goal2.setText(temp.get(1));
 			goal3.setText(temp.get(2));
 			goal4.setText(temp.get(3));
 			goal5.setText(temp.get(4));
-		}
-		else {
-			goal1.setText("");
-			goal2.setText("");
-			goal3.setText("");
-			goal4.setText("");
-			goal5.setText("");
-			
 		}
 		
 	
@@ -276,20 +268,12 @@ public class GoalsController implements Command{
 			goal4.setText(temp.get(3));
 			goal5.setText("");
 		}
-		else if(temp.size()==5) {
+		else if(temp.size()>4) {
 			goal1.setText(temp.get(0));
 			goal2.setText(temp.get(1));
 			goal3.setText(temp.get(2));
 			goal4.setText(temp.get(3));
 			goal5.setText(temp.get(4));
-		}
-		else {
-			goal1.setText("");
-			goal2.setText("");
-			goal3.setText("");
-			goal4.setText("");
-			goal5.setText("");
-			
 		}
 		
 	
@@ -306,6 +290,74 @@ public class GoalsController implements Command{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
+		UserDatabaseGateway d = UserDatabaseGateway.getInstance();
+		User usr = null;
+		try {
+			usr = d.loadUser(usrname, pass);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ListFactory factory = new ListFactory();
+		
+		ArrayList<String> temp = factory.createArray();
+		GoalDatabaseGateway g = GoalDatabaseGateway.getInstance();
+		try {
+			temp = g.getGoals(usr.getUserId());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		if(temp.size()==0) {
+			goal1.setText("");
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==1) {
+			goal1.setText(temp.get(0));
+			goal2.setText("");
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		
+		}
+		else if(temp.size()==2) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText("");
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==3) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText("");
+			goal5.setText("");
+		}
+		else if(temp.size()==4) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText("");
+		}
+		else if(temp.size()>5) {
+			goal1.setText(temp.get(0));
+			goal2.setText(temp.get(1));
+			goal3.setText(temp.get(2));
+			goal4.setText(temp.get(3));
+			goal5.setText(temp.get(4));
+		}
+		
+		
+	
 	}
 	/**
 	 * @author ParakhJaggi
@@ -341,7 +393,7 @@ public class GoalsController implements Command{
 		ListFactory factory = new ListFactory();
 
 		ArrayList<String> temp =factory.createArray();
-		g.getGoals(usr.getUserId());
+		temp=g.getGoals(usr.getUserId());
 		goalsList = FXCollections.observableArrayList(temp);
 		goals.setItems(goalsList);
 		
@@ -382,21 +434,14 @@ public class GoalsController implements Command{
 			goal4.setText(temp.get(3));
 			goal5.setText("");
 		}
-		else if(temp.size()==5) {
+		else if(temp.size()>4) {
 			goal1.setText(temp.get(0));
 			goal2.setText(temp.get(1));
 			goal3.setText(temp.get(2));
 			goal4.setText(temp.get(3));
 			goal5.setText(temp.get(4));
 		}
-		else {
-			goal1.setText("");
-			goal2.setText("");
-			goal3.setText("");
-			goal4.setText("");
-			goal5.setText("");
-			
-		}
+		
 		
 	
 	}
@@ -460,21 +505,14 @@ public class GoalsController implements Command{
 			goal4.setText(temp.get(3));
 			goal5.setText("");
 		}
-		else if(temp.size()==5) {
+		else if(temp.size()>4) {
 			goal1.setText(temp.get(0));
 			goal2.setText(temp.get(1));
 			goal3.setText(temp.get(2));
 			goal4.setText(temp.get(3));
 			goal5.setText(temp.get(4));
 		}
-		else {
-			goal1.setText("");
-			goal2.setText("");
-			goal3.setText("");
-			goal4.setText("");
-			goal5.setText("");
-			
-		}
+		
 	
 	}
 	/**
