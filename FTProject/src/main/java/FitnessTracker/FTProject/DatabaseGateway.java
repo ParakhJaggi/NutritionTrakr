@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import javafx.util.Pair;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
-import FitnessTracker.Exceptions.UserAlreadyInDatabaseException;
 import FitnessTracker.Exceptions.UserNotFoundException;
 
 

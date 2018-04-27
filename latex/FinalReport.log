@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2018.4.26)  26 APR 2018 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2018.4.26)  26 APR 2018 23:27
 entering extended mode
 **FinalReport.tex
 (FinalReport.tex
@@ -880,34 +880,74 @@ Underfull \vbox (badness 10000) detected at line 376
 Underfull \vbox (badness 10000) detected at line 432
  []
 
-[4] [5] [6] <UseCaseModel.jpg, id=52, 706.13812pt x 441.90094pt>
+
+Overfull \hbox (53.24242pt too wide) in alignment at lines 458--462
+ [] [] 
+ []
+
+
+Overfull \hbox (53.24242pt too wide) in alignment at lines 462--469
+ [] [] 
+ []
+
+
+Overfull \hbox (105.10367pt too wide) in alignment at lines 470--474
+ [] [] 
+ []
+
+
+Overfull \hbox (105.10367pt too wide) in alignment at lines 474--481
+ [] [] 
+ []
+
+[4]
+Overfull \hbox (89.687pt too wide) in alignment at lines 482--486
+ [] [] 
+ []
+
+
+Overfull \hbox (89.687pt too wide) in alignment at lines 486--493
+ [] [] 
+ []
+
+
+Overfull \hbox (44.35355pt too wide) in alignment at lines 531--535
+ [] [] 
+ []
+
+
+Overfull \hbox (44.35355pt too wide) in alignment at lines 535--542
+ [] [] 
+ []
+
+[5] [6] <UseCaseModel.jpg, id=52, 706.13812pt x 441.90094pt>
 File: UseCaseModel.jpg Graphic file (type jpg)
 
 <use UseCaseModel.jpg>
-Package pdftex.def Info: UseCaseModel.jpg used on input line 681.
+Package pdftex.def Info: UseCaseModel.jpg used on input line 666.
 (pdftex.def)             Requested size: 469.75502pt x 293.97505pt.
  <Gannt1.png, id=53, 1287.30937pt x 446.41782pt>
 File: Gannt1.png Graphic file (type png)
 
 <use Gannt1.png>
-Package pdftex.def Info: Gannt1.png used on input line 691.
+Package pdftex.def Info: Gannt1.png used on input line 676.
 (pdftex.def)             Requested size: 469.75502pt x 162.90367pt.
  <GANNTCHART.png, id=54, 535.2497pt x 405.76593pt>
 File: GANNTCHART.png Graphic file (type png)
 
 <use GANNTCHART.png>
-Package pdftex.def Info: GANNTCHART.png used on input line 701.
+Package pdftex.def Info: GANNTCHART.png used on input line 686.
 (pdftex.def)             Requested size: 469.75502pt x 356.13402pt.
  <SSD.png, id=56, 551.05875pt x 626.34pt>
 File: SSD.png Graphic file (type png)
  <use SSD.png>
-Package pdftex.def Info: SSD.png used on input line 711.
+Package pdftex.def Info: SSD.png used on input line 696.
 (pdftex.def)             Requested size: 469.75502pt x 533.94933pt.
 
 <UC1.png, id=57, 731.73375pt x 632.3625pt>
 File: UC1.png Graphic file (type png)
  <use UC1.png>
-Package pdftex.def Info: UC1.png used on input line 722.
+Package pdftex.def Info: UC1.png used on input line 707.
 (pdftex.def)             Requested size: 469.75502pt x 405.965pt.
 
 
@@ -916,7 +956,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <UC2.png, id=58, 734.745pt x 668.4975pt>
 File: UC2.png Graphic file (type png)
  <use UC2.png>
-Package pdftex.def Info: UC2.png used on input line 732.
+Package pdftex.def Info: UC2.png used on input line 717.
 (pdftex.def)             Requested size: 469.75502pt x 427.40852pt.
 
 
@@ -925,7 +965,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <UC3.png, id=59, 606.01407pt x 682.80093pt>
 File: UC3.png Graphic file (type png)
  <use UC3.png>
-Package pdftex.def Info: UC3.png used on input line 742.
+Package pdftex.def Info: UC3.png used on input line 727.
 (pdftex.def)             Requested size: 469.75502pt x 529.27985pt.
 
 
@@ -934,7 +974,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <UC4.png, id=60, 682.80093pt x 640.64343pt>
 File: UC4.png Graphic file (type png)
  <use UC4.png>
-Package pdftex.def Info: UC4.png used on input line 752.
+Package pdftex.def Info: UC4.png used on input line 737.
 (pdftex.def)             Requested size: 469.75502pt x 440.75409pt.
 
 
@@ -943,7 +983,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <Domain.png, id=61, 891.33pt x 555.57562pt>
 File: Domain.png Graphic file (type png)
  <use Domain.png>
-Package pdftex.def Info: Domain.png used on input line 762.
+Package pdftex.def Info: Domain.png used on input line 747.
 (pdftex.def)             Requested size: 469.75502pt x 292.80057pt.
 
 
@@ -952,7 +992,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <DesignBasic.png, id=62, 951.555pt x 609.02531pt>
 File: DesignBasic.png Graphic file (type png)
  <use DesignBasic.png>
-Package pdftex.def Info: DesignBasic.png used on input line 772.
+Package pdftex.def Info: DesignBasic.png used on input line 757.
 (pdftex.def)             Requested size: 469.75502pt x 300.66461pt.
 
 
@@ -961,7 +1001,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <DesignFull.png, id=63, 841.64438pt x 536.75531pt>
 File: DesignFull.png Graphic file (type png)
  <use DesignFull.png>
-Package pdftex.def Info: DesignFull.png used on input line 782.
+Package pdftex.def Info: DesignFull.png used on input line 767.
 (pdftex.def)             Requested size: 469.75502pt x 299.58989pt.
 
 
@@ -970,19 +1010,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7] [8 <./UseCaseModel.jpg> <./Gannt1.png>] [9 <./GANNTCHART.png>] [10 <./SSD.p
 ng>] [11 <./UC1.png>] [12 <./UC2.png>] [13 <./UC3.png>] [14 <./UC4.png>]
 [15 <./Domain.png>] [16 <./DesignBasic.png>] [17 <./DesignFull.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 790.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 790.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
 
 (FinalReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 790.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 790.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
 Package rerunfilecheck Info: File `FinalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 790.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
  ) 
 Here is how much of TeX's memory you used:
  8986 strings out of 493698
@@ -991,12 +1031,12 @@ Here is how much of TeX's memory you used:
  12121 multiletter control sequences out of 15000+200000
  6562 words of font info for 28 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,6n,35p,905b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,8n,35p,905b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on FinalReport.pdf (17 pages, 661764 bytes).
+Output written on FinalReport.pdf (17 pages, 663691 bytes).
 PDF statistics:
  152 PDF objects out of 1000 (max. 8388607)
  49 named destinations out of 1000 (max. 500000)

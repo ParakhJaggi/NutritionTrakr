@@ -457,16 +457,87 @@ undo button.\strut
 \textbf{Operation Contracts}\selectlanguage{english}
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
+\textbf{Name} & \textbf{Login()}\tabularnewline
 \midrule
 \endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
+\textbf{Responsibilities} & Verifies that the user can access personal data across sessions, even after the application is closed.\tabularnewline
+\textbf{Cross-references} & All Use Cases\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & The user has an account with the system, and the username and password are entered correctly\tabularnewline
+\textbf{Post-condition} & The user’s data is loaded and can interact with the rest of the functions\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{Register()}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} & Verifies that the user can create personal data maintained across sessions, even after the application is closed.\tabularnewline
+\textbf{Cross-references} & All Use Cases\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & The user does not have an account with the system\tabularnewline
+\textbf{Post-condition} & The user has a permanent account associated with the system\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{LoadUser(Username)}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} & Successes a database and gets all the data from the table, filling the user account with values as necessary\tabularnewline
+\textbf{Cross-references} & All Use Cases\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & A login or registration has been accepted\tabularnewline
+\textbf{Post-condition} & Valid data has been initialized\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{AddCaloriesToFoodTracker(Category,Food)}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} & Adds calories to a tracker, which will be used to formulate a fitness score.\tabularnewline
 \textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & The loadUser operation has occurred\tabularnewline
+\textbf{Post-condition} & Data is initialized\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{InputFitnessData(Height,Weight)}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} & Allows the user to input their measurements to calculate their progress over time.
+\tabularnewline
+\textbf{Cross-references} & UC View BFA,BMI, FitnessScore\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & The loadUser operation has occurred\tabularnewline
+\textbf{Post-condition} &Data is initialized\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{calculateFitnessScore()}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} & Takes user information to calculate a FitnessScore, BMI, and BFA\tabularnewline
+\textbf{Cross-references} & UC View BFA,BMI, FitnessScore\tabularnewline
+\textbf{Output} & A FitnessScore page with BMI and BFA info\tabularnewline
+\textbf{Pre-condition} & The loadUser() operation has occurred\tabularnewline
+\textbf{Post-condition} & All 3 numbers are calculated\tabularnewline
+\bottomrule
+\end{longtable}\selectlanguage{english}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Name} & \textbf{SetGoals}\tabularnewline
+\midrule
+\endhead
+\textbf{Responsibilities} &Shows the goals of the user to help track progress\tabularnewline
+\textbf{Cross-references} &UC Add Goal\tabularnewline
+\textbf{Output} & None\tabularnewline
+\textbf{Pre-condition} & The user has an account with the system, and the username and password are entered correctly\tabularnewline
+\textbf{Post-condition} & The user’s goal is loaded and can be retrieved later\tabularnewline
 \bottomrule
 \end{longtable}\selectlanguage{english}
 \begin{longtable}[]{@{}ll@{}}
@@ -474,96 +545,10 @@ data form\tabularnewline
 \textbf{Name} & \textbf{ViewData()}\tabularnewline
 \midrule
 \endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
+\textbf{Responsibilities} & Shows the data in terms of graphs stemming from the calories tracker\tabularnewline
 \textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
 \textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
-\textbf{Post-condition} & A bar chart is created\tabularnewline
-\bottomrule
-\end{longtable}\selectlanguage{english}
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\textbf{Name} & \textbf{ViewData()}\tabularnewline
-\midrule
-\endhead
-\textbf{Responsibilities} & Shows the data in terms of graphs stemming
-from the calories tracker\tabularnewline
-\textbf{Cross-references} & UC Input Data/View Graphs\tabularnewline
-\textbf{Output} & A calorie bar graph\tabularnewline
-\textbf{Pre-condition} & A user has valid information in the calorie
-data form\tabularnewline
+\textbf{Pre-condition} & A user has valid information in the calorie data form\tabularnewline
 \textbf{Post-condition} & A bar chart is created\tabularnewline
 \bottomrule
 \end{longtable}
@@ -785,6 +770,10 @@ the user requests the goal to be undoed.
 		}}
 	\end{center}
 \end{figure}
+
+\begin{quote}
+	An estimated 65 hours each were spent on the project(130 hours total). In total we had 2663 lines of logical code (not including fxml), which if we had to guess based on author, Garth had 1400 lines and Parakh had 1200 lines. Our git repository is  https://terlizzit@bitbucket.org/terlizzit/fitnesstrackerproject.git. There was a total of 114 commits.
+\end{quote}
 \selectlanguage{english}
 \clearpage
 \end{document}
