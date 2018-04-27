@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import FitnessTracker.Exceptions.FoodNotFoundException;
 
-public class FoodDatabaseGateway extends InputGateway {
+public class FoodDatabaseGateway extends InputDatabaseGateway {
 	private static FoodDatabaseGateway instance = null;
 	/**
 	 * @author Garth Terlizzi

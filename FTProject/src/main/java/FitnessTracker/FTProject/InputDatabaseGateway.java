@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InputGateway extends DatabaseGateway {
+public class InputDatabaseGateway extends DatabaseGateway {
 	/**
 	 * @author Garth Terlizzi III
 	 * @param The name of the exercise
